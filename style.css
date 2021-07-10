@@ -38,7 +38,7 @@ nav {
 	height: 125px;
 	box-shadow: inset 75px 0px 75px -33px #FFFFFF, 
               	inset -75px 0px 75px -33px #FFFFFF;
-  	border-left: 	1px solid #FFFFFF;
+  	border-left: 1px solid #FFFFFF;
   	border-right: 1px solid #FFFFFF;
 }
 #logo img {
@@ -586,21 +586,27 @@ margin: 25px 40% 0 40%;
 .recepten-grid-top {
 	font-size: 25px;
 	font-family: 'IndieFlower', cursive;
-	margin-left: 15px;
+	text-align: center;
 }
 .recepten-grid-personen {
-	opacity: 0.8;
+	opacity: 0.65;
 	margin-left: 15px;
 }
 .recepten-grid-text {
 	margin-left: 15px;
+	
 }
 .recepten-grid-bottom {
 	margin-left: 15px;
 	font-family: 'IndieFlower', cursive;
+	text-align: center;
 }
-.recepten-grid-bereiding {
+.recepten-grid-ingredienten-text th {
+	text-align: right;
 }
+
+
+
 .horizontal-line {
 display: block; 
 margin-before: 0.5em; 
@@ -610,9 +616,49 @@ margin-end: auto;
 overflow: hidden; 
 border-style: inset; 
 border-width: 1px;
-background-color: blue;
+width: 80%;
+margin-bottom: 35px;
 }
 
+.circle-number-a, .circle-number-b, .circle-number-c, .circle-number-d, .circle-number-e {
+background:lightgray;
+font-size:30px;
+padding:5px;
+height:65px;
+width:65px;
+border-radius:50%;
+text-align:center;
+padding-top: 12px;
+border: 1px solid black;
+opacity: 0.8;
+float: left;
+margin-right: 20px;
+}
+ 
+.grid-receptuur-bereidingswijze img {
+	mix-blend-mode: multiply;
+	float: left;
+	margin-right: 20px;
+}
+.grid-receptuur-bereidingswijze {
+	box-shadow: 24px 0px 3px -24px black;
+}
+.print-img {
+	position: relative;
+	mix-blend-mode: multiply;
+	display: flex;
+	margin-left: 400px;
+}
+.grid-receptuur-bereidingswijze button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 16px;
+}
+.grid-receptuur-bereidingswijze > div img {
+	float: left;
+}
 
 
 
@@ -632,13 +678,30 @@ background-color: blue;
 }
 
 .grid-ingredienten {
-	border: 1px solid black;
 	width: 100%;
+	box-shadow: 24px 0px 3px -24px black;
 }
 
-.grid-receptuur-bereidingswijze {
-	border: 1px solid skyblue;
+.grid-nieuw-receptuur img {
+	margin-top: 15px;
+	position: relative;
+	top: 6px;
+
 }
+.grid-nieuw-receptuur a {
+	margin-left: 20px;
+	text-decoration: none;
+	color: black;
+}
+.allergenen {
+	box-shadow: 24px 0px 3px -24px black;
+}
+.allergenen img {
+	float: left;
+}
+
+
+
 
 
 
@@ -791,3 +854,47 @@ background-color: blue;
 	background-color: #902656;
 }
 																/*Einde nieuwsbrief*/
+
+
+
+
+          /* PRINT STYLES */
+/* override styles when printing */
+
+@media print {
+	body {
+	  margin: 0;
+	  color: #000;
+	  background-color: #fff;
+	  font-size: 14px;
+	}
+.recepten-grid-top {
+	font-size:18px;
+}
+  header, .footer, nav, #logo, .menu, .receptuur-header, .grid-nieuw-receptuur {
+	  display:none;
+  }
+  content::after {
+	  content:"2021 foodfreedom alle rechten voorbehouden.";
+	  display: block;
+	  text-align: center;
+  }
+  img {
+  display: none;
+  }
+  .circle-number-a, .circle-number-b, .circle-number-c, .circle-number-d, .circle-number-e {
+	font-size:30px;
+	text-align:center;
+	opacity: 0.8;
+	border: none;
+	font-size: 17px;
+  }
+  .grid-ingredienten {
+	  border-right: none;
+	  text-align: left;
+  }
+  .grid-receptuur-bereidingswijze {
+	  text-align: left;
+	  border: none;
+  }
+  }
