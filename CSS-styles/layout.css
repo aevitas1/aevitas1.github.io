@@ -1,0 +1,269 @@
+                                    /* navbar css */
+
+                                    /*Begin navigation*/
+nav {
+	background: linear-gradient(180deg, #E3F0D4 50%, #E4CACA 33%);
+	width: 100%;
+	margin: 0 auto 0 auto;
+	overflow: auto;
+	font-family: 'IndieFlower', cursive;
+	height: 125px;
+	box-shadow: inset 75px 0px 75px -33px #FFFFFF, 
+              	inset -75px 0px 75px -33px #FFFFFF;
+  	border-left: 1px solid #FFFFFF;
+  	border-right: 1px solid #FFFFFF;
+}
+#logo img {
+	position: absolute;
+	margin: 25px auto auto 15px;
+	mix-blend-mode: multiply;
+}
+.menu {
+	display: inline-block;
+	list-style: none;
+	position: absolute;
+	margin-left: 120px;
+	margin-top: 62px;
+
+}
+/* Link button styling */													
+.menu a {
+	width: 100%;
+	height: 62.5px;
+	display: block;
+	text-decoration: none;
+	color: black;
+	font-size: 15px;
+	padding-top: 10px;
+	text-align: center;
+	border-right:1px solid black;
+	-webkit-transition: background-color 0.7s ease-out;
+  	-moz-transition: background-color 0.7s ease-out;
+  	-o-transition: background-color 0.7s ease-out;
+  	transition: background-color 0.7s ease-out;
+}
+.active {
+	font-weight: bold;
+}
+/* Main menu children */
+.menu > li {
+	float: left;
+	display: flex;
+	position: relative;
+	width: 130px;
+	text-align: center;
+	background-color:transparent;
+}
+.menu > li > a:hover {
+	height: 62.5px;
+	background-color: #902656;
+	position: relative;
+}
+.submenu > li:hover {
+	background-color: rgb(189,223,144);
+	-webkit-transition: background-color 0.7s ease-out;
+  	-moz-transition: background-color 0.7s ease-out;
+  	-o-transition: background-color 0.7s ease-out;
+  	transition: background-color 0.7s ease-out;
+}	
+
+/* submenu */
+.submenu {
+	display: none;
+	position: absolute;
+	justify-content: center;
+	top: 63px;
+	padding: 0;
+	width: 100%;
+	box-shadow: 6px 6px 12px 0px rgba(50, 50, 50, 0.5);
+}
+
+/* show child submenu when menu item is hovered */
+.menu li:hover > .submenu {
+	display: inline-block;
+}
+
+/* submenu children */
+.submenu > li {
+	display: flex;
+	position: relative;
+	background: #E3F0D4;
+	Width: 100%;
+	z-index: 1;
+  	box-shadow: 6px 6px 12px 0px rgba(50, 50, 50, 0.5);	
+}
+
+																/*end navigation*/
+
+																/*search bar*/
+form.searchbar input[type=text] {
+	float: right;	
+	width: 150px;
+	padding: 5px;
+	border: none;
+	margin-top: 15px;
+	margin-right: 50px;
+	font-size: 17px;
+	border-radius: 10px;
+	padding-left: 20px;
+	outline: none;
+	font-family: 'IndieFlower', cursive;
+	background-color: #E4CACA;
+}
+
+	form.searchbar button {
+	float: right;
+	position: relative;
+	width: 35px;
+	height:35px;
+	margin-top: 15px;
+	margin-right: 15px;
+	background-color: #E4CACA;
+	border: 1px solid lightgray;
+	cursor: pointer;
+	border-radius: 10%;
+  	-webkit-transition: background-color 0.7s ease-out;
+  	-moz-transition: background-color 0.7s ease-out;
+  	-o-transition: background-color 0.7s ease-out;
+  	transition: background-color 0.7s ease-out;
+}
+
+form.searchbar button:hover {
+	background-color: #902656;
+}
+															/*end searchbar*/
+
+															/* pagina header text */
+
+.pagina-header {
+	text-align: center;
+	width: 90%;
+	margin: 40px auto;
+  	box-shadow: 0px 0px 2px #191919;
+  	padding: 5px;
+}
+.pagina-top {
+	font-family: 'IndieFlower', cursive;
+	font-size: 35px;
+}
+.pagina-bottom {
+	font-size: 24px;
+	font-weight: 300;
+}
+															/* einde pagina header text */
+
+/*footer*/
+.footer {
+	background-color:#e3f0d4;
+	height: 9rem;
+	box-shadow: inset 75px 0px 75px -33px #FFFFFF, 
+              	inset -75px 0px 75px -33px #FFFFFF;
+  	border-left: 1px solid #FFFFFF;
+  	border-right: 1px solid #FFFFFF;
+   position: relative;
+}
+.footer .footer-bottom {
+	box-shadow: inset 75px 0px 75px -33px #FFFFFF, 
+	inset -75px 0px 75px -33px #FFFFFF;
+	border-left: 1px solid #FFFFFF;
+	border-right: 1px solid #FFFFFF;
+	background-color:#96c959;
+	color: black;
+	height: 1.5rem;
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	font-size: 17px;
+}
+
+
+
+.footer > .column {
+	display: flex;
+	height: 8rem;
+	text-align: left;
+	position: relative;
+	bottom: 0;
+}
+.footer-text-address {
+	font-size: 15px;
+	position: relative;
+	line-height: 5px;
+	margin-left: 50px;
+	margin-top: 30px;
+}
+																	/*nieuwsbrief*/
+
+.blijf-op-de-hoogte {
+	position: relative;
+	width: 260px;
+	font-size: 12px;
+	font-family: 'IndieFlower', cursive;
+	font-weight: 800;
+	text-align: center;
+
+	
+}
+.footer-row {
+	width: 33%;
+	display: inline-block;
+}
+																/*nieuwsbrief aanmelden*/
+#nieuwsbrief-wrapper {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	align-content: center;
+	text-align: center;
+}
+.nieuwsbrief-wrapper-a {
+	font-size: 14px;
+	text-align: center;
+	margin: 5px 0px 0px 100px;
+	position: absolute;
+	font-family: 'IndieFlower', cursive;
+}
+.nieuwsbrief-wrapper-b {
+	text-align: center;
+	color: black;
+	position: absolute;
+	margin: 35px 0px 0px 100px;
+	font-size: 12px;
+	opacity: 0.7;
+	font-family: 'IndieFlower', cursive;
+}
+.nieuwsbrief .input {
+	width: 200px;
+	margin-left: 65px;
+	padding: 5px 40px 5px 40px;
+	border-radius: 5px;
+	margin-top: 70px;
+	border: none;
+	font-weight: bold;
+	font-family: 'IndieFlower', cursive;
+}
+.fas {
+   	left: 95px;
+	position: relative;
+}
+
+.nieuwsbrief-knop {
+	position: absolute;
+	margin-top: 73px;
+	margin-left: 5px;
+	background-color: #E4CACA;
+	letter-spacing: 2px;
+	color: black;
+	cursor: pointer;
+	-webkit-transition: background-color 0.7s ease-out;
+  	-moz-transition: background-color 0.7s ease-out;
+  	-o-transition: background-color 0.7s ease-out;
+  	transition: background-color 0.7s ease-out;
+	
+}
+.nieuwsbrief-knop:hover {
+	background-color: #902656;
+}
+																/*Einde nieuwsbrief*/
