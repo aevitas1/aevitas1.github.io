@@ -103,6 +103,11 @@
     font-size: 30px;
     opacity: 0.9;
 }
+.fa-angle-double-right {
+    font-size: 50px;
+    color: #902656;
+    left: 0;
+}
                                         /* REVIEW BAR */
 .review-bar {
     display: flex;
@@ -146,22 +151,25 @@
                                         /* KLANTEN REVIEW */
 .klanten-review-wrapper {
     background-color: #f1e3e3;
-    width: 100%;
     height: 400px;
     display: flex;
 }
 .review-left {
-    display: inline-block;
-    width: 50%;
-    height: 30vh;
-    left: 0;
-    top: 0;
-}
-.review-right {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    position: relative;
     width: 50%;
     height: auto;
-    right: 0;
+    top: 0;
+    left: 12rem;
+}
+.review-right {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 50%;
+    height: auto;
+    right: 12rem;
     top: 0;
 }
 .quote_marks {
@@ -206,7 +214,7 @@
 .fresh-food-background {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),url(../images/img-list.jpg);
     width: 30vw;
-	height: 65vh;
+	max-height: 65vh;
     max-width: 30%;
     margin-left: 10%;
     background-size: cover;
@@ -241,8 +249,10 @@
     opacity: 0.70;
 }
 .fresh-food-list > li > img {
-    margin-top: 3%;
     mix-blend-mode: multiply;
+    display: flex;
+    float: left;
+    margin-top: 3%;
 }
 .home-img-list-wrap {
     background-color: rgb(237,161,161);
@@ -433,4 +443,28 @@
     .bestel-nu-bottom {
         margin-right: 24rem;
     }
+}
+
+@media screen and (max-width:1500px) {
+    .klanten-review-wrapper {
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(60%, 1fr));
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .review-right .review-left {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin-left: 20rem;
+        height: auto;
+    }
+    .review-right {
+        margin-left:24rem;
+        padding-bottom: 3%;
+    }
+
 }
