@@ -1,0 +1,436 @@
+                                    /* content index */
+                                    /* HERO */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),url(../images/pexels-hero-home.jpeg);
+    width: 100vw;
+	height: 50vh;
+    max-width: 100%;
+    background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.hero h1 {
+    font-size: 2.5em;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    color: white;
+    text-shadow: 1px 2px 1px black;
+}
+.hero h2 {
+    font-family: 'Roboto';
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    color: white;
+    text-shadow: 1px 2px 1px black;
+}
+.hero .bestelhero {
+    display: block;
+    width: 200px;
+    border: 3px solid black;
+    padding: 1em;
+    margin: 50px auto 0 auto;
+    font-size: 1.5em;
+    border-radius: 20px;
+    background-color: #E4CACA;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 8px 16px 0px;
+}
+.bestelhero:hover {
+    background-color: #902656;
+    box-shadow: none;
+}
+.hero a {
+    text-decoration: none;color: black; 
+}
+
+                                    /* ARROWS */
+.home-arrows-wrap {
+    background-color: #f1e3e3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.home-row-arrows figure {
+    max-width: 80%;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+}
+.home-row-arrows figure img {
+    mix-blend-mode: multiply;
+}
+.home-row-arrows {
+    width: 55%;
+    display: flex;
+    flex-direction: row;
+    background-color: #f1e3e3;
+    padding-right: 0;
+    padding-bottom: 50px;
+}
+.home-arrows-text {
+    width: 100%;
+    background-color: #f1e3e3;
+    top: 0;
+    text-align: center;
+}
+.home-arrows-text h1 {
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    margin-top: 0;
+    padding: 35px;
+}
+.home-arrows-text h2 {
+    display: inline-block;
+    font-family: 'Roboto';
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 60px;
+    opacity: 0.9;
+}
+.home-arrows-text h3 {
+    display: inline-block;
+    padding: 10px;
+    font-size: 30px;
+    opacity: 0.9;
+}
+                                        /* REVIEW BAR */
+.review-bar {
+    display: flex;
+    position: relative;
+    background-color: rgb(237,161,161);
+    width: 100%;
+    padding: 20px;
+}
+.fake-rating {
+    text-align: right;
+    font-size: 18px;
+    width: 35%;
+    margin: 0 auto;
+    font-family: 'Roboto';
+    margin-top: 3rem;
+    margin-right: 30px;
+}
+.review-images {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    margin: 0 auto;
+}
+.review-images img {
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 50%; 
+}
+.review-gezond {
+    margin-left: 30px;
+    width: 35%;
+}
+.review-gezond h4 {
+    font-size: 20px;
+}
+.review-gezond h5 {
+    font-size: 18px;
+    opacity: 0.9;
+    font-family: 'Roboto';
+}
+                                        /* KLANTEN REVIEW */
+.klanten-review-wrapper {
+    background-color: #f1e3e3;
+    width: 100%;
+    height: 400px;
+    display: flex;
+}
+.review-left {
+    display: inline-block;
+    width: 50%;
+    height: 30vh;
+    left: 0;
+    top: 0;
+}
+.review-right {
+    display: inline-block;
+    width: 50%;
+    height: auto;
+    right: 0;
+    top: 0;
+}
+.quote_marks {
+    font-size: 4em;
+    font-family: 'Roboto';
+    justify-content: center;
+    display: flex;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+.klant-review-naam {
+    justify-content: center;
+    display: flex;
+    margin: 0 auto;
+    font-size: 16px;
+    margin-bottom: 30px;
+    font-family: 'Righteous';
+}
+.review {
+    width: 20rem;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.review-left img {
+    display: flex;
+    mix-blend-mode: multiply;
+    justify-content: center;
+    position:relative;
+    margin: 90px auto 0 auto;
+}
+.review-right img {
+    display: flex;
+    mix-blend-mode: multiply;
+    justify-content: center;
+    position:relative;
+    margin: 50px auto 0 auto;
+}
+                                        /* IMG LIST */
+.fresh-food-background {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),url(../images/img-list.jpg);
+    width: 30vw;
+	height: 65vh;
+    max-width: 30%;
+    margin-left: 10%;
+    background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+    display: flex;
+    position: relative;
+}
+.fresh-food-list {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    max-width: 35%;
+    left: 20rem;
+    padding-left: 20px;
+}
+.fresh-food-list li {
+    list-style: none;
+    text-align: left;
+}
+    .fresh-food-list li > .fresh-food-list-kop {
+   margin-left: 70px;
+   font-family: 'Righteous';
+   font-size: 24px;
+}
+    .fresh-food-list li > .fresh-food-list-text {
+    margin-left: 70px;
+    font-family: 'Roboto';
+    color: black;
+    font-weight: 500;
+    opacity: 0.70;
+}
+.fresh-food-list > li > img {
+    margin-top: 3%;
+    mix-blend-mode: multiply;
+}
+.home-img-list-wrap {
+    background-color: rgb(237,161,161);
+    display: flex;
+}
+                                        /* RECEPTEN */
+.home-grid-container {
+    background-color: #f1e3e3;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+    padding: 5%;
+}
+.home-grid-kop {
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 2%;
+    display: flex;
+    background-color: #f1e3e3;
+}
+.grid-item img {
+    margin-top: 8%;
+}
+.grid-item:hover {
+	-ms-transform: scale(1.02);
+  	-webkit-transform: scale(1.02);
+  	transform: scale(1.02);
+    transition: transform .7s;
+  	background-color: #f1e3e3;
+    box-shadow: 1px 1px 1px #191919; 
+}
+.grid-item a {
+	text-decoration: none;
+	color: black;
+}
+
+.grid-item {
+	text-align: center;
+	border: 2px solid lightgray;
+    margin-right: 10%;
+    transition: transform .7s;
+}
+
+.main-grid-item {
+	font-size: 25px;
+}
+
+.text-grid-item {
+    font-family: 'Roboto';
+	font-size: 16px;
+	opacity: 0.7;
+}
+
+
+.recepturen-btn-home {
+    justify-content: center;
+    margin: 0 auto;
+    display: flex;
+    background-color: #f1e3e3;
+    padding-bottom: 2rem;
+}
+.recepturen-btn-home h2 {
+    display: block;
+    border: 3px solid black;
+    padding: 1em;
+    margin: 0 auto;
+    color: black;
+    font-size: 1.5em;
+    border-radius: 20px;
+    background-color: #E4CACA;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 8px 16px 0px;
+}
+.recepturen-btn-home a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.recepturen-btn-home h2:hover {
+    background-color: #902656;
+    box-shadow: none;
+}
+
+
+                                /* BESTEL NU */
+.home-gezin {
+    background-color: rgb(237,161,161);
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+.home-gezin-left {
+    flex: 35%;
+    margin: 0 auto;
+    display: inline-block;
+}
+.home-gezin-left h1 {
+    padding-top: 4%;
+    padding-bottom: 5%;
+    font-size: 20px;
+    justify-content: center;
+    display: flex;
+    opacity: 0.6;
+}
+.home-gezin-left h2 {
+    font-weight: 400;
+    font-family: 'Roboto';
+    width: 70%;
+    padding-bottom: 7%;
+    margin: 0 auto;
+}
+.home-gezin-right {
+    flex: 35%;
+    height: auto;
+    margin: auto auto;
+}
+
+.hero-bestel-nu-bottom {
+    background-image: url(../images/home-bestel-nu-a.jpg);
+    width: 100vw;
+    height: 50vh;
+    max-width: 100%;
+    background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.bestel-nu-content h1 {
+    font-size: 2.5em;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    color: black;
+    text-shadow: 1px 2px 1px white;
+}
+.bestel-nu-content h2 {
+    font-family: 'Roboto';
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    color: black;
+    text-shadow: 1px 1px 1px white;
+}
+.bestel-nu-bottom {
+    display: block;
+    width: 200px;
+    border: 3px solid black;
+    padding: 1em;
+    margin: 50px auto 0 auto;
+    font-size: 1.5em;
+    border-radius: 20px;
+    background-color: #E4CACA;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 8px 16px 0px;
+}
+.bestel-nu-bottom:hover {
+    background-color: #902656;
+    box-shadow: none;
+}
+.bestel-nu-content a {
+    text-decoration: none;
+    color: black; 
+}
+
+
+
+
+@media screen and (max-width:1300px) {
+    .fresh-food-list {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        justify-content: center;
+        max-width: 35%;
+        left: 10rem;
+        padding-left: 20px;
+    }
+    .fresh-food-list > li > img {
+        margin-top: 15%;
+        mix-blend-mode: multiply;
+    }
+    .bestel-nu-content h1, .bestel-nu-content h2 {
+        padding-right: 15rem;
+    }
+    .bestel-nu-bottom {
+        margin-right: 24rem;
+    }
+}
