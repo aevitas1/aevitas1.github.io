@@ -162,123 +162,224 @@ form.searchbar button:hover {
 
 /* footer */
 footer {
-    background-color: #e3f0d4;
-    height: 12rem;
     position: relative;
-}
-footer .footer-bottom {
-    background-color: #96c959;
-    color: black;
-    height: 1.5rem;
+    height: auto;
     width: 100%;
+    background: #E3F0D4;
+  }
+  footer .footer-bottom {
+    height: 1.8rem; 
     text-align: center;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    font-size: 17px;
-}
-footer > .column-footer {
+    padding: 0.5rem 0 0.5rem 0;
+    background-color: #96c959;
+  }
+  .footer {
     display: flex;
-    height: 10rem;
-    text-align: left;
-    position: relative;
-    bottom: 0;
-} 
-.footer-row {
-    width: 33%;
-    display: inline-block;
-}
-.adresgegevens {
-    display: inline-block;
-    font-size: 15px;
-    position: relative;
-    line-height: 1.7em;
-    margin-top: 15px;
-    margin-left: 90px;
-}
-.links-footer-left a {
+  }
+  .footer, .left-box, .center-box, .right-box {
+    flex-basis: 50%;
+    padding: 10px 20px;
+  }
+  .fa-facebook {
+    color: #3B5998;
+    transition: transform .2s;
+    margin-right: 2rem;
+  }
+  .fa-pinterest {
+    color: #C8323C;
+    transition: transform .2s;
+  }
+  .content > ul {
+      all: unset;
+  }
+  .content li a {
     text-decoration: none;
-    color: rgb(51, 50, 50);
-    position: relative;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.links-footer-left a:hover {
-    text-decoration: underline;
-}
-.links-footer-left {
-    display: flex;
-    margin: 0 0 0 80px;
-}
-.footer-row h1 {
-    font-size: 28px;
-    text-align: center;
-}
-.footer-social-media {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.footer-social-media img {
-    padding: 5px;
-    mix-blend-mode: multiply;
-    transition: transform .2s;
-}
-.footer-social-media img:hover {
-    -ms-transform: scale(0.9);
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9); 
-    transition: transform .2s;
-}
-.nieuwsbrief-wrapper {
-    width: 350px;
-    height: 100%;
-}
-.nieuwsbrief-wrapper h2 {
     font-size: 18px;
-    display: flex;
-    position: relative;
-    text-align: center;
-}
-.nieuwsbrief-wrapper p {
-    display: flex;
-    position: relative;
-    margin: 0;
-    text-align: center;
-    font-size: 15px;
+    color: black;
+  }
+  .content li a:hover {
+    text-decoration: underline;
     opacity: 0.8;
-}
-.nieuwsbrief .input {
+  }
+  .content li {
+    list-style: none;
+    line-height: 1.6em;
+  }
+  .left-box h2, .center-box h2, .right-box h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .left-box, .center-box, .right-box, .content {
+    margin: 20px 0 0 0;
+    position: relative;
+  }
+  .center-box > .content {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .center-box > .content {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+    .content:before {
     position: absolute;
-    width: 200px;
-    padding: 5px 40px 5px 40px;
+    content:'';
+    top: -10px;
+    height: 3px;
+    width: 100%;
+    background: #E3F0D4;
+  }
+  .content:after {
+    position: absolute;
+    content:'';
+    top: -10px;
+    height: 3px;
+    width: 15%;
+    background: #96c959;
+  }
+  .left-box > .content .fas {
+    font-size: 1rem;
+    background: #96c959;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+  }
+  .phone, .email {
+    margin-top: 5px;
+  }
+  .email {
+    margin-bottom: 5px;
+  }
+  .phone a, .email a {
+      color: black;
+  } 
+  .phone a:hover, .email a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+    }
+ .social {
+    margin-top: 20px;
+    text-align: left;
+  }
+  .social a span {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 50px;
     border-radius: 5px;
-    margin-left: 35px;
+    transition: .3s;
+  }
+  .social a span:hover {
+    -ms-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95); 
+    transition: transform .2s;
+  }
+  .fa-cc-mastercard {
+    background: -webkit-linear-gradient(180deg, #FF5F00 50%, #EB001B  33%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 35px;
+}
+.fa-cc-visa {
+    color: #1a1f71;
+    font-size: 35px;
+}
+.fa-ideal {
+    color:rgb(189, 15, 189);
+    font-size: 35px;
+}
+.fa-cc-paypal {
+    color: rgb(0 69 124);
+    font-size: 35px;
+}
+.payment {
+  bottom: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+  .right-box form input {
+    width: 100%;
+    max-width: 450px;
+    font-size: 1.0625rem;
+    background:#adcc8a;
+    padding-left: 10px;
+    border: 1px solid #2a381a;
+  }
+  .right-box form input:focus {
+    outline-color: #aacf80;
+  }
+  .right-box form input {
+    height: 35px;
+  }
+  .right form .text-footer {
+    font-size: 1.0625rem;
+    margin-bottom: 2px;
+  }
+  .footer-btn {
+    margin-top: 10px;
+  }
+  .footer-btn button {
+    height: 40px;
+    width: 100%;
+    max-width: 150px;
     border: none;
-    font-weight: bold;
-
-}
-.fas {
-    position: relative;
-    top: 22px;
-    left: 50px;
-    z-index: 1;
-}
-.nieuwsbrief-knop {
-    position: relative;
-    display: flex;
-    margin-top: 35px;
-    margin-left: 85px;
-    background-color: #E4CACA;
-    letter-spacing: 1.5px;
+    outline: none;
+    background: #E4CACA;
+    font-size: 1.0625rem;
+    font-weight: 500;
     cursor: pointer;
-    border: 1px solid black;
-    -webkit-transition: background-color 0.7s ease-out;
-    -moz-transition: background-color 0.7s ease-out;
-    -o-transition: background-color 0.7s ease-out;
-    transition: background-color 0.7s ease-out;
-}
-.nieuwsbrief-knop:hover {
-	background-color: #902656;
-}
+    transition: 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 2px 0px;
+  }
+  .footer-btn button:hover {
+    background: #902656;
+    box-shadow: none;
+  }
+  .left-box h3, .center-box h3, .right-box h3 {
+    font-size: 1rem;
+    opacity: 0.7;
+    font-family: 'Roboto';
+  }
+  .payment p {
+    font-size: 1rem;
+    opacity: 0.7;
+    margin-top: 5.5rem;
+  }
+
+
+  /* Responsive */
+
+  @media screen and (max-width: 900px) {
+    footer {
+      position: relative;
+      bottom: 0px;
+    }
+    .footer {
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    .left-box, .center-box, .right-box {
+      margin: 5px 0;
+    }
+    .credit {
+      display: none;
+    }
+
+  }
+  @media screen and (max-width: 800px) {
+    .center-box {
+      order: 1;
+    }
+    .social {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  }
