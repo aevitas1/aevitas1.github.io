@@ -3,11 +3,11 @@
 .hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),url(../images/pexels-hero-home.jpeg);
     width: 100vw;
-	height: 50vh;
+    height: 50vh;
     max-width: 100%;
     background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     display: flex;
     justify-content: center;
@@ -118,12 +118,14 @@
 }
 .fake-rating {
     text-align: right;
-    font-size: 18px;
-    width: 35%;
+    font-size: 30px;
+    width: 15%;
+    line-height: 1.8em;
     margin: 0 auto;
     font-family: 'Roboto';
-    margin-top: 3rem;
-    margin-right: 30px;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    margin-right: 2rem;
 }
 .review-images {
     display: flex;
@@ -214,12 +216,12 @@
 .fresh-food-background {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),url(../images/img-list.jpg);
     width: 30vw;
-	max-height: 65vh;
+    max-height: 65vh;
     max-width: 30%;
     margin-left: 10%;
     background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
+    background-position: center center;
+    background-repeat: no-repeat;
     display: flex;
     position: relative;
 }
@@ -276,33 +278,33 @@
     margin-top: 8%;
 }
 .grid-item:hover {
-	-ms-transform: scale(1.02);
-  	-webkit-transform: scale(1.02);
-  	transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
     transition: transform .7s;
-  	background-color: #f1e3e3;
+    background-color: #f1e3e3;
     box-shadow: 1px 1px 1px #191919; 
 }
 .grid-item a {
-	text-decoration: none;
-	color: black;
+    text-decoration: none;
+    color: black;
 }
 
 .grid-item {
-	text-align: center;
-	border: 2px solid lightgray;
+    text-align: center;
+    border: 2px solid lightgray;
     margin-right: 10%;
     transition: transform .7s;
 }
 
 .main-grid-item {
-	font-size: 25px;
+    font-size: 25px;
 }
 
 .text-grid-item {
     font-family: 'Roboto';
-	font-size: 16px;
-	opacity: 0.7;
+    font-size: 16px;
+    opacity: 0.7;
 }
 
 
@@ -351,23 +353,30 @@
 }
 .home-gezin-left h1 {
     padding-top: 4%;
-    padding-bottom: 5%;
+    margin-bottom: 2%;
     font-size: 20px;
     justify-content: center;
     display: flex;
     opacity: 0.6;
 }
-.home-gezin-left h2 {
+.home-gezin-left p {
     font-weight: 400;
-    font-family: 'Roboto';
-    width: 70%;
+    font-size: 18px;
+    width: 50%;
+    line-height: 1.6em;
     padding-bottom: 7%;
     margin: 0 auto;
 }
 .home-gezin-right {
-    flex: 35%;
-    height: auto;
-    margin: auto auto;
+   background-image: url(../images/foto-gezin.jpg);
+   width: 28%;
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-right: 18%;
 }
 
 .hero-bestel-nu-bottom {
@@ -376,8 +385,8 @@
     height: 50vh;
     max-width: 100%;
     background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     display: flex;
     justify-content: center;
