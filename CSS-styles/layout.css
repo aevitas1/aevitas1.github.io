@@ -179,6 +179,9 @@ footer {
     flex-basis: 50%;
     padding: 10px 20px;
   }
+.left-box > .content {
+    padding-top: 1rem;
+}
   .fa-facebook {
     color: #3B5998;
     transition: transform .2s;
@@ -190,7 +193,6 @@ footer {
   }
   .content > ul {
       all: unset; 
-	  margin-top: 1rem;
   }
   .content li a {
     text-decoration: none;
