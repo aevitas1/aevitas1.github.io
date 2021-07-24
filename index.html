@@ -1,323 +1,389 @@
-<!DOCTYPE html>
-<html lang="nl">
+@charset "utf-8";
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>foodfreedom - lactosevrije maaltijdboxen</title>
-    <!-- links -->
-    <link href="CSS-styles/layout.css" rel="stylesheet" type="text/css">
-    <link href="CSS-styles/styles.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;500;900&display=swap"
-        rel="stylesheet">
-</head>
-
-<body>
-    <div class="wrapper">
-        <header>
-            <!-- nav -->
-            <a href="index.html" id="logo"><img src="images/logo-foodfreedom-01.jpg" alt="foodforfreedom logo"></a>
-            <nav>
-                <ul class="menu">
-                    <li><a href="#">Home</a>
-                    <li><a href="#">Maaltijdboxen</a>
-                        <ul class="submenu">
-                            <li><a href="#">Basis</a></li>
-                            <li><a href="#">Extra</a></li>
-                            <li><a href="#">Luxe</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Hoe werkt het?</a>
-                        <ul class="submenu">
-                            <li><a href="#">Bestellen</a></li>
-                            <li><a href="#">Bezorgen & afhalen</a></li>
-                            <li><a href="#">Koken</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Mijn account</a>
-                        <ul class="submenu">
-                            <li><a href="#">Registreren</a></li>
-                            <li><a href="#">Mijn profiel</a></li>
-                            <li><a href="#">Mijn bestellingen</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Over foodfreedom</a>
-                        <ul class="submenu">
-                            <li><a href="#">Over ons</a></li>
-                            <li><a href="#">Recepten</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Reviews</a></li>
-                </ul>
-                <form class="searchbar" action="#" style="display: inLine">
-                    <input type="text" placeholder="Zoeken..." name="Search">
-                    <button type="submit" value="submit"><i class="fa fa-search"></i></button>
-                </form>
-            </nav>
-        </header>
-        <!-- end nav -->
-
-        <!-- start content-->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Gezond, lactosevrij en lekker eten</h1>
-                <h2>Kook lekkere en gezonde gerechten die passen bij jouw leefstyle</h2>
-                <a href="#" class="bestelhero">BESTEL NU</a>
-            </div>
-        </section>
-
-        <div class="home-arrows-text">
-            <h1>Hoe werkt het?</h1>
-            <h2>Kies je maaltijdbox</h2>
-            <h3>&middot;</h3>
-            <h2>Zoek recepturen</h2>
-            <h3>&middot;</h3>
-            <h2>Kook eenvoudig lekkere maaltijden</h2>
-        </div>
-
-        <div class="home-arrows-wrap">
-            <section class="home-row-arrows">
-                <figure>
-                    <img src="images/food_icon_home_1.jpg" alt="4 borden">
-                    <figcaption>1 tot 6
-                        personen</figcaption>
-                </figure>
-                <figure>
-                    <i class="fas fa-angle-double-right"></i>
-                </figure>
-                <figure>
-                    <img src="images/food_icon_home_2.jpg" alt="eten">
-                    <figcaption>3 tot 5 gerechten per week
-                    </figcaption>
-                </figure>
-                <figure>
-                    <i class="fas fa-angle-double-right"></i>
-                </figure>
-                <figure>
-                    <img src="images/food_icon_home_3.jpg" alt="maaltijdbox">
-                    <figcaption>Ontvang uw maaltijdbox
-                    </figcaption>
-                </figure>
-                <figure>
-                    <i class="fas fa-angle-double-right"></i>
-                </figure>
-                <figure>
-                    <img src="images/food_icon_home_4.jpg" alt="recepturen">
-                    <figcaption>Zoek recepturen</figcaption>
-                </figure>
-                <figure>
-                    <i class="fas fa-angle-double-right"></i>
-                </figure>
-                <figure>
-                    <img src="images/food_icon_home_5.jpg" alt="chef">
-                    <figcaption>Kook als een echte chef!</figcaption>
-                </figure>
-            </section>
-        </div>
-
-        <div class="review-bar">
-            <h1 class="fake-rating">Onze klanten beoordelen onze service met een 8.1</h1>
-            <div class="review-images"><img src="images/fake_rating.png" alt="Fake rating">
-                <img src="images/gezond-nl.jpg" alt="Gezonde review 8.2">
-            </div>
-            <div class="review-gezond">
-                <h4>Review gezond.nl</h4>
-                <h5>
-                    "Wat fijn dat er eindelijk lactosevrije maaltijdboxen beschikbaar zijn! De prijs/kwaliteit
-                    is
-                    erg goed."</h5>
-            </div>
-        </div>
+html,
+html * {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    font-weight: 400;
+}
+.wrapper {
+    margin: 0 auto;
+    min-height: 100%;
+    /* padding-bottom: 13.5rem; */
+}
+/* pagina header */
+.pagina-header {
+	text-align: center;
+	width: 90%;
+	margin: 40px auto;
+  	box-shadow: 0px 0px 2px #191919;
+  	padding: 5px;
+}
+.pagina-top {
+	font-family: 'Righteous';
+	font-size: 35px;
+}
+.pagina-bottom {
+	font-size: 24px;
+	font-weight: 300;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family:'Righteous';
+}
+p {
+    font-family: 'Roboto';
+}
+/* end pagina header */
 
 
+nav {
+	background: linear-gradient(180deg, #E3F0D4 50%, #E4CACA 33%);
+	width: 100%;
+	margin: 0 auto 0 auto;
+	overflow: auto;
+	height: 125px;
+  font-weight: 500;
+}
+#logo img {
+    position: absolute;
+    margin: 25px auto auto 15px;
+    mix-blend-mode: multiply;
+}
+.menu {
+	display: inline-block;
+	list-style: none;
+	position: absolute;
+	margin-left: 120px;
+	margin-top: 62px;
+}
+/* link button styling */
+.menu a {
+	width: 100%;
+	height: 62.5px;
+	display: block;
+	text-decoration: none;
+	color: black;
+	font-size: 15px;
+	padding-top: 10px;
+	text-align: center;
+	-webkit-transition: background-color 0.7s ease-out;
+  	-moz-transition: background-color 0.7s ease-out;
+  	-o-transition: background-color 0.7s ease-out;
+  	transition: background-color 0.7s ease-out;
+}
+.active {
+    font-weight: bold;
+}
+/* main menu children */
+.menu > li {
+    float: left;
+    display: flex;
+    position: relative;
+    width: 130px;
+    text-align: center;
+    background-color: transparent;
+}
+.menu > li > a:hover {
+    height: 62.5px;
+    background-color: #902656;
+    position: relative;
+}
+.submenu > li:hover {
+    background-color: rgb(189,223,144);
+	-webkit-transition: background-color 0.7s ease-out;
+  	-moz-transition: background-color 0.7s ease-out;
+  	-o-transition: background-color 0.7s ease-out;
+  	transition: background-color 0.7s ease-out;
+}
+/* submenu */
+.submenu {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    top: 63px;
+    padding: 0;
+    width: 100%;
+    box-shadow: 6px 6px 12px 0px rgba(50, 50, 50, 0.5);
+}
+/* show child submenu when menu item is hovered */
+.menu li:hover > .submenu {
+	display: inline-block;
+}
+/* submenu children */
+.submenu > li {
+	display: flex;
+	position: relative;
+	background: #E3F0D4;
+	width: 100%;
+	z-index: 1;
+  	box-shadow: 6px 6px 12px 0px rgba(50, 50, 50, 0.5);	
+}
 
-        <div class="klanten-review-wrapper">
-            <div class="review-left">
-                <p class="quote_marks">&#x201C;</p>
-                <p class="klant-review-naam">Ben zegt</p>
-                <p class="review">Ik ben erg blij met de service en kan niet meer zonder, de producten zijn
-                    van erg
-                    goed kwaliteit en omdat je minder naar de supermarkt moet eet ik gezonder.</p>
-                <img src="images/4_star.png" alt="4 sterren review">
-            </div>
+    form.searchbar {
+       display: inline-flex;
+       position: relative;
+    }
+form.searchbar input[type=text] {	
+	position: relative;
+    width: 10rem;
+	padding: 5px;
+	border: none;
+	margin-top: 15px;
+	margin-left: 400px;
+	font-size: 17px;
+	border-radius: 10px;
+	padding-left: 20px;
+	outline: none;
+	font-family: 'Roboto';
+	background-color: #E4CACA;
+}
+	form.searchbar button {
+    position: relative;
+    padding: 0;
+	width: 2rem;
+	height:2rem;
+	background-color: #E4CACA;
+	border: 1px solid lightgray;
+	cursor: pointer;
+	border-radius: 10%;
+  	-webkit-transition: background-color 0.7s ease-out;
+  	-moz-transition: background-color 0.7s ease-out;
+  	-o-transition: background-color 0.7s ease-out;
+  	transition: background-color 0.7s ease-out;
+}
+form.searchbar button:hover {
+	background-color: #902656;
+}
 
-            <div class="review-right">
-                <p class="quote_marks">&#x201C;</p>
-                <p class="klant-review-naam">Annika zegt</p>
-                <p class="review">Omdat wij een druk gezin zijn is het heel fijn niet meer na te hoeven
-                    denken over
-                    de
-                    boodschappen. Ik krijg wekelijks een mail met recepturen en wij eten inmiddels vaak
-                    verassend
-                    goede
-                    gerechten die wij nog nooit gegeten hadden.</p>
-                <img src="images/4.5_star.png" alt="4.5 sterren review">
-            </div>
-        </div>
+/* footer */
+footer {
+    position: relative;
+    height: auto;
+    width: 100%;
+    background: #E3F0D4;
+  }
+  footer .footer-bottom {
+    height: 1.8rem; 
+    text-align: center;
+    padding: 0.5rem 0 0.5rem 0;
+    background-color: #96c959;
+  }
+  .footer {
+    display: flex;
+  }
+  .footer, .left-box, .center-box, .right-box {
+    flex-basis: 50%;
+    padding: 10px 20px;
+  }
+  .fa-facebook {
+    color: #3B5998;
+    transition: transform .2s;
+    margin-right: 2rem;
+  }
+  .fa-pinterest {
+    color: #C8323C;
+    transition: transform .2s;
+  }
+  .content > ul {
+      all: unset;
+  }
+  .content li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+  }
+  .content li a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+  }
+  .content li {
+    list-style: none;
+    line-height: 1.6em;
+  }
+  .left-box h2, .center-box h2, .right-box h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .left-box, .center-box, .right-box, .content {
+    margin: 20px 0 0 0;
+    position: relative;
+  }
+  .center-box > .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .center-box > .content {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+    .content:before {
+    position: absolute;
+    content:'';
+    top: -10px;
+    height: 3px;
+    width: 100%;
+    background: #E3F0D4;
+  }
+  .content:after {
+    position: absolute;
+    content:'';
+    top: -10px;
+    height: 3px;
+    width: 15%;
+    background: #96c959;
+  }
+  .left-box > .content .fas {
+    font-size: 1rem;
+    background: #96c959;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+  }
+  .phone, .email {
+    margin-top: 5px;
+  }
+  .email {
+    margin-bottom: 5px;
+  }
+  .phone a, .email a {
+      color: black;
+  } 
+  .phone a:hover, .email a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+    }
+ .social {
+    margin-top: 20px;
+    text-align: left;
+  }
+  .social a span {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 50px;
+    border-radius: 5px;
+    transition: .3s;
+  }
+  .social a span:hover {
+    -ms-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95); 
+    transition: transform .2s;
+  }
+  .fa-cc-mastercard {
+    background: -webkit-linear-gradient(180deg, #FF5F00 50%, #EB001B  33%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 35px;
+}
+.fa-cc-visa {
+    color: #1a1f71;
+    font-size: 35px;
+}
+.fa-ideal {
+    color:rgb(189, 15, 189);
+    font-size: 35px;
+}
+.fa-cc-paypal {
+    color: rgb(0 69 124);
+    font-size: 35px;
+}
+.payment {
+  bottom: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+  .right-box form input {
+    width: 100%;
+    max-width: 450px;
+    font-size: 1.0625rem;
+    background:#adcc8a;
+    padding-left: 10px;
+    border: 1px solid #2a381a;
+  }
+  .right-box form input:focus {
+    outline-color: #aacf80;
+  }
+  .right-box form input {
+    margin-top: 1rem;
+    height: 35px;
+  }
+  .right-box form input::placeholder {
+    color: black;
+  }
+  
+  .right form .text-footer {
+    font-size: 1.0625rem;
+    margin-bottom: 2px;
+  }
+  .footer-btn {
+    margin-top: 10px;
+  }
+  .footer-btn button {
+    height: 40px;
+    width: 100%;
+    max-width: 150px;
+    border: none;
+    outline: none;
+    background: #E4CACA;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 2px 0px;
+  }
+  .footer-btn button:hover {
+    background: #902656;
+    box-shadow: none;
+  }
+  .left-box h3, .center-box h3, .right-box h3 {
+    font-size: 1rem;
+    opacity: 0.7;
+    font-family: 'Roboto';
+  }
+  .payment p {
+    font-size: 1rem;
+    opacity: 0.7;
+    margin-top: 5.5rem;
+  }
 
-        <div class="home-img-list-wrap">
-            <div class="fresh-food-background"></div>
 
-            <ul class="fresh-food-list">
-                <li><img src="images/clock.png" class="image-food-list" alt="clock">
-                    <h2 class="fresh-food-list-kop">Bespaar tijd</h2>
-                    <h3 class="fresh-food-list-text">Minder bezoekjes aan de supermarkt, je eten wordt thuisbezorgd
-                        en
-                        laat
-                        je verrassen.</h3>
-                </li>
+  /* Responsive */
 
-                <li><img src="images/kwaliteit.png" class="image-food-list" alt="Kwaliteit">
-                    <h2 class="fresh-food-list-kop">Kwaliteit</h2>
-                    <h3 class="fresh-food-list-text">Wij kiezen alleen voor de beste producten om onze maaltijdboxen
-                        mee
-                        samen te stellen.</h3>
-                </li>
+  @media screen and (max-width: 900px) {
+    footer {
+      position: relative;
+      bottom: 0px;
+    }
+    .footer {
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    .left-box, .center-box, .right-box {
+      margin: 5px 0;
+    }
+    .credit {
+      display: none;
+    }
 
-                <li><img src="images/prullenbak.jpg" class="image-food-list" alt="Prullenbak">
-                    <h2 class="fresh-food-list-kop">Minder waste</h2>
-                    <h3 class="fresh-food-list-text">Wij houden niet van weggooien!</h3>
-                </li>
-
-                <li><img src="images/blaadje.jpg" class="image-food-list" alt="Blaadje">
-                    <h2 class="fresh-food-list-kop">Jouw maaltijdbox</h2>
-                    <h3 class="fresh-food-list-text">Je kunt jouw maaltijdbox abonnement <strong>iedere week
-                            aanpassen,
-                            pauzeren of opzeggen.</strong></h3>
-                </li>
-            </ul>
-        </div>
-        <h1 class="home-grid-kop">Wat eet u vanavond?</h1>
-        <div class="home-grid-container">
-
-            <div class="grid-item">
-                <a href="foodfreedom_1.html">
-                    <img src="images/recepten_3.jpg" class="grid-item-image-b">
-                    <h1 class="main-grid-item">Maaltijd salade</h1>
-                    <h2 class="text-grid-item">met rode kool</h2>
-                </a>
-            </div>
-
-            <div class="grid-item">
-                <a href="#">
-                    <img src="images/recepten_2.jpg" class="grid-item-image-c">
-                    <h1 class="main-grid-item">Maaltijd salade</h1>
-                    <h2 class="text-grid-item">met rode kool</h2>
-                </a>
-            </div>
-
-            <div class="grid-item">
-                <a href="#">
-                    <img src="images/recepten_6.jpg" class="grid-item-image-d">
-                    <h1 class="main-grid-item">Lorem ipsum dolor sit amet.</h1>
-                    <h2 class="text-grid-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat,
-                        inventore!</h2>
-                </a>
-            </div>
-        </div>
-        <div class="recepturen-btn-home">
-            <h2><a href="#">Bekijk recepturen</a></h2>
-        </div>
-
-        <!-- Home gezin -->
-        <div class="home-gezin">
-            <div class="home-gezin-left">
-                <h1>'Founder-chef Tara van Veen'</h1>
-                <p>"Lekker en gezond eten is niet altijd even makkelijk, met een lactose allergie erbij word dit soms
-                    helemaal lastig. Wij helpen jou met gezonde recepten en verse ingrediënten. Eet je vegetarisch,
-                    vlees,
-                    vis of wil je simpelweg gemakkelijk gevarieerd eten? Dit kan allemaal, er is een ruime keuze. Chef
-                    Tara bedenkt wekelijks nieuwe gerechten, passend in het seizoen en met veel keuze voor
-                    iedereen.
-                </p>
-            </div>
-            <div class="home-gezin-right">
-            </div>
-        </div>
-        <!-- home bestel nu -->
-        <section class="hero-bestel-nu-bottom">
-            <div class="bestel-nu-content">
-                <h1>Aan de slag</h1>
-                <h2>Met foodfreedom eet je vers en gevarieerd. Wij bezorgen <br>de ingrediënten en jij kiest wat je
-                    kookt!
-                </h2>
-                <a href="#" class="bestel-nu-bottom">BESTEL NU</a>
-            </div>
-        </section>
-
-
-        <!-- end content -->
-        <footer>
-            <div class="footer">
-                <div class="left-box">
-                    <h2>Contact &amp; FAQ</h2>
-                    <h3>Heb je vragen? Neem contact op!</h3>
-                    <div class="content">
-                        <ul>
-                            <li><a href="#">Veelgestelde vragen</a></li>
-                            <li><a href="#">Vacatures</a></li>
-                            <li><a href="#">Algemene voorwaarden</a></li>
-                            <li><a href="#">Privacy beleid</a></li>
-                        </ul>
-                        <div class="phone">
-                            <span class="fas fa-phone-alt"></span>
-                            <a href="tel:07212234"><span class="text-footer">072 122 34</span></a>
-                        </div>
-                        <div class="email">
-                            <span class="fas fa-envelope"></span>
-                            <a href="mailto:post@foodfreedom.nl?subject=Ik heb een vraag"><span
-                                    class="text-footer">post@foodfreedom.nl</span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="center-box">
-                    <h2>Social media</h2>
-                    <h3>Volg ons voor meer nieuws</h3>
-                    <div class="content">
-                        <div class="social">
-                            <a href="#"><span class="fab fa-facebook"></span></a>
-                            <a href="#"><span class="fab fa-pinterest"></span></a>
-                        </div>
-
-                        <div class="payment">
-                            <p>U kunt betalen met</p>
-                            <i class="fab fa-cc-mastercard"></i>
-                            <i class="fab fa-cc-visa"></i>
-                            <i class="fab fa-ideal"></i>
-                            <i class="fab fa-cc-paypal"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="right-box">
-                    <h2>Nieuwsbrief</h2>
-                    <h3>Ontvang wekelijks recepten</h3>
-                    <div class="content">
-                        <form action="#">
-                            <div class="email">
-                                <div class="text-footer">
-                                </div>
-                                <input type="email" placeholder="Jouw e-mail adres" required>
-                            </div>
-                            <div class="footer-btn">
-                                <button type="submit">Verstuur</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span class="credit">foodfreedom | Designed by xxxxxxx xxx xxx xxxxxxx</span>
-                <span class="far fa-copyright"></span><span> 2021 Alle rechten voorbehouden.</span>
-            </div>
-        </footer>
-
-    </div>
-
-</body>
-
-
-</html>
+  }
+  @media screen and (max-width: 800px) {
+    .center-box {
+      order: 1;
+    }
+    .social {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  }
