@@ -189,7 +189,8 @@ footer {
     transition: transform .2s;
   }
   .content > ul {
-      all: unset;
+      all: unset; 
+	  margin-top: 1rem;
   }
   .content li a {
     text-decoration: none;
