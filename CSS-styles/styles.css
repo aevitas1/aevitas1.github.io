@@ -287,7 +287,7 @@
     -ms-transform: scale(1.02);
     -webkit-transform: scale(1.02);
     transform: scale(1.02);
-    transition: transform .7s;
+    transition: transform 50ms;
     background-color: #f1e3e3;
     box-shadow: 1px 1px 1px #191919; 
 }
@@ -301,7 +301,7 @@
     border: 2px solid lightgray;
     margin: 0 auto;
     width: 20rem;
-    transition: transform .7s;
+    transition: transform .2s;
     max-width: 25rem;
 }
 
@@ -324,6 +324,7 @@
     padding-bottom: 2rem;
 }
 .recepturen-btn-home h2 {
+    font-family: 'Roboto';
     display: block;
     border: 3px solid black;
     padding: 1em;
@@ -338,6 +339,8 @@
 .recepturen-btn-home a {
     text-decoration: none;
     color: black;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 
