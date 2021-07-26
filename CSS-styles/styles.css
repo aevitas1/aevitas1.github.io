@@ -46,7 +46,8 @@
     box-shadow: none;
 }
 .hero a {
-    text-decoration: none;color: black; 
+    text-decoration: none;
+    color: black; 
 }
 
                                     /* ARROWS */
@@ -112,17 +113,17 @@
 .review-bar {
     display: flex;
     position: relative;
-    background-color: rgb(237,161,161);
+    background-color: rgba(237, 161, 161, 0.692);
     width: 100%;
     padding: 20px;
 }
 .fake-rating {
-    text-align: right;
+    text-align: center;
     font-size: 30px;
     width: 15%;
     line-height: 1.8em;
     margin: 0 auto;
-    font-family: 'Roboto';
+    font-family: 'Righteous';
     font-weight: 500;
     margin-top: 1.5rem;
     margin-right: 2rem;
@@ -137,6 +138,8 @@
     padding: 20px;
     margin: 0 auto;
     border-radius: 50%; 
+    min-height: auto;
+    max-height: auto;
 }
 .review-gezond {
     margin-left: 30px;
@@ -231,6 +234,7 @@
     position: relative;
     justify-content: center;
     max-width: 35%;
+    max-height: 65vh;
     left: 20rem;
     padding-left: 20px;
 }
@@ -253,11 +257,11 @@
 .fresh-food-list > li > img {
     mix-blend-mode: multiply;
     display: flex;
-    float: left;
+    position: absolute;
     margin-top: 3%;
 }
 .home-img-list-wrap {
-    background-color: rgb(237,161,161);
+    background-color: rgba(237, 161, 161, 0.692);
     display: flex;
 }
                                         /* RECEPTEN */
@@ -265,7 +269,9 @@
     background-color: #f1e3e3;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
-    padding: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 100%;
 }
 .home-grid-kop {
     justify-content: center;
@@ -293,8 +299,10 @@
 .grid-item {
     text-align: center;
     border: 2px solid lightgray;
-    margin-right: 10%;
+    margin: 0 auto;
+    width: 20rem;
     transition: transform .7s;
+    max-width: 25rem;
 }
 
 .main-grid-item {
@@ -341,7 +349,7 @@
 
                                 /* BESTEL NU */
 .home-gezin {
-    background-color: rgb(237,161,161);
+    background-color: rgba(237, 161, 161, 0.692);
     width: 100%;
     height: auto;
     display: flex;
@@ -430,9 +438,17 @@
 }
 
 
-
+@media screen and (max-width: 1800px) {
+        .review-images img {
+            max-width: 80%;
+            max-height: 70%;
+        }
+}
 
 @media screen and (max-width:1300px) {
+    .review-images {
+        margin-top: 1rem;
+    }
     .fresh-food-list {
         display: flex;
         flex-direction: column;
@@ -452,6 +468,17 @@
     .bestel-nu-bottom {
         margin-right: 24rem;
     }
+    .review-gezond {
+        margin-left: 1rem;
+        width: 20%;
+    }
+    .fresh-food-background {
+        max-height: 50vh;
+    }
+    .fresh-food-list {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 @media screen and (max-width:1500px) {
@@ -459,21 +486,24 @@
         height: auto;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(60%, 1fr));
-        justify-content: center;
-        margin: 0 auto;
+
     }
     .review-right .review-left {
         position: relative;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        margin-left: 20rem;
-        height: auto;
     }
     .review-right {
-        margin-left:24rem;
-        padding-bottom: 3%;
+        padding-bottom: 2rem;
+        left: 20rem;
+    }
+    .review-left {
+        left: 20rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .fresh-food-background {
+        display: none;
     }
 
 }
