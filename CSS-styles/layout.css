@@ -50,14 +50,14 @@ nav {
 }
 #logo img {
     position: absolute;
-    margin: 25px auto auto 15px;
+    margin: 25px auto auto 5%;
     mix-blend-mode: multiply;
 }
 .menu {
 	display: inline-block;
 	list-style: none;
 	position: absolute;
-	margin-left: 120px;
+	margin-left: 15%;
 	margin-top: 62px;
 }
 /* link button styling */
@@ -67,8 +67,8 @@ nav {
 	display: block;
 	text-decoration: none;
 	color: black;
-	font-size: 15px;
-	padding-top: 10px;
+	font-size: 1rem;
+	padding-top: 1.2rem;
 	text-align: center;
 	-webkit-transition: background-color 0.7s ease-out;
   	-moz-transition: background-color 0.7s ease-out;
@@ -101,7 +101,8 @@ nav {
 }
 /* submenu */
 .submenu {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     position: absolute;
     justify-content: center;
     top: 63px;
@@ -109,10 +110,13 @@ nav {
     width: 100%;
     box-shadow: 6px 6px 12px 0px rgba(50, 50, 50, 0.5);
 }
+
 /* show child submenu when menu item is hovered */
 .menu li:hover > .submenu {
-	display: inline-block;
-}
+	opacity: 1;
+  visibility: visible;
+  }
+
 /* submenu children */
 .submenu > li {
 	display: flex;
@@ -120,43 +124,43 @@ nav {
 	background: #E3F0D4;
 	width: 100%;
 	z-index: 1;
-  	box-shadow: 6px 6px 12px 0px rgba(50, 50, 50, 0.5);	
+  box-shadow: 6px 6px 12px 0px rgba(50, 50, 50, 0.5);	
 }
-
+/* searchbar */
     form.searchbar {
        display: inline-flex;
        position: relative;
     }
 form.searchbar input[type=text] {	
 	position: relative;
-    width: 10rem;
 	padding: 5px;
-	border: none;
-	margin-top: 15px;
-	margin-left: 400px;
-	font-size: 17px;
+  left: 60%;
+	margin-top: 1rem;
+	font-size: 1rem;
 	border-radius: 10px;
-	padding-left: 20px;
-	outline: none;
-	font-family: 'Roboto';
-	background-color: #E4CACA;
+	max-width: 100%;
+  width: 25rem;
+  border: 1px solid #2a381a;
+	background:#fff;
 }
 	form.searchbar button {
-    position: relative;
-    padding: 0;
+  position: relative;
+  padding: 0;
 	width: 2rem;
 	height:2rem;
-	background-color: #E4CACA;
-	border: 1px solid lightgray;
+  left: 60%;
+	background-color: #E3F0D4;
 	cursor: pointer;
-	border-radius: 10%;
-  	-webkit-transition: background-color 0.7s ease-out;
-  	-moz-transition: background-color 0.7s ease-out;
-  	-o-transition: background-color 0.7s ease-out;
-  	transition: background-color 0.7s ease-out;
+  border: none;
+  outline: none;
 }
-form.searchbar button:hover {
-	background-color: #902656;
+
+form.searchbar input[type=text]:focus {
+  border: 1px solid #aacf80;
+  outline: none;
+}
+form.search input[type=text]::placeholder {
+  color: black;
 }
 
 /* footer */
@@ -179,9 +183,6 @@ footer {
     flex-basis: 50%;
     padding: 10px 20px;
   }
-.left-box > .content {
-    padding-top: 1rem;
-}
   .fa-facebook {
     color: #3B5998;
     transition: transform .2s;
@@ -191,8 +192,8 @@ footer {
     color: #C8323C;
     transition: transform .2s;
   }
-  .content > ul {
-      all: unset; 
+  .content ul {
+    padding-left: 0;
   }
   .content li a {
     text-decoration: none;
@@ -216,16 +217,14 @@ footer {
     margin: 20px 0 0 0;
     position: relative;
   }
+  .left-box > .content {
+    padding-top: 0.2rem;
+    text-align: left;
+  }
   .center-box > .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-  .center-box > .content {
-    justify-content: space-between;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
   }
     .content:before {
     position: absolute;
@@ -311,21 +310,22 @@ footer {
     width: 100%;
     max-width: 450px;
     font-size: 1.0625rem;
-    background:#adcc8a;
+    background:#fff;
     padding-left: 10px;
-    border: 1px solid #2a381a;
-  }
-  .right-box form input:focus {
-    outline-color: #aacf80;
-  }
-  .right-box form input {
     margin-top: 1rem;
     height: 35px;
+    border-radius: 1rem;
+    border: none;
+    
+  }
+  .right-box form input:focus {
+    border: 1px solid #aacf80;
+    outline: none;
   }
   .right-box form input::placeholder {
     color: black;
   }
-  
+
   .right form .text-footer {
     font-size: 1.0625rem;
     margin-bottom: 2px;
@@ -347,7 +347,6 @@ footer {
     box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 2px 0px;
   }
   .footer-btn button:hover {
-    background: #902656;
     box-shadow: none;
   }
   .left-box h3, .center-box h3, .right-box h3 {
@@ -379,6 +378,13 @@ footer {
     .credit {
       display: none;
     }
+    .center-box > .content {
+      justify-content: space-between;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
 
   }
   @media screen and (max-width: 800px) {
