@@ -20,44 +20,70 @@
     <div class="wrapper">
         <header>
             <!-- nav -->
-            <a href="index.html" id="logo"><img src="images/logo-foodfreedom-01.jpg" alt="foodforfreedom logo"></a>
             <nav>
+                <a href="index.html" id="logo"><img src="images/logo-foodfreedom-01.jpg" alt="foodforfreedom logo"></a>
+
+                <label for="drop" class="toggle"><i class="fas fa-bars"></i></label>
+                <input type="checkbox" id="drop" />
+
                 <ul class="menu">
-                    <li><a href="#javascript:void(0)">Home</a>
-                    <li><a href="javascript:void(0)">Maaltijdboxen</a>
-                        <ul class="submenu">
+                    <li><a href="javascript:void(0);">Home</a></li>
+                    <li>
+                        <!-- maaltijdboxen -->
+                        <label for="drop-1" class="toggle">Maaltijdboxen +</label>
+                        <a href="javascript:void(0)">Maaltijdboxen</a>
+                        <input type="checkbox" id="drop-1" />
+                        <ul>
                             <li><a href="javascript:void(0)">Basis</a></li>
                             <li><a href="javascript:void(0)">Extra</a></li>
                             <li><a href="javascript:void(0)">Luxe</a></li>
                         </ul>
+
                     </li>
-                    <li><a href="javascript:void(0)">Hoe werkt het?</a>
-                        <ul class="submenu">
+                    <li>
+                        <!-- hoe werkt het -->
+                        <label for="drop-2" class="toggle">Hoe werkt het? +</label>
+                        <a href="javascript:void(0)">Hoe werkt het?</a>
+                        <input type="checkbox" id="drop-2" />
+                        <ul>
                             <li><a href="javascript:void(0)">Bestellen</a></li>
                             <li><a href="javascript:void(0)">Bezorgen & afhalen</a></li>
                             <li><a href="javascript:void(0)">Koken</a></li>
                         </ul>
+
                     </li>
-                    <li><a href="javascript:void(0)">Mijn account</a>
-                        <ul class="submenu">
+                    <li>
+                        <!-- mijn account -->
+                        <label for="drop-3" class="toggle">Mijn account +</label>
+                        <a href="javascript:void(0)">Mijn account</a>
+                        <input type="checkbox" id="drop-3" />
+                        <ul>
                             <li><a href="javascript:void(0)">Registreren</a></li>
                             <li><a href="javascript:void(0)">Mijn profiel</a></li>
                             <li><a href="javascript:void(0)">Mijn bestellingen</a></li>
                         </ul>
+
                     </li>
-                    <li><a href="javascript:void(0)">Over foodfreedom</a>
-                        <ul class="submenu">
+                    <li>
+                        <!-- over foodfreedom -->
+                        <label for="drop-4" class="toggle">Over foodfreedom +</label>
+                        <a href="javascript:void(0)">Over foodfreedom</a>
+                        <input type="checkbox" id="drop-4" />
+                        <ul>
                             <li><a href="javascript:void(0)">Over ons</a></li>
                             <li><a href="javascript:void(0)">Recepten</a></li>
+                            <li><a href="javascript:void(0)">Reviews</a></li>
                         </ul>
+
                     </li>
-                    <li><a href="javascript:void(0)">Reviews</a></li>
+
+
                 </ul>
-                <form class="searchbar" action="javascript:void(0)" style="display: inLine">
-                    <input type="text" placeholder="Zoeken..." name="Search">
-                    <button type="submit" value="submit"><i class="fa fa-search"></i></button>
-                </form>
             </nav>
+            <!-- <form class="mob-searchbar" action="javascript:void(0)">
+                <input type="text" placeholder="Zoeken..." name="Search">
+                <button type="submit" value="submit"><i class="fa fa-search"></i></button>
+            </form> -->
         </header>
         <!-- end nav -->
 
@@ -315,7 +341,6 @@
         </footer>
 
     </div>
-
 </body>
 
 
