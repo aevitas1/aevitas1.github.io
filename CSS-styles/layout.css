@@ -325,9 +325,7 @@ footer {
 
   /* Responsive */
   @media all and (min-width: 1200px) {
-    .menu label {
-      font-size: 15rem;
-    }
+
     }
   @media all and (max-width : 1200px) {
     #logo {
@@ -347,6 +345,19 @@ footer {
     nav a {
       text-align: left;
     }
+
+
+
+    nav ul li ul li:hover {
+      background: transparent;
+    }
+    nav a:hover {
+      background: transparent;
+    }
+
+
+
+
     .fa-bars {
       font-size: 1.6rem;
     }
@@ -370,9 +381,7 @@ footer {
       text-transform: uppercase;
     }
   
-    .toggle:hover {
-      background-color: #902656;
-    }
+
   
     /* Display Dropdown when clicked on Parent Lable */
     [id^=drop]:checked + ul {
@@ -385,10 +394,6 @@ footer {
       width: 100%;
       }
   
-    nav a:hover,
-     nav ul ul ul a {
-      background-color: #902656;
-    }
     
     nav ul li ul li .toggle,
     nav ul ul a,
