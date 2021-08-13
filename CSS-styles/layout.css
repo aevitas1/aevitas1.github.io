@@ -38,129 +38,89 @@ p {
 }
 /* end pagina header */
 
+#logo img {
+    display: block;
+    position: absolute;
+    mix-blend-mode: multiply;
+    height: 55px;
+    width: auto;
+    padding: 0;
+    line-height: 60px;
+}
+.toggle, [id^=drop] {
+	display: none;
+}
 
 nav {
-	background: linear-gradient(180deg, #E3F0D4 50%, #E4CACA 33%);
-	width: 100%;
-	margin: 0 auto 0 auto;
-	overflow: auto;
-	height: 125px;
+	background-color: #E3F0D4;
+	margin: 0;
+  padding: 0;
   font-weight: 500;
 }
-#logo img {
-    position: absolute;
-    margin: 25px auto auto 5%;
-    mix-blend-mode: multiply;
+
+nav:after {
+  content:"";
+  display: table;
+  clear: both;
 }
-.menu {
-	display: inline-block;
-	list-style: none;
-	position: absolute;
-	margin-left: 15%;
-	margin-top: 62px;
+nav ul {
+  float: right;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
 }
-/* link button styling */
-.menu a {
-	width: 100%;
-	height: 62.5px;
-	display: block;
-	text-decoration: none;
-	color: black;
-	font-size: 1rem;
-	padding-top: 1.2rem;
-	text-align: center;
-	-webkit-transition: background-color 0.7s ease-out;
-  	-moz-transition: background-color 0.7s ease-out;
-  	-o-transition: background-color 0.7s ease-out;
-  	transition: background-color 0.7s ease-out;
+nav ul li {
+  margin: 0;
+  display: inline-block;
+  float: left;
+  background-color: #E3F0D4;
+}
+nav a {
+  display: block;
+  padding: 1rem 1rem;
+  color: black;
+  font-size: 1rem;
+  width: 210px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: background-color 0.25s ease-out;
+  -moz-transition: background-color 0.25s ease-out;
+  -o-transition: background-color 0.25s ease-out;
+  transition: background-color 0.25s ease-out;
+  text-transform: uppercase;
+}
+nav ul li ul li:hover {
+  background: #902656;
+}
+nav a:hover {
+  background: #902656;
+}
+
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 51px;
+}
+nav ul li:hover > ul {
+  display: inherit;
+}
+nav ul ul li {
+  width: 100%;
+  float: none;
+  display: list-item;
+  position: relative;
+}
+
+li > a:only-child:after { 
+  content: ''; 
 }
 .active {
     font-weight: bold;
 }
-/* main menu children */
-.menu > li {
-    float: left;
-    display: flex;
-    position: relative;
-    width: 150px;
-    text-align: center;
-    background-color: transparent;
-}
-.menu > li > a:hover {
-    height: 62.5px;
-    background-color: #902656;
-    position: relative;
-}
-.submenu > li:hover {
-    background-color: rgb(189,223,144);
-	-webkit-transition: background-color 0.7s ease-out;
-  	-moz-transition: background-color 0.7s ease-out;
-  	-o-transition: background-color 0.7s ease-out;
-  	transition: background-color 0.7s ease-out;
-}
-/* submenu */
-.submenu {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    justify-content: center;
-    top: 63px;
-    padding: 0;
-    width: 100%;
-    box-shadow: 6px 6px 12px 0px rgba(50, 50, 50, 0.5);
-}
 
-/* show child submenu when menu item is hovered */
-.menu li:hover > .submenu {
-	opacity: 1;
-  visibility: visible;
-  }
 
-/* submenu children */
-.submenu > li {
-	display: flex;
-	position: relative;
-	background: #E3F0D4;
-	width: 100%;
-	z-index: 1;
-  box-shadow: 6px 6px 12px 0px rgba(50, 50, 50, 0.5);	
-}
-/* searchbar */
-    form.searchbar {
-       display: inline-flex;
-       position: relative;
-    }
-form.searchbar input[type=text] {	
-	position: relative;
-	padding: 5px;
-  left: 60%;
-	margin-top: 1rem;
-	font-size: 1rem;
-	border-radius: 10px;
-	max-width: 100%;
-  width: 25rem;
-  border: 1px solid #2a381a;
-	background:#fff;
-}
-	form.searchbar button {
-  position: relative;
-  padding: 0;
-	width: 2rem;
-	height:2rem;
-  left: 60%;
-	background-color: #E3F0D4;
-	cursor: pointer;
-  border: none;
-  outline: none;
-}
 
-form.searchbar input[type=text]:focus {
-  border: 1px solid #aacf80;
-  outline: none;
-}
-form.search input[type=text]::placeholder {
-  color: black;
-}
 
 /* footer */
 footer {
@@ -364,7 +324,100 @@ footer {
 
 
   /* Responsive */
+  @media all and (min-width: 1200px) {
+    .menu label {
+      font-size: 15rem;
+    }
+    }
+  @media all and (max-width : 1200px) {
+    #logo {
+      display: flex;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+      z-index: 1;
+      mix-blend-mode: multiply;
+    }
+    nav {
+      margin: 0;
+    }
+    nav a {
+      text-align: left;
+    }
+    .fa-bars {
+      font-size: 1.6rem;
+    }
+  
+    /* Hide the navigation menu by default */
+    /* Also hide the toggles */
+    .toggle + a,
+    .menu {
+      display: none;
+    }
+  
+    /* Styling the toggle lable */
+    .toggle {
+      display: block;
+      
+      background-color: rgb(189,223,144);
+      padding:14px 20px;
+      font-size:1rem;
+      text-decoration:none;
+      border:none;
+      text-transform: uppercase;
+    }
+  
+    .toggle:hover {
+      background-color: #902656;
+    }
+  
+    /* Display Dropdown when clicked on Parent Lable */
+    [id^=drop]:checked + ul {
+      display: block;
+    }
+  
+    /* Change menu item's width to 100% */
+    nav ul li {
+      display: block;
+      width: 100%;
+      }
+  
+    nav a:hover,
+     nav ul ul ul a {
+      background-color: #902656;
+    }
+    
+    nav ul li ul li .toggle,
+    nav ul ul a,
+    nav ul ul ul a{
+      padding:14px 20px;	
+      font-size:1rem; 
+    }
+  
+    /* Hide Dropdowns by Default */
+    nav ul ul {
+      float: none;
+      position:static;
+    }
+      
+    /* Hide menus on hover */
+    nav ul ul li:hover > ul,
+    nav ul li:hover > ul {
+      display: none;
+    }
+      
+    /* Dropdown */
+    nav ul ul li {
+      display: block;
+      width: 100%;
+    }
+  
 
+  }
+  /* Media queries */
   @media screen and (max-width: 900px) {
     footer {
       position: relative;
