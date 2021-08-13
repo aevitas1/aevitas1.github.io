@@ -349,10 +349,15 @@ footer {
 
 
     nav ul li ul li:hover {
+      opacity: 0.6;
       background: transparent;
     }
     nav a:hover {
+      opacity: 0.6;
       background: transparent;
+    }
+    .toggle:hover {
+      opacity: 0.6;
     }
 
 
