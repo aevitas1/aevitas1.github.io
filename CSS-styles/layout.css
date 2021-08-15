@@ -44,6 +44,7 @@ p {
   background: #E3F0D4;
   position: fixed;
   width: 100%;
+  z-index: 99;
 }
 .wrapper-nav nav {
   position: relative;
@@ -55,6 +56,7 @@ p {
   justify-content: space-between;
   
 }
+
 nav .content-nav {
   display: flex;
   align-items: center;
@@ -155,7 +157,6 @@ nav .content-nav .links {
   position: absolute;
   background: #E3F0D4;
   top: 80px;
-  z-index: 99;
   opacity: 0;
   visibility: hidden;
 }
@@ -169,7 +170,7 @@ nav .content-nav .links {
   display: block;
   width: 100%;
   line-height: 30px;
-  border-radius: 0px!important;
+  border-radius: 0px;
 }
 
 .content-nav .links ul li{
@@ -178,6 +179,17 @@ nav .content-nav .links {
 .content-nav .links ul li:hover ul{
   top: 0;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* footer */
