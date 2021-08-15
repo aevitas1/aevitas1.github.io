@@ -1,512 +1,249 @@
-                                    /* content index */
-                                    /* HERO */
-.hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),url(../images/pexels-hero-home.jpeg);
-    width: 100vw;
-    height: 50vh;
-    max-width: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
 }
-.hero h1 {
-    font-size: 2.5em;
-    margin-top: 0;
-    margin-bottom: 0.5em;
-    color: white;
-    text-shadow: 1px 2px 1px black;
+.wrapper-nav {
+  background: #E3F0D4;
+  position: fixed;
+  width: 100%;
 }
-.hero h2 {
-    font-family: 'Roboto';
-    font-size: 1.2em;
-    margin-top: 0;
-    margin-bottom: 0.5em;
-    color: white;
-    text-shadow: 1px 2px 1px black;
+.wrapper-nav nav {
+  position: relative;
+  display: flex;
+  max-width: calc(100% - 200px);
+  margin: 0 auto;
+  height: 70px;
+  align-items: center;
+  justify-content: space-between;
 }
-.hero .bestelhero {
-    display: block;
-    width: 200px;
-    border: 3px solid black;
-    padding: 1em;
-    margin: 50px auto 0 auto;
-    font-size: 1.5em;
-    border-radius: 20px;
-    background-color: #E4CACA;
-    cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.6) 0px 8px 16px 0px;
+nav .content-nav {
+  display: flex;
+  align-items: center;
 }
-.bestelhero:hover {
-    background-color: #902656;
-    box-shadow: none;
+nav .content-nav .links {
+  margin-left: 80px;
+  display: flex;
 }
-.hero a {
-    text-decoration: none;
-    color: black; 
+#logo {
+  mix-blend-mode: multiply;
+}
+.content-nav {
+  font-size: 30px;
+  font-weight: 600;
+}
+.content-nav .links li {
+  list-style: none;
+  line-height: 90px;
+}
+.content-nav .links li a,
+.content-nav .links li label{
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 9px 17px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.content-nav .links li label{
+  display: none;
+}
+.content-nav .links li a:hover,
+.content-nav .links li label:hover{
+  background: #902656;
+}
+.wrapper-nav .search-icon,
+.wrapper-nav .menu-icon{
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 70px;
+  width: 70px;
+  text-align: center;
+}
+.wrapper-nav .menu-icon{
+  display: none;
+}
+.wrapper-nav #show-search:checked ~ .search-icon i::before{
+  content: "\f00d";
 }
 
-                                    /* ARROWS */
-.home-arrows-wrap {
-    background-color: #f1e3e3;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+.wrapper-nav .search-box{
+  position: absolute;
+  height: 100%;
+  max-width: calc(100% - 50px);
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
 }
-.home-row-arrows figure {
-    max-width: 80%;
-    padding: 0;
-    margin: 0 auto;
-    text-align: center;
-    font-weight: bold;
+.wrapper-nav #show-search:checked ~ .search-box{
+  opacity: 1;
+  pointer-events: auto;
 }
-.home-row-arrows figure img {
-    mix-blend-mode: multiply;
+.search-box input{
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  color: black;
+  background: #E3F0D4;
+  padding: 0 100px 0 15px;
 }
-.home-row-arrows {
-    width: 55%;
-    display: flex;
-    flex-direction: row;
-    background-color: #f1e3e3;
-    padding-right: 0;
-    padding-bottom: 50px;
+.search-box input::placeholder{
+  opacity: 0.8;
+  color: black;
 }
-.home-arrows-text {
-    width: 100%;
-    background-color: #f1e3e3;
-    top: 0;
-    text-align: center;
+.search-box .go-icon{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 60px;
+  width: 70px;
+  background: #E3F0D4;
+  border: none;
+  outline: none;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
 }
-.home-arrows-text h1 {
-    text-align: center;
-    justify-content: center;
-    align-content: center;
-    margin-top: 0;
-    padding: 35px;
+.wrapper-nav input[type="checkbox"]{
+  display: none;
 }
-.home-arrows-text h2 {
-    display: inline-block;
-    font-family: 'Roboto';
-    text-align: center;
-    justify-content: center;
-    align-content: center;
-    margin-bottom: 60px;
-    opacity: 0.9;
+
+/* Dropdown Menu code start */
+.content-nav .links ul{
+  position: absolute;
+  background: #E3F0D4;
+  top: 80px;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
 }
-.home-arrows-text h3 {
-    display: inline-block;
-    padding: 10px;
-    font-size: 30px;
-    opacity: 0.9;
+.content-nav .links li:hover > ul{
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
 }
-.fa-angle-double-right {
-    font-size: 50px;
-    color: #902656;
-    left: 0;
+.content-nav .links ul li a{
+  display: block;
+  width: 100%;
+  line-height: 30px;
+  border-radius: 0px!important;
 }
-                                        /* REVIEW BAR */
-.review-bar {
-    display: flex;
-    position: relative;
-    background-color: rgba(237, 161, 161, 0.692);
-    width: 100%;
-    padding: 20px;
+
+.content-nav .links ul li{
+  position: relative;
 }
-.fake-rating {
-    text-align: center;
-    font-size: 30px;
-    width: 15%;
-    line-height: 1.8em;
-    margin: 0 auto;
-    font-family: 'Righteous';
-    font-weight: 500;
-    margin-top: 1.5rem;
-    margin-right: 2rem;
+.content-nav .links ul li:hover ul{
+  top: 0;
 }
-.review-images {
-    display: flex;
-    flex-direction: row;
-    width: 30%;
-    margin: 0 auto;
-}
-.review-images img {
-    padding: 20px;
-    margin: 0 auto;
-    border-radius: 50%; 
-    min-height: auto;
-    max-height: auto;
-}
-.review-gezond {
+
+/* Responsive code start */
+@media screen and (max-width: 1250px){
+  .wrapper-nav nav{
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  nav .content-nav .links{
     margin-left: 30px;
-    width: 35%;
-}
-.review-gezond h4 {
-    font-size: 20px;
-}
-.review-gezond h5 {
-    font-size: 18px;
-    opacity: 0.9;
-    font-family: 'Roboto';
-}
-                                        /* KLANTEN REVIEW */
-.klanten-review-wrapper {
-    background-color: #f1e3e3;
-    height: 400px;
-    display: flex;
-}
-.review-left {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 50%;
-    height: auto;
-    top: 0;
-    left: 12rem;
-}
-.review-right {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 50%;
-    height: auto;
-    right: 12rem;
-    top: 0;
-}
-.quote_marks {
-    font-size: 4em;
-    font-family: 'Roboto';
-    justify-content: center;
-    display: flex;
-    margin: 0 auto;
-    padding-top: 30px;
-}
-.klant-review-naam {
-    justify-content: center;
-    display: flex;
-    margin: 0 auto;
-    font-size: 16px;
-    margin-bottom: 30px;
-    font-family: 'Righteous';
-}
-.review {
-    width: 20rem;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
+  }
+  .content-nav .links li a{
+    padding: 8px 13px;
+  }
+  .wrapper-nav .search-box{
+    max-width: calc(100% - 100px);
+  }
+  .wrapper-nav .search-box input{
+    padding: 0 100px 0 15px;
+  }
 }
 
-.review-left img {
-    display: flex;
-    mix-blend-mode: multiply;
-    justify-content: center;
-    position:relative;
-    margin: 90px auto 0 auto;
-}
-.review-right img {
-    display: flex;
-    mix-blend-mode: multiply;
-    justify-content: center;
-    position:relative;
-    margin: 50px auto 0 auto;
-}
-                                        /* IMG LIST */
-.fresh-food-background {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),url(../images/img-list.jpg);
-    width: 30vw;
-    max-height: 65vh;
-    max-width: 30%;
-    margin-left: 10%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    display: flex;
-    position: relative;
-}
-.fresh-food-list {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    justify-content: center;
-    max-width: 35%;
-    max-height: 65vh;
-    left: 20rem;
-    padding-left: 20px;
-}
-.fresh-food-list li {
-    list-style: none;
-    text-align: left;
-}
-    .fresh-food-list li > .fresh-food-list-kop {
-   margin-left: 70px;
-   font-family: 'Righteous';
-   font-size: 24px;
-}
-    .fresh-food-list li > .fresh-food-list-text {
-    margin-left: 70px;
-    font-family: 'Roboto';
-    color: black;
-    font-weight: 500;
-    opacity: 0.70;
-}
-.fresh-food-list > li > img {
-    mix-blend-mode: multiply;
-    display: flex;
-    position: absolute;
-    margin-top: 3%;
-}
-.home-img-list-wrap {
-    background-color: rgba(237, 161, 161, 0.692);
-    display: flex;
-}
-                                        /* RECEPTEN */
-.home-grid-container {
-    background-color: #f1e3e3;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
-    padding-top: 5%;
-    padding-bottom: 5%;
-    width: 100%;
-}
-.home-grid-kop {
-    justify-content: center;
-    margin: 0 auto;
-    padding-top: 2%;
-    display: flex;
-    background-color: #f1e3e3;
-}
-.grid-item img {
-    margin-top: 8%;
-}
-.grid-item:hover {
-    -ms-transform: scale(1.02);
-    -webkit-transform: scale(1.02);
-    transform: scale(1.02);
-    transition: transform 50ms;
-    background-color: #f1e3e3;
-    box-shadow: 1px 1px 1px #191919; 
-}
-.grid-item a {
-    text-decoration: none;
-    color: black;
-}
-
-.grid-item {
-    text-align: center;
-    border: 2px solid lightgray;
-    margin: 0 auto;
-    width: 20rem;
-    transition: transform .2s;
-    max-width: 25rem;
-}
-
-.main-grid-item {
-    font-size: 25px;
-}
-
-.text-grid-item {
-    font-family: 'Roboto';
-    font-size: 16px;
-    opacity: 0.7;
-}
-
-
-.recepturen-btn-home {
-    justify-content: center;
-    margin: 0 auto;
-    display: flex;
-    background-color: #f1e3e3;
-    padding-bottom: 2rem;
-}
-.recepturen-btn-home h2 {
-    font-family: 'Roboto';
+@media screen and (max-width: 960px){
+  .wrapper-nav .menu-icon{
     display: block;
-    border: 3px solid black;
-    padding: 1em;
-    margin: 0 auto;
-    color: black;
-    font-size: 1.5em;
-    border-radius: 20px;
-    background-color: #E4CACA;
-    cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.6) 0px 8px 16px 0px;
-}
-.recepturen-btn-home a {
-    text-decoration: none;
-    color: black;
-    font-weight: 400;
-    text-transform: uppercase;
-}
-
-
-.recepturen-btn-home h2:hover {
-    background-color: #902656;
-    box-shadow: none;
-}
-
-
-                                /* BESTEL NU */
-.home-gezin {
-    background-color: rgba(237, 161, 161, 0.692);
-    width: 100%;
-    height: auto;
-    display: flex;
-}
-.home-gezin-left {
-    flex: 35%;
-    margin: 0 auto;
-    display: inline-block;
-}
-.home-gezin-left h1 {
-    padding-top: 4%;
-    margin-bottom: 2%;
-    font-size: 20px;
-    justify-content: center;
-    display: flex;
-    opacity: 0.6;
-}
-.home-gezin-left p {
-    font-weight: 400;
-    font-size: 18px;
-    width: 50%;
-    line-height: 1.6em;
-    padding-bottom: 7%;
-    margin: 0 auto;
-}
-.home-gezin-right {
-   background-image: url(../images/foto-gezin.jpg);
-   width: 28%;
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   margin-right: 18%;
-}
-
-.hero-bestel-nu-bottom {
-    background-image: url(../images/home-bestel-nu-a.jpg);
-    width: 100vw;
-    height: 50vh;
-    max-width: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.bestel-nu-content h1 {
-    font-size: 2.5em;
-    margin-top: 0;
-    margin-bottom: 0.5em;
-    color: black;
-    text-shadow: 1px 2px 1px white;
-}
-.bestel-nu-content h2 {
-    font-family: 'Roboto';
-    font-size: 1.2em;
-    margin-top: 0;
-    margin-bottom: 0.5em;
-    color: black;
-    text-shadow: 1px 1px 1px white;
-}
-.bestel-nu-bottom {
+  }
+  .wrapper-nav #show-menu:checked ~ .menu-icon i::before{
+    content: "\f00d";
+  }
+  nav .content-nav .links{
     display: block;
-    width: 200px;
-    border: 3px solid black;
-    padding: 1em;
-    margin: 50px auto 0 auto;
-    font-size: 1.5em;
-    border-radius: 20px;
-    background-color: #E4CACA;
+    position: fixed;
+    background: #E3F0D4;
+    height: 100%;
+    width: 100%;
+    top: 70px;
+    left: -100%;
+    margin-left: 0;
+    max-width: 350px;
+    overflow-y: auto;
+    padding-bottom: 100px;
+    transition: all 0.3s ease;
+  }
+  nav #show-menu:checked ~ .content-nav .links{
+    left: 0%;
+  }
+  .content-nav .links li{
+    margin: 15px 20px;
+  }
+  .content-nav .links li a,
+  .content-nav .links li label{
+    line-height: 40px;
+    font-size: 20px;
+    display: block;
+    padding: 8px 18px;
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.6) 0px 8px 16px 0px;
-}
-.bestel-nu-bottom:hover {
-    background-color: #902656;
-    box-shadow: none;
-}
-.bestel-nu-content a {
-    text-decoration: none;
-    color: black; 
-}
+  }
+  .content-nav .links li a.desktop-link{
+    display: none;
+  }
 
-
-@media screen and (max-width: 1800px) {
-        .review-images img {
-            max-width: 80%;
-            max-height: 70%;
-        }
-}
-
-@media screen and (max-width:1300px) {
-    .review-images {
-        margin-top: 1rem;
-    }
-    .fresh-food-list {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        justify-content: center;
-        max-width: 35%;
-        left: 10rem;
-        padding-left: 20px;
-    }
-    .fresh-food-list > li > img {
-        margin-top: 15%;
-        mix-blend-mode: multiply;
-    }
-    .bestel-nu-content h1, .bestel-nu-content h2 {
-        padding-right: 15rem;
-    }
-    .bestel-nu-bottom {
-        margin-right: 24rem;
-    }
-    .review-gezond {
-        margin-left: 1rem;
-        width: 20%;
-    }
-    .fresh-food-background {
-        max-height: 50vh;
-    }
-    .fresh-food-list {
-        margin: 0;
-        padding: 0;
-    }
+  /* dropdown responsive code start */
+  .content-nav .links ul,
+  .content-nav .links ul ul{
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    background: none;
+    max-height: 0px;
+    overflow: hidden;
+  }
+  .content-nav .links #show-maaltijdboxen:checked ~ ul,
+  .content-nav .links #show-hoewerkthet:checked ~ ul,
+  .content-nav .links #show-account:checked ~ ul,
+  .content-nav .links #show-over:checked ~ ul{
+    max-height: 100vh;
+  }
+  .content-nav .links ul li{
+    margin: 7px 20px;
+  }
+  .content-nav .links ul li a{
+    font-size: 18px;
+    line-height: 30px;
+    border-radius: 5px!important;
+  }
 }
 
-@media screen and (max-width:1500px) {
-    .klanten-review-wrapper {
-        height: auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(60%, 1fr));
-
-    }
-    .review-right .review-left {
-        position: relative;
-        display: flex;
-    }
-    .review-right {
-        padding-bottom: 2rem;
-        left: 20rem;
-    }
-    .review-left {
-        left: 20rem;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .fresh-food-background {
-        display: none;
-    }
-
+@media screen and (max-width: 400px){
+  .wrapper-nav nav{
+    padding: 0 10px;
+  }
+  .content-nav {
+    font-size: 27px;
+  }
+  .wrapper-nav .search-box{
+    max-width: calc(100% - 70px);
+  }
+  .wrapper-nav .search-box .go-icon{
+    width: 30px;
+    right: 0;
+  }
+  .wrapper-nav .search-box input{
+    padding-right: 30px;
+  }
 }
