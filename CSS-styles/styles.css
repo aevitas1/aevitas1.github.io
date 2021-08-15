@@ -451,6 +451,11 @@
     background-color: #f1e3e3;
 }
 
+        /* RECEPTUREN */
+
+.wrapper-bg {
+    padding-top: 90px;
+}
 @media screen and (max-width: 1800px) {
         .review-images img {
             max-width: 80%;
