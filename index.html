@@ -20,66 +20,70 @@
     <div class="wrapper">
         <header>
             <!-- nav -->
-            <nav>
-                <a href="index.html" id="logo"><img src="images/logo-foodfreedom-01.jpg" alt="foodforfreedom logo"></a>
+            <div class="wrapper-nav">
+                <nav>
+                    <input type="checkbox" id="show-search">
+                    <input type="checkbox" id="show-menu">
+                    <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+                    <div class="content-nav">
+                        <div id="logo"><a href="#"><img src="images/logo-foodfreedom-01.jpg" alt="foodfreedom logo"></a>
+                        </div>
 
-                <label for="drop" class="toggle"><i class="fas fa-bars"></i></label>
-                <input type="checkbox" id="drop" />
+                        <ul class="links">
+                            <li><a href="#">Home</a></li>
+                            <li>
+                                <a href="#" class="desktop-link">Maaltijdboxen</a>
+                                <input type="checkbox" id="show-maaltijdboxen">
+                                <label for="show-maaltijdboxen">Maaltijdboxen</label>
+                                <ul>
+                                    <li><a href="#">Basis</a></li>
+                                    <li><a href="#">Extra</a></li>
+                                    <li><a href="#">Luxe</a></li>
+                                </ul>
+                            </li>
 
-                <ul class="menu">
-                    <li><a href="javascript:void(0);">Home</a></li>
-                    <li>
-                        <!-- maaltijdboxen -->
-                        <label for="drop-1" class="toggle">Maaltijdboxen +</label>
-                        <a href="javascript:void(0)">Maaltijdboxen</a>
-                        <input type="checkbox" id="drop-1" />
-                        <ul>
-                            <li><a href="javascript:void(0)">Basis</a></li>
-                            <li><a href="javascript:void(0)">Extra</a></li>
-                            <li><a href="javascript:void(0)">Luxe</a></li>
+                            <li>
+                                <a href="#" class="desktop-link">Hoe werkt het?</a>
+                                <input type="checkbox" id="show-hoewerkthet">
+                                <label for="show-hoewerkthet">Hoe werkt het?</label>
+                                <ul>
+                                    <li><a href="#">Bestellen & afhalen</a></li>
+                                    <li><a href="#">Bezorgen & afhalen</a></li>
+                                    <li><a href="#">Koken</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="#" class="desktop-link">Mijn account</a>
+                                <input type="checkbox" id="show-account">
+                                <label for="show-account">Mijn account</label>
+                                <ul>
+                                    <li><a href="#">Registreren</a></li>
+                                    <li><a href="#">Mijn profiel</a></li>
+                                    <li><a href="#">Mijn bestellingen</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="#" class="desktop-link">Over foodfreedom</a>
+                                <input type="checkbox" id="show-over">
+                                <label for="show-over">Over foodfreedom</label>
+                                <ul>
+                                    <li><a href="#">Over ons</a></li>
+                                    <li><a href="#">Recepten</a></li>
+                                    <li><a href="#">Reviews</a></li>
+                                </ul>
+                            </li>
+
                         </ul>
-
-                    </li>
-                    <li>
-                        <!-- hoe werkt het -->
-                        <label for="drop-2" class="toggle">Hoe werkt het? +</label>
-                        <a href="javascript:void(0)">Hoe werkt het?</a>
-                        <input type="checkbox" id="drop-2" />
-                        <ul>
-                            <li><a href="javascript:void(0)">Bestellen</a></li>
-                            <li><a href="javascript:void(0)">Bezorgen & afhalen</a></li>
-                            <li><a href="javascript:void(0)">Koken</a></li>
-                        </ul>
-
-                    </li>
-                    <li>
-                        <!-- mijn account -->
-                        <label for="drop-3" class="toggle">Mijn account +</label>
-                        <a href="javascript:void(0)">Mijn account</a>
-                        <input type="checkbox" id="drop-3" />
-                        <ul>
-                            <li><a href="javascript:void(0)">Registreren</a></li>
-                            <li><a href="javascript:void(0)">Mijn profiel</a></li>
-                            <li><a href="javascript:void(0)">Mijn bestellingen</a></li>
-                        </ul>
-
-                    </li>
-                    <li>
-                        <!-- over foodfreedom -->
-                        <label for="drop-4" class="toggle">Over foodfreedom +</label>
-                        <a href="javascript:void(0)">Over foodfreedom</a>
-                        <input type="checkbox" id="drop-4" />
-                        <ul>
-                            <li><a href="javascript:void(0)">Over ons</a></li>
-                            <li><a href="javascript:void(0)">Recepten</a></li>
-                            <li><a href="javascript:void(0)">Reviews</a></li>
-                        </ul>
-
-                    </li>
-
-
-                </ul>
-            </nav>
+                    </div>
+                    <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+                    <form action="#" class="search-box">
+                        <input type="text" placeholder="Wat zoekt u?" required>
+                        <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+                    </form>
+                </nav>
+            </div>
         </header>
         <!-- end nav -->
 
@@ -277,7 +281,7 @@
                 <div class="left-box">
                     <h2>Contact &amp; FAQ</h2>
                     <h3>Heb je vragen? Neem contact op!</h3>
-                    <div class="content">
+                    <div class="content-footer">
                         <ul>
                             <li><a href="javascript:void(0)">Veelgestelde vragen</a></li>
                             <li><a href="javascript:void(0)">Vacatures</a></li>
@@ -298,7 +302,7 @@
                 <div class="center-box">
                     <h2>Social media</h2>
                     <h3>Volg ons voor meer nieuws</h3>
-                    <div class="content">
+                    <div class="content-footer">
                         <div class="social">
                             <a href="javascript:void(0)"><span class="fab fa-facebook"></span></a>
                             <a href="javascript:void(0)"><span class="fab fa-pinterest"></span></a>
@@ -316,7 +320,7 @@
                 <div class="right-box">
                     <h2>Nieuwsbrief</h2>
                     <h3>Ontvang wekelijks recepten</h3>
-                    <div class="content">
+                    <div class="content-footer">
                         <form action="javascript:void(0)">
                             <div class="email">
                                 <div class="text-footer">
