@@ -34,6 +34,7 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
     font-family:'Righteous';
+    letter-spacing: 0.05em;
 }
 p {
     font-family: 'Roboto';
