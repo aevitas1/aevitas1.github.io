@@ -333,8 +333,8 @@ footer {
 }
 .payment {
   bottom: 0;
-  margin: 0 auto;
-  text-align: center;
+  margin: 0;
+  text-align: left;
 }
   .right-box form input {
     width: 100%;
@@ -389,8 +389,8 @@ footer {
   }
   .payment p {
     font-size: 1rem;
-    opacity: 0.7;
     margin-top: 5.5rem;
+    text-decoration: underline;
   }
 
 
@@ -477,59 +477,6 @@ footer {
     .content-nav .links ul li a{
       font-size: 18px;
       line-height: 30px;
-      border-radius: 5px!important;
-    }
-  }   
-    
-
-
-
-  
-  @media screen and (max-width: 800px) {
-    .center-box {
-      order: 1;
-    }
-    .social {
-      text-align: center;
-      margin-bottom: 2rem;
-    }    
-      footer {
-      position: relative;
-      bottom: 0px;
-    }
-    .footer {
-      flex-wrap: wrap;
-      flex-direction: column;
-    }
-    .left-box, .center-box, .right-box {
-      margin: 5px 0;
-    }
-    .credit {
-      display: none;
-    }
-    .center-box > .content-footer {
-      justify-content: space-between;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-  }
-  
-  @media screen and (max-width: 400px){
-    .wrapper-nav nav{
-      padding: 0 10px;
-    }
-    .content-nav {
-      font-size: 27px;
-    }
-    .wrapper-nav .search-box{
-      max-width: calc(100% - 70px);
-    }
-    .wrapper-nav .search-box .go-icon{
-      width: 30px;
-      right: 0;
-    }
-    .wrapper-nav .search-box input{
-      padding-right: 30px;
+      border-radius: 5px;
     }
   }
