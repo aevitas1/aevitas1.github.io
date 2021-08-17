@@ -120,7 +120,8 @@
 
 .fake-rating, .review-gezond {
     width: 50%;
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     margin: 0 auto;
 }
