@@ -54,6 +54,24 @@
     .payment p {
     margin-top:1rem;
     }  
+    .klanten-review-wrapper {
+        width: 100%;
+        justify-content:unset;
+        display: flex;
+    }
+    .review-right, .review-left {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 0;
+        justify-content:unset;
+        display: flex;
+    }
+    .review-right p, .review-left p {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        justify-content:unset;
+    }
 
 /* home arrows */
 .home-row-arrows {
@@ -72,6 +90,14 @@ display: none;
 .fresh-food-list {
 max-width: 90%;
 }
+.home-gezin-left {
+    flex: 100%;
+    bottom: 0;
+}
+.home-gezin-right {
+    display: none;
+}
+
   }
 
 
@@ -111,12 +137,8 @@ max-width: 90%;
     
     
     
-    
-    .bestel-nu-content h1, .bestel-nu-content h2 {
-        padding-right: 15rem;
-    }
-    .bestel-nu-bottom {
-        margin-right: 24rem;
+    .hero-bestel-nu-bottom {
+        background-position:right;
     }
     .review-gezond {
         margin-left: 1rem;
@@ -151,20 +173,22 @@ max-width: 90%;
     @media screen and (max-width:1500px) {
         .klanten-review-wrapper {
             height: auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(60%, 1fr));
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            justify-content: center;
         
         }
-        .review-right .review-left {
+        .review-right, .review-left {
             position: relative;
             display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            left: 0rem;
+            width: 50%;
         }
         .review-right {
             padding-bottom: 2rem;
-            left: 20rem;
-        }
-        .review-left {
-            left: 20rem;
         }
         }
 
