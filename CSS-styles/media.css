@@ -72,7 +72,13 @@
         position: relative;
         justify-content:unset;
     }
-
+/* review bar */
+.fake-rating h1, .review-gezond h1, .review-gezond p, .fake-rating p {
+    width: 90%;
+}
+.fake-rating h1, .review-gezond h1 {
+    margin-bottom: 2.5rem;
+}
 /* home arrows */
 .home-row-arrows {
 flex-direction: column;
@@ -116,10 +122,8 @@ max-width: 90%;
     .arrows-margin {
         padding-bottom: 2rem;
     }
-    /* reviews */
-    .review-images {
-        margin-top: 1rem;
-    }
+
+
     .fresh-food-background {
         margin: 5% 0 5% 2%;
         max-height: 100%;
@@ -135,15 +139,18 @@ max-width: 90%;
         mix-blend-mode: multiply;
     }
     
+    /* REVIEW BAR */
     
+    .fake-rating h1, .review-gezond h1, .review-gezond p, .fake-rating p {
+        width: 80%;
+    }
+
+    /* Bestel nu */
     
     .hero-bestel-nu-bottom {
         background-position:right;
     }
-    .review-gezond {
-        margin-left: 1rem;
-        width: 20%;
-    }
+
     .fresh-food-background {
         max-height: 50vh;
     }
@@ -188,7 +195,7 @@ max-width: 90%;
             width: 50%;
         }
         .review-right {
-            padding-bottom: 2.001rem;
+            padding-bottom: 2rem;
         }
         }
 
