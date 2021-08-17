@@ -115,44 +115,45 @@
     position: relative;
     background-color: rgba(237, 161, 161, 0.692);
     width: 100%;
-    padding: 20px;
+    height: auto;
 }
-.fake-rating {
-    text-align: center;
-    font-size: 30px;
-    width: 15%;
-    line-height: 1.8em;
-    margin: 0 auto;
-    font-family: 'Righteous';
-    font-weight: 500;
-    margin-top: 1.5rem;
-    margin-right: 2rem;
-}
-.review-images {
-    display: flex;
+
+.fake-rating, .review-gezond {
+    width: 50%;
     flex-direction: row;
-    width: 30%;
+    justify-content: center;
     margin: 0 auto;
 }
-.review-images img {
-    padding: 20px;
+.fake-rating img, .review-gezond img {
+    display: flex;
+    position: relative;
+    border-radius: 50%;
+    border: 1px solid gray;
+    margin: 1.5rem auto;
+}
+
+
+.fake-rating h1, .review-gezond h1, .review-gezond p, .fake-rating p {
+    text-align: center;
+    width: 60%;
     margin: 0 auto;
-    border-radius: 50%; 
-    min-height: auto;
-    max-height: auto;
 }
-.review-gezond {
-    margin-left: 30px;
-    width: 35%;
+.fake-rating h1, .review-gezond h1 {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    height: 20%;
 }
-.review-gezond h4 {
-    font-size: 20px;
+
+.review-gezond p, .fake-rating p {
+    padding-top: 1rem;
+    height: 20%;
+    margin-bottom: 2rem;
 }
-.review-gezond h5 {
-    font-size: 18px;
-    opacity: 0.9;
-    font-family: 'Roboto';
+.fake-rating p {
+    color: transparent;
+    user-select: none;
 }
+
                                         /* KLANTEN REVIEW */
 .klanten-review-wrapper {
     background-color: #f1e3e3;
