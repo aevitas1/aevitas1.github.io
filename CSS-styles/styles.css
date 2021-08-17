@@ -1,7 +1,7 @@
                                     /* content index */
                                     /* HERO */
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),url(../images/pexels-hero-home.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.31)),url(../images/pexels-hero-home.jpeg);
     width: 100vw;
     height: 50vh;
     max-width: 100%;
