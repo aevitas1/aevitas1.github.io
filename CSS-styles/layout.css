@@ -209,10 +209,12 @@ footer {
   .footer {
     display: flex;
   }
-  .footer, .left-box, .center-box, .right-box {
-    flex-basis: 50%;
+  .footer, .footer > * {
     padding: 10px 20px;
-  }
+}
+.footer > * {
+    flex-basis: 50%;
+}
   .fa-facebook {
     color: #3B5998;
     transition: transform .2s;
