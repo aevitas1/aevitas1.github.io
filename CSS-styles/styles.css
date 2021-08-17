@@ -1,7 +1,7 @@
                                     /* content index */
                                     /* HERO */
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),url("../images/pexels-hero-home.jpeg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),url("../images/pexels-hero-home.png");
     width: 100vw;
     height: 50vh;
     max-width: 100%;
@@ -393,7 +393,7 @@
 }
 
 .hero-bestel-nu-bottom {
-    background-image: url("../images/home-bestel-nu-a.jpg");
+    background-image: url("../images/home-bestel-nu-a.png");
     width: 100vw;
     height: 50vh;
     max-width: 100%;
