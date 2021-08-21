@@ -1,24 +1,847 @@
 <!DOCTYPE html>
-<html lang="nl">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1">
+
     <title>foodfreedom - lactosevrije maaltijdboxen</title>
-    <!-- links -->
+<!--
     <link href="CSS-styles/layout.css" rel="stylesheet" type="text/css">
     <link href="CSS-styles/styles.css" rel="stylesheet" type="text/css">
     <link href="CSS-styles/media.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+-->
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;500;900&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;500;900&display=swap">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+
+<style>
+/*****************/
+/*  global rules */
+/*****************/
+/* naast element 'width' ook 'border' en 'padding' meerekenen in breedtes = 100% */
+html                { -webkit-box-sizing: border-box; box-sizing: border-box }
+*:before,*:after, * { -webkit-box-sizing: inherit; box-sizing: inherit }
+/* 'margin' wordt altijd buiten beschouwing gelaten, maakt een element dus breder > 100% */
+/* TODO: controleer of dit ook geldt voor 'gap' properties */
+
+/*
+    Standaard gebruikt CSS:
+
+    - standaard properties met de element eigenschappen
+
+    - attributes, unique CSS defined and user defined inline tag 'keywords'
+      - CSS defined, protected
+      - [data-*] attributes, attributes starting with 'data-'
+      - [...] custom attributes, any kind of keyword not being CSS defined
+
+    - custom variables, beginnen met -- en zijn speciale properties
+*/
+
+/* for debugging */
+[outlines="1"] * { outline: 1px dashed }
+
+/**************************/
+/* override html defaults */
+/**************************/
+html,body   { max-width: 100% }
+
+body,h1,h2,h3,
+h4, h5, h6  { width: 100%; margin: 0 }
+
+ul,li       { list-style-type: none; padding: 0; margin: 0 }
+a           { color: currentColor; text-decoration: none }
+img         { display: block; width: 100% }
+figure      { margin: 0 }
+body        { font-size: 1rem }
+
+/*******************/
+/* algemene regels */
+/*******************/
+[class^="container"],
+[class^="content"],
+.ct-header, .ct-footer {
+    display: flex;       /* Flexbox Layout container */
+    flex-flow: row wrap; /* een regel van kolommen, met overloop */
+
+    width: 100%;
+
+    /* alles centreren */
+    /* FLB   */ justify-content: center; align-items: center; align-content: center;
+    /* plain */ text-align: center;
+}
+
+/*******************************/
+/* bootstrap classes           */
+/* remove when using bootstrap */
+/*******************************/
+.flex-row               { flex-direction: row }
+.flex-column            { flex-direction: column }
+.flex-row-reverse       { flex-direction: row-reverse }
+.flex-column-reverse    { flex-direction: column-reverse }
+
+.flex-wrap              { flex-wrap: wrap }
+.flex-nowrap            { flex-wrap: nowrap }
+.flex-wrap-reverse      { flex-wrap: wrap-reverse }
+
+.flex-grow-0            { flex-grow: 0 }
+.flex-grow-1            { flex-grow: 1 }
+.flex-shrink-0          { flex-shrink: 0 }
+.flex-shrink-1          { flex-shrink: 1 }
+
+.flex-fill              { flex: 1 1 auto }
+/**/
+
+/* ******************* */
+/*     navigation      */
+/* ******************* */
+.wrapper-nav {
+  background: #E3F0D4;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+.wrapper-nav nav {
+  position: relative;
+  display: flex;
+  max-width: calc(100% - 200px);
+  margin: 0 auto;
+  height: 70px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .content-nav {
+  display: flex;
+  align-items: center;
+}
+nav .content-nav .links {
+  margin-left: 80px;
+  display: flex;
+}
+#logo {
+  mix-blend-mode: multiply;
+}
+#logo img {
+  max-height: 4.375rem;
+}
+.content-nav {
+  font-size: 30px;
+  font-weight: 600;
+}
+.content-nav .links li {
+  list-style: none;
+  line-height: 90px;
+}
+.content-nav .links li a,
+.content-nav .links li label{
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 9px 17px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.content-nav .links li label{
+  display: none;
+}
+.content-nav .links li a:hover,
+.content-nav .links li label:hover{
+  background: #902656;
+}
+.wrapper-nav .search-icon,
+.wrapper-nav .menu-icon{
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 70px;
+  width: 70px;
+  text-align: center;
+}
+.wrapper-nav .menu-icon{
+  display: none;
+}
+.wrapper-nav #show-search:checked ~ .search-icon i::before{
+  content: "\f00d";
+}
+
+.wrapper-nav .search-box{
+  position: absolute;
+  height: 100%;
+  max-width: calc(100% - 50px);
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.wrapper-nav #show-search:checked ~ .search-box{
+  opacity: 1;
+  pointer-events: auto;
+}
+.search-box input{
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  color: black;
+  background: #E3F0D4;
+  padding: 0 100px 0 15px;
+}
+.search-box input::placeholder{
+  opacity: 0.8;
+  color: black;
+}
+.search-box .go-icon{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 60px;
+  width: 70px;
+  background: #E3F0D4;
+  border: none;
+  outline: none;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+}
+.wrapper-nav input[type="checkbox"]{
+  display: none;
+}
+/* ******************* */
+/*     drop-down menu  */
+/* ******************* */
+.content-nav .links ul{
+  position: absolute;
+  background: #E3F0D4;
+  top: 80px;
+  opacity: 0;
+  visibility: hidden;
+}
+.content-nav .links li:hover > ul{
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+.content-nav .links ul li a{
+  display: block;
+  width: 100%;
+  line-height: 30px;
+  border-radius: 0px;
+}
+
+.content-nav .links ul li{
+  position: relative;
+}
+.content-nav .links ul li:hover ul{
+  top: 0;
+}
+@media screen and (max-width: 400px){
+     /* ******************* */
+     /* navigation & footer */
+     /* ******************* */
+    .wrapper-nav nav{
+      padding: 0 10px;
+    }
+    .content-nav {
+      font-size: 27px;
+    }
+    .wrapper-nav .search-box{
+      max-width: calc(100% - 70px);
+    }
+    .wrapper-nav .search-box .go-icon{
+      width: 30px;
+      right: 0;
+    }
+    .wrapper-nav .search-box input{
+      padding-right: 30px;
+    }
+  }
+
+
+  @media screen and (max-width: 800px) {
+     /* ******************* */
+     /* navigation & footer */
+     /* ******************* */
+    .center-box {
+    order: 1;
+    }
+    .social {
+    margin-bottom: 0;
+    }
+    footer {
+    position: relative;
+    bottom: 0px;
+    }
+    .footer {
+    flex-wrap: wrap;
+    flex-direction: column;
+    }
+    .left-box, .center-box, .right-box {
+    margin: 5px 0;
+    }
+    .credit {
+    display: none;
+    }
+    .center-box > .content-footer {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    }
+    .payment p {
+    margin-top:1rem;
+    }  
+  }
+
+  @media screen and (max-width: 1250px){
+    /* ******************* */
+    /* navigation & footer */
+    /* ******************* */
+   .wrapper-nav nav{
+     max-width: 100%;
+     padding: 0 20px;
+   }
+   nav .content-nav .links{
+     margin-left: 30px;
+   }
+   .content-nav .links li a{
+     padding: 8px 13px;
+   }
+   .wrapper-nav .search-box{
+     max-width: calc(100% - 100px);
+   }
+   .wrapper-nav .search-box input{
+     padding: 0 100px 0 15px;
+   }
+ }
+
+ @media screen and (max-width: 1000px) {
+    /* ******************* */
+    /* navigation & footer */
+    /* ******************* */
+    .wrapper-nav .menu-icon{
+      display: block;
+    }
+    .wrapper-nav #show-menu:checked ~ .menu-icon i::before{
+      content: "\f00d";
+    }
+    nav .content-nav .links{
+      display: block;
+      position: fixed;
+      background: #E3F0D4;
+      height: 100%;
+      width: 100%;
+      top: 40px;
+      left: -100%;
+      margin-left: 0;
+      max-width: 350px;
+      overflow-y: auto;
+      padding-bottom: 100px;
+      transition: all 0.3s ease;
+    }
+    nav #show-menu:checked ~ .content-nav .links{
+      left: 0%;
+    }
+    .content-nav .links li{
+      margin: 15px 20px;
+    }
+    .content-nav .links li a,
+    .content-nav .links li label{
+      line-height: 40px;
+      font-size: 20px;
+      display: block;
+      padding: 8px 18px;
+      cursor: pointer;
+    }
+    .content-nav .links li a.desktop-link{
+      display: none;
+    }
+  
+    /* dropdown responsive code start */
+    .content-nav .links ul,
+    .content-nav .links ul ul{
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      background: none;
+      max-height: 0px;
+      overflow: hidden;
+    }
+    .content-nav .links #show-maaltijdboxen:checked ~ ul,
+    .content-nav .links #show-hoewerkthet:checked ~ ul,
+    .content-nav .links #show-account:checked ~ ul,
+    .content-nav .links #show-over:checked ~ ul{
+      max-height: 100vh;
+    }
+    .content-nav .links ul li{
+      margin: 7px 20px;
+    }
+    .content-nav .links ul li a{
+      font-size: 18px;
+      line-height: 30px;
+      border-radius: 5px;
+    }
+  }
+/* einde media */ 
+
+/* ******************* */
+/*         footer      */
+/* ******************* */
+footer {
+    position: relative;
+    height: auto;
+    width: 100%;
+    background: #E3F0D4;
+  }
+  footer .footer-bottom {
+    height: 1.8rem; 
+    text-align: center;
+    padding: 0.5rem 0 0.5rem 0;
+    background-color: #96c959;
+  }
+  .footer {
+    display: flex;
+  }
+  .footer, .footer > * {
+    padding: 10px 20px;
+}
+    .footer > * {
+    flex-basis: 50%;
+}
+  .fa-facebook {
+    color: #3B5998;
+    transition: transform .2s;
+    margin-right: 2rem;
+  }
+  .fa-pinterest {
+    color: #C8323C;
+    transition: transform .2s;
+  }
+  .content-footer ul {
+    padding-left: 0;
+  }
+  .content-footer li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+  }
+  .content-footer li a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+  }
+  .content-footer li {
+    list-style: none;
+    line-height: 1.6em;
+  }
+  .left-box h2, .center-box h2, .right-box h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .left-box, .center-box, .right-box, .content-footer {
+    margin: 20px 0 0 0;
+    position: relative;
+  }
+  .left-box > .content-footer {
+    flex-direction: column;
+    align-content: flex-start;
+    padding-top: 0.2rem;
+    text-align: left;
+  }
+  .center-box > .content-footer {
+    flex-direction: column;
+    align-content: flex-start;
+  }
+    .content-footer:before {
+    position: absolute;
+    content:'';
+    top: -10px;
+    height: 3px;
+    width: 100%;
+    background: #E3F0D4;
+  }
+  .content-footer:after {
+    position: absolute;
+    content:'';
+    top: -10px;
+    height: 3px;
+    width: 15%;
+    background: #96c959;
+  }
+  .left-box > .content-footer .fas {
+    font-size: 1rem;
+    background: #96c959;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+  }
+  .phone, .email {
+    margin-top: 5px;
+  }
+  .email {
+    margin-bottom: 5px;
+  }
+  .phone a, .email a {
+      color: black;
+  } 
+  .phone a:hover, .email a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+    }
+ .social {
+    margin-top: 20px;
+    text-align: left;
+  }
+  .social a span {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 50px;
+    border-radius: 5px;
+    transition: .3s;
+  }
+  .social a span:hover {
+    -ms-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95); 
+    transition: transform .2s;
+  }
+  .fa-cc-mastercard {
+    background: -webkit-linear-gradient(180deg, #FF5F00 50%, #EB001B  33%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 35px;
+}
+.fa-cc-visa {
+    color: #1a1f71;
+    font-size: 35px;
+}
+.fa-ideal {
+    color:#CC0066;
+    font-size: 35px;
+}
+.fa-cc-paypal {
+    color: rgb(0 69 124);
+    font-size: 35px;
+}
+.payment {
+  bottom: 0;
+  margin: 0;
+  text-align: left;
+}
+  .right-box form input {
+    width: 100%;
+    max-width: 450px;
+    font-size: 1.0625rem;
+    background:#fff;
+    padding-left: 10px;
+    margin-top: 1rem;
+    height: 35px;
+    border-radius: 1rem;
+    border: none;
+    
+  }
+  .right-box form input:focus {
+    border: 1px solid #aacf80;
+    outline: none;
+  }
+  .right-box form input::placeholder {
+    color: black;
+  }
+
+  .right form .text-footer {
+    font-size: 1.0625rem;
+    margin-bottom: 2px;
+  }
+  .footer-btn {
+    margin-top: 10px;
+  }
+  .footer-btn button {
+    height: 40px;
+    width: 100%;
+    max-width: 150px;
+    border: 2px solid black;
+    border-radius: 10px;
+    outline: none;
+    text-transform: uppercase;
+    background: #E4CACA;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 2px 0px;
+  }
+  .footer-btn button:hover {
+    box-shadow: none;
+    background-color: #902656;
+  }
+  .left-box h3, .center-box h3, .right-box h3 {
+    font-size: 1rem;
+    opacity: 0.7;
+    font-family: 'Roboto';
+  }
+  .payment p {
+    font-size: 1rem;
+    margin-top: 5.5rem;
+    text-decoration: underline;
+  }
+
+/********************/
+/* custom variables */
+/********************/
+:root { /* some default ribbon colors */
+    --even-bg-ribbon-color: Ivory;
+    --odd-bg-ribbon-color : Gainsboro;
+}
+
+/*************************************/
+/* uitzonderingen op algemene regels */
+/*************************************/
+/*
+    styling algemeen
+    ----------------
+
+    Alleen algemene thematische eye-candy die voor
+    alle pagina's en alle thema's gelden. 
+
+    VOORNAMELIJK alles wat met breedte/hoogte/padding/margin te maken heeft.
+    Misschien wat standaard kleuren of instelling met custom variables die
+    altijd gelden.
+*/
+/********************/
+/* styling algemeen */
+/********************/
+section:nth-of-type(even) { background-color: var(--even-bg-color) }
+section:nth-of-type(odd)  { background-color: var(--odd-bg-color)  }
+
+h1, h2, h3,
+h4, h5, h6              { padding-bottom: 0.5em }
+
+.ct-header              { padding: 1rem }
+.ct-footer              { padding: 2.5rem 0 0 0 }
+.button                 { width: 8.3em; padding: 1em; cursor: pointer }
+
+.text-list>*            { width: auto; padding: 1.5rem;}
+
+[class^="container"]    { padding: 3rem 0 }
+[class^="content"]      { /* dummy */ }
+.content                { /* dummy */ }
+
+.content-block          { /* dummy */ }
+.content-block figure   { padding-top: 1.5rem }
+.content-block img      { max-width: 4.375rem; margin: 0 auto }
+.content-block.textlist { /* dummy */ }
+.fa-quote-left { padding: 1.5rem 0 0.5rem 0; }
+.fa-clock, .fa-check-circle, .fa-trash-alt, .fa-leaf { padding: 1rem 1rem; }
+
+/* hero */
+.container-hero         { min-height: 50vh }
+.container-hero .ct-header { padding-top: 5rem; }
+
+/* info */
+.container-info         { /* dummy */ }
+
+/* review */
+.container-review       { /* dummy */ }
+.container-review .content-block .row-img   { min-width: 8.875rem; }
+.container-review .content-block            { width: auto; flex-basis: 15rem; padding: 0.5rem 1rem; }
+
+/* klanten */
+.container-klanten                          { min-height: 40vh }
+.container-klanten .content-block           { min-height: 30vh; justify-content: space-between; flex-basis: 25vw; min-width: 15rem }
+.container-klanten .row-img  { min-width: 9.375rem; width: auto; mix-blend-mode: multiply }
+
+.container-klanten .row-head,
+.container-klanten .row-text { flex-grow: 1; padding: 1rem 1rem; }
+.container-klanten > .row-head { max-height: fit-content;}
+
+
+/* list */
+.container-list                 { padding: 0; }
+.container-list .content-img    { height: 50vh; width: auto;  }
+.container-list .content-block  { flex:1; min-width: 12rem; }
+
+/* recepten */
+.container-recepten .grid-item { flex: 1;}
+.container-recepten .row-img {  max-width: 16rem; margin: 0 auto; }
+
+/* founder */
+.container-founder { padding: 0; }
+.container-founder .content-img { height: 50vh; width: auto; }
+.container-founder .content-block { flex: 1; min-width: 12rem;}
+
+/* bestel */
+.container-bestel       { min-height: 50vh; }
+.container-bestel .ct-header { max-width: 40vw;}
+
+/*
+    styling specifiek
+    -----------------
+
+    Hieronder alleen kleuren, font settings, achtergronden
+    en alles wat met specifieke thematische eye-candy te maken heeft. 
+
+    NIKS wat met breedte/hoogte/padding/margin te maken heeft. 
+
+    Reden: de inhoud van de onderstaande rules moet uitwisselbaar zijn
+           zonder dat de responsiveness en de algemene structuur
+           van je pagina veranderd. Op deze wijze kun je eenvoudig
+           verschillende thema's invoeren.
+
+    Uiteindelijk eventueel naar 'styles.css' verplaatsen 
+*/
+/*********************/
+/* styling specifiek */
+/*********************/
+/********************/
+/* custom variables */
+/********************/
+:root {
+    --green : rgb(142,200,64);
+    --purple: rgb(144,38,86);
+
+    --odd-bg-color: hsla(0,32.5%,84.3%,1);
+    --even-bg-color : hsla(0,33.3%,91.8%,1);
+}
+
+body { font-family: 'Roboto' }
+
+h1, h2, h3,
+h4, h5, h6 {
+    font-family: 'Righteous';
+    letter-spacing: 0.05em;
+}
+
+.ct-header { font-size: 1.5rem }
+.ct-footer { /* dummy */ }
+
+.button {
+    font-size: 1.5em;
+    background-color: #E4CACA; color: Black;
+    border: 3px solid black; border-radius: 1.25rem;
+}
+.button:hover { background-color: #902656 }
+
+.action { 
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,.2),
+                0px 1px 1px 0px  rgba(0,0,0,.14)
+                0px 1px 3px 0px  rgba(0,0,0,.12);
+}
+.action:hover {
+    transform: scale(1.02);
+    /* GMC elevation 3dp */
+    box-shadow: 0px 3px 3px -2px rgba(0,0,0,.20),
+                0px 3px 4px  0px rgba(0,0,0,.14),
+                0px 1px 8px  0px rgba(0,0,0,.12);
+}
+.action:active { transform: scale(1); transition: all 0s ease-in-out }
+
+/* hero */
+.container-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),
+                      url("images/pexels-hero-home.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container-hero .ct-header { color: white; text-shadow: 1px 2px 1px black; }
+.container-hero h1      { font-size: 2.5rem }
+.container-hero h4      { font-size: 1.2rem; font-family: 'Roboto' }
+
+/* info */
+.container-info                 { /* dummy */ }
+.figures figcaption             { font-weight: 600; padding-top: 1rem }
+.figures .fa-angle-double-right { font-size: 3.125rem; color: #902656 }
+.text-list h3 { padding: 0; }
+.text-list p { font-weight: 500; font-size: 1.2rem;}
+
+/* review */
+.container-review       { /* dummy */ }
+.container-review .content-block .row-img { 
+    border: 1px solid rgba(0, 0, 0, 0.2); border-radius: 50%;
+}
+
+/* klanten */
+.container-klanten      { /* dummy */ }
+
+/* list */
+.container-list         { /* dummy */ }
+
+/* recepten */
+.container-recepten .row-img { border-radius: 50%;}
+
+/* founder */
+.container-founder      { /* dummy */ }
+
+/* bestel */
+.container-bestel {
+    background-image: url("images/home-bestel-nu-a.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.container-bestel .ct-header { color: black; text-shadow: 1px 2px 1px white; }
+.container-bestel h1      { font-size: 2.5rem }
+.container-bestel h4      { font-size: 1.2rem; font-family: 'Roboto' }
+
+/* none */ 
+@media all and (min-width: 36rem)   {
+
+ }
+/* md 576px   */
+@media all and (max-width: 36rem)   { 
+  /*bestel-nu*/
+  .container-bestel { background-position: 70%; background-attachment:fixed; }
+  .container-bestel .ct-header { max-width: 90vw;}
+ }
+/* md 768px  */
+@media all and (max-width: 48rem)   { 
+  /* algemeen */
+  .button { font-size: 1.2rem; }
+  /* info */
+ .container-info .text-list, .figures { flex-direction: column; }
+ .container-info .content .text-list p { padding: 0; margin: 0 auto;}
+ .content-block figure { padding: 0; }
+ .fa-angle-double-right { transform: rotate(90deg);}
+ .container-info figure figcaption { max-width: 15rem; padding: 0;}
+ .container-info figure i { padding: 0; }
+}
+/* lg 992px  */
+@media all and (max-width: 62rem)   { 
+.container-review .content { flex-direction: column; }
+}
+/* xl 1200px   */
+@media all and (max-width: 75rem)   { 
+  /* info */
+.container-info .content .text-list p { padding: 1rem; } 
+.container-info .content-block img { padding: 0; }
+.figures figcaption { max-width: 6rem; max-height: 3rem;}
+.fa-angle-double-right { padding-bottom: 1rem; }
+
+}
+/* xxl 1400px */
+@media all and (max-width: 87.5rem) { 
+
+ }
+
+</style>
+
 </head>
 
-<body>
-    <div class="wrapper">
+
+<body outlines="1">
         <header>
             <!-- nav -->
             <div class="wrapper-nav">
@@ -30,7 +853,7 @@
                         <div id="logo"><a href="javascript:void(0)"><img src="images/logo-foodfreedom-01.jpg"
                                     alt="foodfreedom logo"></a>
                         </div>
-
+    
                         <ul class="links">
                             <li><a href="javascript:void(0)">Home</a></li>
                             <li>
@@ -43,7 +866,7 @@
                                     <li><a href="javascript:void(0)">Luxe</a></li>
                                 </ul>
                             </li>
-
+    
                             <li>
                                 <a href="javascript:void(0)" class="desktop-link">Hoe werkt het?</a>
                                 <input type="checkbox" id="show-hoewerkthet">
@@ -54,7 +877,7 @@
                                     <li><a href="javascript:void(0)">Koken</a></li>
                                 </ul>
                             </li>
-
+    
                             <li>
                                 <a href="javascript:void(0)" class="desktop-link">Mijn account</a>
                                 <input type="checkbox" id="show-account">
@@ -65,7 +888,7 @@
                                     <li><a href="javascript:void(0)">Mijn bestellingen</a></li>
                                 </ul>
                             </li>
-
+    
                             <li>
                                 <a href="javascript:void(0)" class="desktop-link">Over foodfreedom</a>
                                 <input type="checkbox" id="show-over">
@@ -76,7 +899,7 @@
                                     <li><a href="javascript:void(0)">Reviews</a></li>
                                 </ul>
                             </li>
-
+    
                         </ul>
                     </div>
                     <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
@@ -86,198 +909,224 @@
                     </form>
                 </nav>
             </div>
+            <!-- end nav -->
         </header>
-        <!-- end nav -->
 
         <!-- start content-->
-        <section class="hero">
-            <div class="hero-content">
+        <section class="container-hero">
+            <div class="ct-header">
                 <h1>Gezond, lactosevrij en lekker eten</h1>
-                <h2>Kook lekkere en gezonde gerechten die passen bij jouw leefstyle</h2>
-                <a href="javascript:void(0)" class="bestelhero">BESTEL NU</a>
+                <h4>Kook lekkere en gezonde gerechten die passen bij jouw leefstyle</h4>
+            </div>
+
+            <div class="ct-footer">
+                <a href="javascript:void(0)" class="button action">BESTEL NU</a>
             </div>
         </section>
 
-        <div class="home-arrows-text">
-            <h1>Hoe werkt het?</h1>
-            <h2>Kies je maaltijdbox</h2>
-            <h3>&middot;</h3>
-            <h2>Zoek recepturen</h2>
-            <h3>&middot;</h3>
-            <h2>Kook eenvoudig lekkere maaltijden</h2>
-        </div>
-
-        <div class="home-arrows-wrap">
-            <section class="home-row-arrows">
-                <figure>
-                    <img src="images/food_icon_home_1.png" alt="Een bord met bestek">
-                    <figcaption>1 tot 6
-                        personen</figcaption>
-                </figure>
-                <figure>
-                    <i class="fas fa-angle-double-right"></i>
-                </figure>
-                <figure>
-                    <img src="images/food_icon_home_2.png" alt="eten">
-                    <figcaption>3 tot 5 gerechten per week
-                    </figcaption>
-                </figure>
-                <figure>
-                    <i class="fas fa-angle-double-right"></i>
-                </figure>
-                <figure>
-                    <img src="images/food_icon_home_3.png" alt="maaltijdbox">
-                    <figcaption>Ontvang uw maaltijdbox
-                    </figcaption>
-                </figure>
-                <figure>
-                    <i class="fas fa-angle-double-right"></i>
-                </figure>
-                <figure>
-                    <img src="images/food_icon_home_4.png" alt="recepturen">
-                    <figcaption>Zoek recepturen</figcaption>
-                </figure>
-                <figure>
-                    <i class="fas fa-angle-double-right"></i>
-                </figure>
-                <figure>
-                    <img src="images/food_icon_home_5.png" alt="chef">
-                    <figcaption>Kook als een echte chef!</figcaption>
-                </figure>
-            </section>
-        </div>
-
-        <div class="review-bar">
-            <div class="fake-rating">
-                <h1>Onze klanten beoordelen onze service met een 8.1</h1>
-                <p>"Wat fijn dat er eindelijk lactosevrije maaltijdboxen beschikbaar zijn! De prijs/kwaliteit is erg
-                    goed."</p>
-                <img src="images/fake_rating.png" alt="Fake rating">
-
-            </div>
-            <div class="review-gezond">
-                <h1>Review gezond.nl</h1>
-                <p>
-                    "Wat fijn dat er eindelijk lactosevrije maaltijdboxen beschikbaar zijn! De prijs/kwaliteit
-                    is
-                    erg goed."</p> <img src="images/gezond-nl.jpg" alt="Gezonde review 8.2">
-            </div>
-        </div>
-
-
-
-        <div class="klanten-review-wrapper">
-            <div class="review-left">
-                <i class="fas fa-quote-left quote_marks"></i>
-                <p class="klant-review-naam">Ben zegt</p>
-                <p class="review">Ik ben erg blij met de service en kan niet meer zonder, de producten zijn
-                    van erg
-                    goede kwaliteit en omdat je minder naar de supermarkt moet eet ik gezonder.</p>
-                <img src="images/4_star.png" alt="4 sterren review">
+        <section class="container-info">
+            <div class="ct-header">
+                <h1>Hoe werkt het?</h1>
             </div>
 
-            <div class="review-right">
-                <i class="fas fa-quote-left quote_marks"></i>
-                <p class="klant-review-naam">Annika zegt</p>
-                <p class="review">Omdat wij een druk gezin zijn is het heel fijn niet meer na te hoeven
-                    denken over
-                    de
-                    boodschappen. Ik krijg wekelijks een mail met recepturen en wij eten inmiddels vaak
-                    verassend
-                    goede
-                    gerechten die wij nog nooit gegeten hadden.</p>
-                <img src="images/4.5_star.png" alt="4.5 sterren review">
+            <div class="content">
+
+                <div class="content-block text-list">
+                    <p>Kies je maaltijdbox</p>
+                    <h3>&middot;</h3>
+                    <p>Zoek recepturen</p>
+                    <h3>&middot;</h3>
+                    <p>Kook eenvoudig lekkere maaltijden</p>
+                </div>
+
+                <div class="content-block figures">
+                    <figure>
+                        <img src="images/food_icon_home_1.png" alt="Een bord met bestek">
+                        <figcaption>1 tot 6 personen</figcaption>
+                    </figure>
+                    <figure>
+                        <i class="fas fa-angle-double-right"></i>
+                    </figure>
+                    <figure>
+                        <img src="images/food_icon_home_2.png" alt="eten">
+                        <figcaption>3 tot 5 gerechten per week</figcaption>
+                    </figure>
+                    <figure>
+                        <i class="fas fa-angle-double-right"></i>
+                    </figure>
+                    <figure>
+                        <img src="images/food_icon_home_3.png" alt="maaltijdbox">
+                        <figcaption>Ontvang uw maaltijdbox</figcaption>
+                    </figure>
+                    <figure>
+                        <i class="fas fa-angle-double-right"></i>
+                    </figure>
+                    <figure>
+                        <img src="images/food_icon_home_4.png" alt="recepturen">
+                        <figcaption>Zoek recepturen</figcaption>
+                    </figure>
+                    <figure>
+                        <i class="fas fa-angle-double-right"></i>
+                    </figure>
+                    <figure>
+                        <img src="images/food_icon_home_5.png" alt="chef">
+                        <figcaption>Kook als een echte chef!</figcaption>
+                    </figure>
+                </div>
+
             </div>
-        </div>
+        </section>
 
-        <div class="home-img-list-wrap">
-            <div class="fresh-food-background"></div>
+        <section class="container-review">
+            <div class="content">
 
-            <ul class="fresh-food-list">
-                <li><img src="images/clock.png" class="image-food-list" alt="clock">
-                    <h2 class="fresh-food-list-kop">Bespaar tijd</h2>
-                    <h3 class="fresh-food-list-text">Minder bezoekjes aan de supermarkt, je eten wordt thuisbezorgd
-                        en
-                        laat
-                        je verrassen.</h3>
-                </li>
+                <div class="content-block">
+                    <h1 class="row-head">Onze klanten beoordelen onze service met een 8.1</h1>
+                </div>
 
-                <li><img src="images/kwaliteit.png" class="image-food-list" alt="Kwaliteit">
-                    <h2 class="fresh-food-list-kop">Kwaliteit</h2>
-                    <h3 class="fresh-food-list-text">Wij kiezen alleen voor de beste producten om onze maaltijdboxen
-                        mee
-                        samen te stellen.</h3>
-                </li>
+                <div class="content-block">
+                    <img class="row-img action" shaded="anim" src="images/fake_rating.png" alt="Fake rating">
+                </div>
 
-                <li><img src="images/prullenbak.jpg" class="image-food-list" alt="Prullenbak">
-                    <h2 class="fresh-food-list-kop">Minder waste</h2>
-                    <h3 class="fresh-food-list-text">Wij houden niet van weggooien!</h3>
-                </li>
+                <div class="content-block">
+                    <img class="row-img action" shaded="anim" src="images/gezond-nl.jpg" alt="Gezonde review 8.2">
+                </div>
 
-                <li><img src="images/blaadje.jpg" class="image-food-list" alt="Blaadje">
-                    <h2 class="fresh-food-list-kop">Jouw maaltijdbox</h2>
-                    <h3 class="fresh-food-list-text">Je kunt jouw maaltijdbox abonnement <strong>iedere week
-                            aanpassen,
-                            pauzeren of opzeggen.</strong></h3>
-                </li>
-            </ul>
-        </div>
-        <h1 class="home-grid-kop">Wat eet u vanavond?</h1>
-        <div class="home-grid-container">
+                <div class="content-block">
+                    <h1  class="row-head">Review gezond.nl</h1>
+                    <p  class="row-text">"Wat fijn dat er eindelijk lactosevrije maaltijdboxen beschikbaar zijn! De prijs/kwaliteit is erg
+                        goed."</p>
+                </div>
+            </div>
+        </section>
 
-            <div class="grid-item">
-                <a href="javascript:void(0)">
-                    <img src="images/recepten_3.jpg" class="grid-item-image-b">
-                    <h1 class="main-grid-item">Maaltijd salade</h1>
-                    <h2 class="text-grid-item">met rode kool</h2>
-                </a>
+        <section class="container-klanten">
+            <div class="content">
+
+                <div class="content-block flex-column">
+                    <i class="fas fa-quote-left"></i>
+                    <div class="row-head">Ben zegt</div>
+                    <div class="row-text">Ik ben erg blij met de service en kan niet meer zonder, de producten
+                       zijn van erg goede kwaliteit en omdat je minder naar de supermarkt moet eet ik gezonder.</div>
+                    <img class="row-img" src="images/4_star.png" alt="4 sterren review">
+                </div>
+
+                <div class="content-block flex-column">
+                    <i class="fas fa-quote-left"></i>
+                    <div class="row-head">Annika zegt</div>
+                    <div class="row-text">Omdat wij een druk gezin zijn is het heel fijn niet meer na te hoeven
+                       denken over de boodschappen. Ik krijg wekelijks een mail met recepturen en wij eten
+                       inmiddels vaak verassend goede gerechten die wij nog nooit gegeten hadden.</div>
+                    <img class="row-img" src="images/4.5_star.png" alt="4.5 sterren review">
+                </div>
+
+            </div>
+        </section>
+
+        <section class="container-list">
+          <div class="content">
+
+              <img class="content-img" src="images/img-list.jpg" alt="Tafel met eten">
+
+              <ul class="content-block list flex-column">
+                    <li>
+                        <i class="far fa-clock"></i>
+                        <h3>Bespaar tijd</h3>
+                        <p>Minder bezoekjes aan de supermarkt, je eten wordt
+                            thuisbezorgd en laat je verrassen.</p>
+                    </li>
+                    <li>
+                        <i class="far fa-check-circle"></i>
+                        <h3>Kwaliteit</h3>
+                        <p>Wij kiezen alleen voor de beste producten om onze
+                            maaltijdboxen mee samen te stellen.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-trash-alt"></i>
+                        <h3>Minder waste</h3>
+                        <p>Wij houden niet van weggooien!</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-leaf"></i>
+                        <h3>Jouw maaltijdbox</h3>
+                        <p>Je kunt jouw maaltijdbox abonnement<strong>
+                            iedere week aanpassen, pauzeren of opzeggen.</strong></p>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+
+        <section class="container-recepten">
+            <div class="ct-header">
+                <h1>Wat eet u vanavond?</h1>
             </div>
 
-            <div class="grid-item">
-                <a href="javascript:void(0)">
-                    <img src="images/recepten_2.jpg" class="grid-item-image-c">
-                    <h1 class="main-grid-item">Kerrie bloemkool</h1>
-                    <h2 class="text-grid-item">met broccoli op een bedje van quinoa</h2>
-                </a>
+            <div class="content">
+                <div class="content-block">
+                    <div class="grid-item">
+                        <a href="javascript:void(0)">
+                            <img class="row-img" src="images/recepten_3.jpg">
+                            <h1 class="row-head">Maaltijd salade</h1>
+                            <h2 class="row-text">met rode kool</h2>
+                        </a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="javascript:void(0)">
+                            <img class="row-img" src="images/recepten_2.jpg">
+                            <h1 class="row-head">Kerrie bloemkool</h1>
+                            <h2 class="row-text">met broccoli op een bedje van quinoa</h2>
+                        </a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="javascript:void(0)">
+                            <img class="row-img" src="images/recepten_6.jpg">
+                            <h1 class="row-head">Gebraden eendenborst</h1>
+                            <h2 class="row-text">met aardappel mousse en een vijgenjus</h2>
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <div class="grid-item">
-                <a href="javascript:void(0)">
-                    <img src="images/recepten_6.jpg" class="grid-item-image-d">
-                    <h1 class="main-grid-item">Gebraden eendenborst</h1>
-                    <h2 class="text-grid-item">met aardappel mousse en een vijgenjus</h2>
-                </a>
+            <div class="ct-footer">
+                <a href="javascript:void(0)" class="button action">RECEPTUREN</a>
             </div>
-        </div>
-        <div class="recepturen-btn-home">
-            <h2><a href="javascript:void(0)">Bekijk recepturen</a></h2>
-        </div>
+        </section>
 
-        <!-- Home gezin -->
-        <div class="home-gezin">
+        <section class="container-founder">
+            <div class="content">
 
-            <div class="home-gezin-left">
-                <i class="fas fa-quote-left quote_marks"></i>
-                <h1>'Founder-chef Tara van Veen'</h1>
-                <p>"Lekker en gezond eten is niet altijd even makkelijk, met een lactose allergie erbij word dit soms
-                    helemaal lastig. Wij helpen jou met gezonde recepten en verse ingrediënten. Eet je vegetarisch,
-                    vlees,
-                    vis of wil je simpelweg gemakkelijk gevarieerd eten? Dit kan allemaal, er is een ruime keuze. Chef
-                    Tara bedenkt wekelijks nieuwe gerechten, passend in het seizoen en met veel keuze voor
-                    iedereen."
-                </p>
+                <div class="content-block">
+                    <i class="fas fa-quote-left"></i>
+                    <h1 class="row-head">Founder-chef Tara van Veen</h1>
+                    <p class="row-text">"Lekker en gezond eten is niet altijd even makkelijk, met een lactose allergie
+                        erbij
+                        word dit soms
+                        helemaal lastig. Wij helpen jou met gezonde recepten en verse ingrediënten. Eet je vegetarisch,
+                        vlees,
+                        vis of wil je simpelweg gemakkelijk gevarieerd eten? Dit kan allemaal, er is een ruime keuze.
+                        Chef
+                        Tara bedenkt wekelijks nieuwe gerechten, passend in het seizoen en met veel keuze voor
+                        iedereen."
+                    </p>
+                </div>
+
+                    <img class="content-img" src="images/foto-gezin.jpg" alt="Familie">
+
             </div>
-            <div class="home-gezin-right">
-            </div>
-        </div>
+        </section>
+
         <!-- home bestel nu -->
-        <section class="hero-bestel-nu-bottom">
-            <div class="bestel-nu-content">
+        <section class="container-bestel">
+            <div class="ct-header">
                 <h1>Aan de slag</h1>
-                <h2>Met foodfreedom eet je vers en gevarieerd. Wij bezorgen <br>de ingrediënten en jij kiest wat je
+                <h4>Met foodfreedom eet je vers en gevarieerd. Wij bezorgen de ingrediënten en jij kiest wat je
                     kookt!
-                </h2>
-                <a href="javascript:void(0)" class="bestel-nu-bottom">BESTEL NU</a>
+                </h4>
+            </div>
+
+            <div class="ct-footer">
+                <a href="javascript:void(0)" class="button action">BESTEL NU</a>
             </div>
         </section>
 
@@ -314,7 +1163,7 @@
                             <a href="javascript:void(0)"><span class="fab fa-facebook"></span></a>
                             <a href="javascript:void(0)"><span class="fab fa-pinterest"></span></a>
                         </div>
-
+    
                         <div class="payment">
                             <p>U kunt betalen met</p>
                             <i class="fab fa-cc-mastercard"></i>
@@ -346,9 +1195,5 @@
                 <span class="far fa-copyright"></span><span> 2021 Alle rechten voorbehouden.</span>
             </div>
         </footer>
-
-    </div>
 </body>
-
-
 </html>
