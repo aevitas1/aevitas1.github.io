@@ -810,20 +810,6 @@ h4, h5, h6 {
 @media all and (max-width: 48rem)   { 
   /* algemeen */
   .button { font-size: 1.2rem; }
-  /* hero ios mobile fix */
-  .container-hero {
-  height: 50vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), transparent url("images/pexels-hero-home.png") no-repeat scroll 70% 50%;
-}
-.container-bestel:before {
-  background-image: url("images/home-bestel-nu-a.png");
-background-size: cover;
-position: relative;
-top: 0;
-left: 0;
-width: 100%;
-min-height: 50vh;
-}
   /* info */
  .container-info .text-list, .figures { flex-direction: column; }
  .container-info .content .text-list p { padding: 0; margin: 0 auto;}
@@ -835,6 +821,17 @@ min-height: 50vh;
 /* lg 992px  */
 @media all and (max-width: 62rem)   { 
 .container-review .content { flex-direction: column; }
+}
+/* iOS / mobile / tablet fix*/
+@media all and (max-width: 64rem) {
+    /* hero ios mobile fix */
+    .container-hero {
+  min-height: 50vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), transparent url("images/pexels-hero-home.png") no-repeat scroll 70% 50%;
+}
+.container-bestel {
+  min-height: 50vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), transparent url("images/home-bestel-nu-a.png") no-repeat scroll 70% 50%;}
 }
 /* xl 1200px   */
 @media all and (max-width: 75rem)   { 
