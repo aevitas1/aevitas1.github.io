@@ -837,6 +837,7 @@ h4, h5, h6 {
   .button { font-size: 1.2rem; }
   /* info */
  .container-info .text-list, .figures { flex-direction: column; }
+ .fig-hide { display: none; }
  .container-info .content .text-list p { padding: 0; margin: 0 auto;}
  .content-block figure { padding: 0; }
  .fa-angle-double-right { transform: rotate(90deg);}
@@ -846,17 +847,21 @@ h4, h5, h6 {
  .container-list .content { flex-direction: column-reverse; }
  .container-list .content-img { transform: rotate(90deg); max-height: 100vw; }
  .container-list .content .list { padding: 2rem 15vw 0rem 15vw; }
+ /* review */
+ .container-review .content { flex-direction: column; flex-flow: nowrap; }
+ .container-review .content .content-block { padding: .3rem 8rem; }
 }
 /* ********* */
 /* lg 992px  */
 /* ********* */
 @media all and (max-width: 62rem)   { 
   /* review */
-.container-review .content { flex-basis: 25rem; }
+.container-review .content { flex-basis: auto; flex-flow:wrap; }
+.container-review .content-block .row-head { width: 50vw; }
  /* founder */
  .container-founder .content { flex-direction: column; }
  .container-founder .content .content-block { max-width: 40rem; padding: 0 10vw; text-align: left; }
- .container-founder .content-img {max-height: 35vh;}
+ .container-founder .content-img { max-width: 100vh; }
 }
 
 /* *********** */
@@ -903,7 +908,7 @@ h4, h5, h6 {
 </head>
 
 
-<body outlines="0">
+<body outlines="1">
         <header>
             <!-- nav -->
             <div class="wrapper-nav">
@@ -1023,11 +1028,11 @@ h4, h5, h6 {
                     <figure>
                         <i class="fas fa-angle-double-right"></i>
                     </figure>
-                    <figure>
+                    <figure class="fig-hide">
                         <img src="images/food_icon_home_4.png" alt="recepturen">
                         <figcaption>Zoek recepturen</figcaption>
                     </figure>
-                    <figure>
+                    <figure class="fig-hide">
                         <i class="fas fa-angle-double-right"></i>
                     </figure>
                     <figure>
