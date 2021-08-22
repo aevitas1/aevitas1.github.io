@@ -987,7 +987,7 @@
     }
 
     .container-recepten .row-img {
-      max-width: 16rem;
+      min-width: 16rem;
       margin: 0 auto;
     }
 
@@ -1270,7 +1270,9 @@
 /* bestel ios mobile/tab fix */
 .container-bestel {
   min-height: 50vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), transparent url("images/home-bestel-nu-a.png") no-repeat scroll 70% 50%;
+  background: transparent url("images/home-bestel-nu-a.png") no-repeat scroll 70% 20%;
+  background-size: cover;
+  background-attachment: fixed;
 }
 }
 
@@ -1374,13 +1376,6 @@
     /* ********** */
 
     @media all and (max-width: 36rem) {
-
-      /*bestel-nu*/
-      .container-bestel {
-        background-position: 70%;
-        background-attachment: fixed;
-      }
-
       .container-bestel .ct-header {
         max-width: 90vw;
       }
@@ -1389,7 +1384,7 @@
       .container-review .content .content-block {
         padding: 0 0rem;
       }
-      
+
       .container-review .row-text { padding: 0 1rem; }
     }
 
@@ -1404,7 +1399,7 @@
 </head>
 
 
-<body outlines="0">
+<body outlines="1">
   <header>
     <!-- nav -->
     <div class="wrapper-nav">
