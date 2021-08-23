@@ -1124,24 +1124,32 @@
       transition: all 0s ease-in-out
     }
       /* tooltips */
-    .tooltip { position: relative; }
-    .tooltip:before { 
-      content: attr(data-text); 
-      position: absolute; 
-      width: max-content;
-      padding: .5rem;
-      background-color:rgba(0, 0, 0, 0.8);
-      color: #fff;
-      text-align: center;
-      bottom: 100%;
-      transform: translateX(-50%);
-      opacity: 0;
-    }
-    .tooltip:hover:before,
-    .tooltip:focus:before,
-    .tooltip:active:before {
-      opacity: 1;
-    }
+    .tooltip { position: relative; cursor: pointer; display: inline-flex;}
+    .tooltip::before{
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  background-color: black;
+  color:white;
+  padding: .25em .5em;
+  white-space: nowrap;
+  font-size: .9em;
+}
+
+    .tooltip > * { pointer-events: none; }
+    .tooltip:focus::before,
+    .tooltip:hover::before{
+      animation: tooltipAnim 3s ease;
+  }
+
+    @keyframes tooltipAnim{
+    0% { transform: translateX(-50%) scale(0) }
+    10%{ transform: translateX(-50%) scale(1) }
+    90%{ transform: translateX(-50%) scale(1) }
+    100%{ transform: translateX(-50%) scale(0) }
+  }
 
     /* hero */
     .container-hero {
@@ -1654,7 +1662,7 @@
             <div class="row-head">Maaltijd salade</div>
             <div class="row-text">met spinazie</div>
             <div class="allergenen-img">
-            <div class="tooltip" data-text="Bevat zwaveldioxide">
+            <div class="tooltip" data-tooltip="Bevat zwaveldioxide">
             <img src="images/allergenen/zwavel.png" alt="bevat waveldioxide">
           </div>            
           </div>
@@ -1670,10 +1678,10 @@
             <div class="row-head">Kerrie bloemkool</div>
             <div class="row-text">met broccoli en quinoa</div>
           <div class="allergenen-img">
-            <div class="tooltip" data-text="Bevat gluten">
+            <div class="tooltip" data-tooltip="Bevat gluten">
               <img src="images/allergenen/gluten.png" alt="Bevat gluten">
             </div>
-            <div class="tooltip" data-text="Bevat ei">
+            <div class="tooltip" data-tooltip="Bevat ei">
               <img src="images/allergenen/ei.png" alt="Bevat ei">
             </div>
           </div>
@@ -1684,10 +1692,10 @@
             <div class="row-head">Gebraden eendenborst</div>
             <div class="row-text">met aardappel en vijgenjus</div>
           <div class="allergenen-img">
-            <div class="tooltip" data-text="Bevat melk">
+            <div class="tooltip" data-tooltip="Bevat melk">
               <img src="images/allergenen/melk.png" alt="Bevat melk">
             </div>
-            <div class="tooltip" data-text="Bevat sporen van noten">
+            <div class="tooltip" data-tooltip="Bevat sporen van noten">
               <img src="images/allergenen/noten.png" alt="Bevat sporen van noten">
             </div>
           </div>
@@ -1763,68 +1771,29 @@
 
   <!-- end content -->
   <footer>
-    <div class="footer">
-      <div class="left-box">
-        <h2>Contact &amp; FAQ</h2>
-        <h3>Heb je vragen? Neem contact op!</h3>
-        <div class="content-footer">
-          <ul>
+    <div class="container-footer">
+
+      <div class="content">
+        <div class="content-block">
+          <div class="ct-header">
+            <h1>Contact &amp; FAQ</h1>
+            <h2>Heb je vragen? Neem contact op!</h2>
+          </div>
+          <ul class="list">
             <li><a href="javascript:void(0)">Veelgestelde vragen</a></li>
             <li><a href="javascript:void(0)">Vacatures</a></li>
             <li><a href="javascript:void(0)">Algemene voorwaarden</a></li>
             <li><a href="javascript:void(0)">Privacy beleid</a></li>
           </ul>
-          <div class="phone">
-            <span class="fas fa-phone-alt"></span>
-            <a href="tel:07212234"><span class="text-footer">072 122 34</span></a>
-          </div>
-          <div class="email">
-            <span class="fas fa-envelope"></span>
-            <a href="mailto:post@foodfreedom.nl?subject=Ik heb een vraag"><span
-                class="text-footer">post@foodfreedom.nl</span></a>
-          </div>
         </div>
-      </div>
-      <div class="center-box">
-        <h2>Social media</h2>
-        <h3>Volg ons voor meer nieuws</h3>
-        <div class="content-footer">
-          <div class="social">
-            <a href="javascript:void(0)"><span class="fab fa-facebook"></span></a>
-            <a href="javascript:void(0)"><span class="fab fa-pinterest"></span></a>
-          </div>
+        <div class="content-block"><span class="fas fa-phone-alt"></span>
+        <a href="tel:07212234"><span class="text-footer">072 122 34</span></a>
+        <span class="fas fa-envelope"></span>
+        <a href="mailto:post@foodfreedom.nl?subject=Ik heb een vraag"><span
+                class="text-footer">post@foodfreedom.nl</span></a></div>
 
-          <div class="payment">
-            <p>U kunt betalen met</p>
-            <i class="fab fa-cc-mastercard"></i>
-            <i class="fab fa-cc-visa"></i>
-            <i class="fab fa-ideal"></i>
-            <i class="fab fa-cc-paypal"></i>
-          </div>
-        </div>
-      </div>
-      <div class="right-box">
-        <h2>Nieuwsbrief</h2>
-        <h3>Ontvang wekelijks recepten</h3>
-        <div class="content-footer">
-          <form action="javascript:void(0)">
-            <div class="email">
-              <div class="text-footer">
-              </div>
-              <input type="email" placeholder="Jouw e-mail adres" required>
-            </div>
-            <div class="footer-btn">
-              <button type="submit">Verstuur</button>
-            </div>
-          </form>
-        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span class="credit">foodfreedom | Designed by Stephan vd M</span>
-      <span class="far fa-copyright"></span><span> 2021 Alle rechten voorbehouden.</span>
-    </div>
-  </footer>
 </body>
 
 </html>
