@@ -550,12 +550,14 @@
     .button {
       width: 8.3em;
       padding: 1em;
-      cursor: pointer
+      cursor: pointer;
+      text-align: center;
     }
     .btn-sm {
       width: 8.3em;
       padding: .5em;
       cursor: pointer;
+      text-align: center;
     }
 
     .text-list>* {
@@ -734,9 +736,10 @@
 
     /* footer */
     /* footer height */
+
     .container-footer .content > .content-block { min-height: 35vh; }
     .container-footer { padding: 0 .5rem; }
-
+  
     /* content left */
     .container-footer span,
     .container-footer .content-block, 
@@ -750,11 +753,13 @@
     .container-footer .content-block .content-block p,
     .container-footer .content-block .content-block { margin: 0; padding: .5rem 1rem; }
 
-    .container-footer .ct-header { padding: 1rem 1rem 0rem 1rem; }
-  
+    .container-footer .ct-header { position: relative; padding: 1rem 1rem 0rem 1rem; }
+    .container-footer .ct-header p {padding-bottom: .7rem; margin: 0; }
 
-    /* all icons to the left  */
-    .container-footer .content-block .content-block span { width: 50%; text-align: left; padding: 0; }
+    /* all items to the left  */
+    .container-footer .content-block .content-block span
+    { width: 50%; text-align: left; padding: 0; }
+    .container-footer .content-block .content-block p { width: 50%; padding-left:0;}
 
     /* reduce padding header */
     .container-footer .ct-header { padding: 1rem 1rem 0rem 1rem; }
@@ -766,6 +771,7 @@
     /* credits */
     .container-footer .credits { padding: 0; max-height: 3rem; border-top: 1px solid rgba(0, 0, 0, 0.3);}
     .container-footer .credits p { padding: 0 10vw; }
+
 
 
 
@@ -1006,6 +1012,22 @@
     .container-footer .credits {
       background-color: #bedc9b; }
 
+    .container-footer .ct-header::before {
+      position: absolute;
+      content: '';
+      height: 4px;
+      bottom:0;
+      width: 100%;
+      background: #E3F0D4;
+    }
+    .container-footer .ct-header::after {
+      position: absolute;
+      content: '';
+      height: 4px;
+      bottom:0;
+      width: 25%;
+      background: #96c959;
+    }
 
 
 
@@ -1520,7 +1542,7 @@
   <!-- end content -->
   <footer>
     <div class="container-footer">
-      <div class="content flex-row flex-nowrap">
+      <div class="content footer flex-row flex-nowrap">
 
         <div class="content-block">
           <div class="ct-header">
@@ -1552,7 +1574,7 @@
             <a href="javascript:void(0)"><span class="fab fa-pinterest"></span></a>
           </div>
           <div class="content-block flex-column">
-            <p>U kunt betalen met</p>
+            <p class="payment">U kunt betalen met</p>
             <span class="payment-icons">
             <i class="fab fa-cc-mastercard"></i>
             <i class="fab fa-cc-visa"></i>
@@ -1569,15 +1591,18 @@
           <div class="content-block email">
             <div class="email-input"><input type="email" placeholder="Jouw e-mail adres" required></div>
 
-            <a href="javascript:void(0)" class="btn-sm action">Verstuur</a>
+            <a href="javascript:void(0)" class="btn-sm action">VERSTUUR</a>
             
           </div>
         </div>
       </div>
 
+      <div class="content copyright">
       <div class="ct-footer credits"><p>foodfreedom | Designed by Stephan vd M <i class="far fa-copyright"></i> 2021 Alle rechten voorbehouden.</p></div>
+      </div>
     </div>
   </footer>
+
 </body>
 
 </html>
