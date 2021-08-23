@@ -1305,6 +1305,16 @@
   background-size: cover;
   background-attachment: fixed;
 }
+/* tooltips */
+.tooltip:hover:before {
+        display: none;
+      }
+      .tooltip {
+       animation-duration: tooltip 2s;
+      -webkit-animation-duration: tooltip 2s;
+      -o-animation-duration: tooltip 2s;
+      -moz-animation-duration: tooltip 2s;
+      }
 }
 
     /* ********* */
@@ -1399,15 +1409,6 @@
       .container-list .content .list {
         padding: 2rem 15vw 0rem 15vw;
       }
-      .tooltip:hover:before {
-        display: none;
-      }
-      .tooltip {
-       animation-duration: 2s;
-      -webkit-animation-duration: 2s;
-      -o-animation-duration: 2s;
-      -moz-animation-duration: 2s;
-      }
       }
 
     
@@ -1440,7 +1441,7 @@
 </head>
 
 
-<body outlines="1">
+<body outlines="0">
   <header>
     <!-- nav -->
     <div class="wrapper-nav">
