@@ -1122,7 +1122,8 @@
       transform: translateX(-50%);
       display: none;
     }
-    .tooltip:hover:before {
+    .tooltip:hover:before,
+    .tooltip:focus:before {
       display: inline-block; 
     }
 
@@ -1395,8 +1396,12 @@
       .container-list .content .list {
         padding: 2rem 15vw 0rem 15vw;
       }
+      .tooltip:hover:before {
+        display: none;
+      }
+      }
 
-    }
+    
 
     /* ********** */
     /* md 576px   */
@@ -1426,7 +1431,7 @@
 </head>
 
 
-<body outlines="0">
+<body outlines="1">
   <header>
     <!-- nav -->
     <div class="wrapper-nav">
@@ -1628,7 +1633,7 @@
       <div class="content-block">
 
         <div class="grid-item">      
-            <img class="row-img" src="images/recepten_3.jpg">
+            <a href="javascript:void(0)"><img class="row-img" src="images/recepten_3.jpg"></a>
             <div class="row-head">Maaltijd salade</div>
             <div class="row-text">met spinazie</div>
             <div class="allergenen-img">
@@ -1644,8 +1649,7 @@
 
 
         <div class="grid-item">
-          <a href="javascript:void(0)">
-            <img class="row-img" src="images/recepten_2.jpg"></a>
+          <a href="javascript:void(0)"><img class="row-img" src="images/recepten_2.jpg"></a>
             <div class="row-head">Kerrie bloemkool</div>
             <div class="row-text">met broccoli en quinoa</div>
           <div class="allergenen-img">
@@ -1659,8 +1663,7 @@
         </div>
 
         <div class="grid-item">
-          <a href="javascript:void(0)">
-            <img class="row-img" src="images/recepten_6.jpg"></a>
+          <a href="javascript:void(0)"><img class="row-img" src="images/recepten_6.jpg"></a>
             <div class="row-head">Gebraden eendenborst</div>
             <div class="row-text">met aardappel en vijgenjus</div>
           <div class="allergenen-img">
