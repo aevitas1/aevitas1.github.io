@@ -794,8 +794,7 @@
     /********************/
     :root {
       /* some default ribbon colors */
-      --even-bg-ribbon-color: Ivory;
-      --odd-bg-ribbon-color: Gainsboro;
+      --bg-ribbon-color: Gainsboro;
     }
 
     /*************************************/
@@ -982,15 +981,15 @@
     }
 
     /* recepten */
-    .container-recepten .grid-item {
-      flex: 1;
-    }
+    .container-recepten .content-block { justify-content: space-around; gap: 2rem; }
+    .container-recepten .grid-item { display: inline-block; flex: 1; max-width: 20rem; padding: 2rem;}
+    .container-recepten .row-img { min-width: 16rem; margin: 0 auto; }
+    .container-recepten .row-head { padding: 0.5rem; }
+    .container-recepten .row-text { padding-bottom: 1rem; width: 16rem; }
+    .container-recepten .aller-row-img { display: flex; flex-direction: row; }
 
-    .container-recepten .row-img {
-      min-width: 16rem;
-      margin: 0 auto;
-    }
 
+    
     /* founder */
     .container-founder {
       padding: 0;
@@ -1175,8 +1174,12 @@
 
     /* recepten */
     .container-recepten .row-img {
-      border-radius: 50%;
-    }
+      border: 2px solid rgba(0, 0, 0, 0.2); border-radius: 5px; }
+    .container-recepten .grid-item { background-color:var(--bg-ribbon-color); background-clip: border-box;  border: 1px solid rgba(0, 0, 0, 0.1); }
+    .container-recepten .row-head { font-size: 1.5rem; }
+    .container-recepten .row-text { font-size: 1.2rem; }
+    .container-recepten .aller-row-img img {max-width: 3rem; }
+  
 
     /* founder */
     .container-founder {
@@ -1399,7 +1402,7 @@
 </head>
 
 
-<body outlines="1">
+<body outlines="0">
   <header>
     <!-- nav -->
     <div class="wrapper-nav">
@@ -1602,22 +1605,28 @@
         <div class="grid-item">
           <a href="javascript:void(0)">
             <img class="row-img" src="images/recepten_3.jpg">
-            <h1 class="row-head">Maaltijd salade</h1>
-            <h2 class="row-text">met rode kool</h2>
+            <div class="row-head">Maaltijd salade</div>
+            <div class="row-text">met rode kool</div>
+            <div class="aller-row-img">
+            <img src="images/allergenen/zwavel.png" alt="Zwaveldioxide">
+            <img src="images/allergenen/ei.png" alt="Ei">
+            <img src="images/allergenen/gluten.png">
+            <img src="images/allergenen/melk.png">
+            </div> 
           </a>
         </div>
         <div class="grid-item">
           <a href="javascript:void(0)">
             <img class="row-img" src="images/recepten_2.jpg">
-            <h1 class="row-head">Kerrie bloemkool</h1>
-            <h2 class="row-text">met broccoli op een bedje van quinoa</h2>
+            <div class="row-head">Kerrie bloemkool</div>
+            <div class="row-text">met broccoli op een bedje van quinoa</div>
           </a>
         </div>
         <div class="grid-item">
           <a href="javascript:void(0)">
             <img class="row-img" src="images/recepten_6.jpg">
-            <h1 class="row-head">Gebraden eendenborst</h1>
-            <h2 class="row-text">met aardappel mousse en een vijgenjus</h2>
+            <div class="row-head">Gebraden eendenborst</div>
+            <div class="row-text">met aardappel mousse en een vijgenjus</div>
           </a>
         </div>
       </div>
