@@ -385,45 +385,6 @@
       /* ******************* */
       /* navigation & footer */
       /* ******************* */
-      .center-box {
-        order: 1;
-      }
-
-      .social {
-        margin-bottom: 0;
-      }
-
-      footer {
-        position: relative;
-        bottom: 0px;
-      }
-
-      .footer {
-        flex-wrap: wrap;
-        flex-direction: column;
-      }
-
-      .left-box,
-      .center-box,
-      .right-box {
-        margin: 5px 0;
-      }
-
-      .credit {
-        display: none;
-      }
-
-      .center-box>.content-footer {
-        justify-content: space-between;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-      }
-
-      .payment p {
-        margin-top: 1rem;
-      }
-
       #logo {
         width: 7.5rem;
       }
@@ -535,259 +496,6 @@
     }
 
     /* einde media */
-
-    /* ******************* */
-    /*         footer      */
-    /* ******************* */
-    footer {
-      position: relative;
-      height: auto;
-      width: 100%;
-      background: #E3F0D4;
-    }
-
-    footer .footer-bottom {
-      height: 1.8rem;
-      text-align: center;
-      padding: 0.5rem 0 0.5rem 0;
-      background-color: #96c959;
-    }
-
-    .footer {
-      display: flex;
-    }
-
-    .footer,
-    .footer>* {
-      padding: 10px 20px;
-    }
-
-    .footer>* {
-      flex-basis: 50%;
-    }
-
-    .fa-facebook {
-      color: #3B5998;
-      transition: transform .2s;
-      margin-right: 2rem;
-    }
-
-    .fa-pinterest {
-      color: #C8323C;
-      transition: transform .2s;
-    }
-
-    .content-footer ul {
-      padding-left: 0;
-    }
-
-    .content-footer li a {
-      text-decoration: none;
-      font-size: 18px;
-      color: black;
-    }
-
-    .content-footer li a:hover {
-      text-decoration: underline;
-      opacity: 0.8;
-    }
-
-    .content-footer li {
-      list-style: none;
-      line-height: 1.6em;
-    }
-
-    .left-box h2,
-    .center-box h2,
-    .right-box h2 {
-      font-size: 1.125rem;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    .left-box,
-    .center-box,
-    .right-box,
-    .content-footer {
-      margin: 20px 0 0 0;
-      position: relative;
-    }
-
-    .left-box>.content-footer {
-      flex-direction: column;
-      align-content: flex-start;
-      padding-top: 0.2rem;
-      text-align: left;
-    }
-
-    .center-box>.content-footer {
-      flex-direction: column;
-      align-content: flex-start;
-    }
-
-    .content-footer:before {
-      position: absolute;
-      content: '';
-      top: -10px;
-      height: 3px;
-      width: 100%;
-      background: #E3F0D4;
-    }
-
-    .content-footer:after {
-      position: absolute;
-      content: '';
-      top: -10px;
-      height: 3px;
-      width: 15%;
-      background: #96c959;
-    }
-
-    .left-box>.content-footer .fas {
-      font-size: 1rem;
-      background: #96c959;
-      height: 45px;
-      width: 45px;
-      line-height: 45px;
-      text-align: center;
-      border-radius: 50%;
-    }
-
-    .phone,
-    .email {
-      margin-top: 5px;
-    }
-
-    .email {
-      margin-bottom: 5px;
-    }
-
-    .phone a,
-    .email a {
-      color: black;
-    }
-
-    .phone a:hover,
-    .email a:hover {
-      text-decoration: underline;
-      opacity: 0.8;
-    }
-
-    .social {
-      margin-top: 20px;
-      text-align: left;
-    }
-
-    .social a span {
-      height: 40px;
-      width: 40px;
-      line-height: 40px;
-      text-align: center;
-      font-size: 50px;
-      border-radius: 5px;
-      transition: .3s;
-    }
-
-    .social a span:hover {
-      -ms-transform: scale(0.95);
-      -webkit-transform: scale(0.95);
-      transform: scale(0.95);
-      transition: transform .2s;
-    }
-
-    .fa-cc-mastercard {
-      background: -webkit-linear-gradient(180deg, #FF5F00 50%, #EB001B 33%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 35px;
-    }
-
-    .fa-cc-visa {
-      color: #1a1f71;
-      font-size: 35px;
-    }
-
-    .fa-ideal {
-      color: #CC0066;
-      font-size: 35px;
-    }
-
-    .fa-cc-paypal {
-      color: rgb(0 69 124);
-      font-size: 35px;
-    }
-
-    .payment {
-      bottom: 0;
-      margin: 0;
-      text-align: left;
-    }
-
-    .right-box form input {
-      width: 100%;
-      max-width: 450px;
-      font-size: 1.0625rem;
-      background: #fff;
-      padding-left: 10px;
-      margin-top: 1rem;
-      height: 35px;
-      border-radius: 1rem;
-      border: none;
-
-    }
-
-    .right-box form input:focus {
-      border: 1px solid #aacf80;
-      outline: none;
-    }
-
-    .right-box form input::placeholder {
-      color: black;
-    }
-
-    .right form .text-footer {
-      font-size: 1.0625rem;
-      margin-bottom: 2px;
-    }
-
-    .footer-btn {
-      margin-top: 10px;
-    }
-
-    .footer-btn button {
-      height: 40px;
-      width: 100%;
-      max-width: 150px;
-      border: 2px solid black;
-      border-radius: 10px;
-      outline: none;
-      text-transform: uppercase;
-      background: #E4CACA;
-      font-size: 1.0625rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: 0.3s;
-      box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 2px 0px;
-    }
-
-    .footer-btn button:hover {
-      box-shadow: none;
-      background-color: #902656;
-    }
-
-    .left-box h3,
-    .center-box h3,
-    .right-box h3 {
-      font-size: 1rem;
-      opacity: 0.7;
-      font-family: 'Roboto';
-    }
-
-    .payment p {
-      font-size: 1rem;
-      margin-top: 5.5rem;
-      text-decoration: underline;
-    }
 
     /********************/
     /* custom variables */
@@ -1024,6 +732,40 @@
       max-width: 40vw;
     }
 
+    /* footer */
+    /* footer height */
+    .container-footer .content > .content-block { min-height: 35vh; }
+
+    /* content left */
+    .container-footer span,
+    .container-footer .content-block, 
+    .container-footer .content-block .ct-header,
+    .container-footer .content-block .ct-text,
+    .container-footer .content-block .ct-footer * { display: flex; justify-content: flex-start; text-align: left; align-content: flex-start; }
+
+    /* fix default margin and add padding */
+    .container-footer .list,
+    .container-footer span,
+    .container-footer .content-block .content-block p,
+    .container-footer .content-block .content-block { margin: 0; padding: .5rem 1rem; }
+
+    .container-footer .ct-header { padding: 1rem 1rem 0rem 1rem; }
+  
+
+    /* all icons to the left  */
+    .container-footer .content-block .content-block span { width: 50%; text-align: left; padding: 0; }
+
+    /* reduce padding header */
+    .container-footer .ct-header { padding: 1rem 1rem 0rem 1rem; }
+  
+    /* email */
+    .container-footer .content-block > .email { flex-direction: column; padding: 1rem; }
+    .container-footer .content-block .email-input { padding-bottom: 1rem;   }
+
+    /* credits */
+    .container-footer .credits { padding: 0; max-height: 3rem; border-top: 1px solid rgba(0, 0, 0, 0.3);}
+    .container-footer .credits p { padding: 0 10vw; }
+
 
 
 
@@ -1087,8 +829,8 @@
     .button {
       font-size: 1.5em;
       background-color: rgba(187, 75, 125, 0.8);
-      color: Black;
-      border: 3px solid black;
+      color: black;
+      border: 2px solid black;
       border-radius: 1.25rem;
     }
     .btn-sm {
@@ -1257,6 +999,11 @@
       font-size: 1.2rem;
       font-family: 'Roboto'
     }
+    /* footer */
+    .container-footer {
+      background-color: #e3f0d4;}
+    .container-footer .credits {
+      background-color: #bedc9b; }
 
 
 
@@ -1362,6 +1109,10 @@
 .container-recepten .content .content-block {
   flex-direction: column;
 }
+/* footer */
+.container-footer .content {
+  flex-direction: column; 
+}
 }
 
 
@@ -1452,7 +1203,7 @@
 </head>
 
 
-<body outlines="1">
+<body outlines="0">
   <header>
     <!-- nav -->
     <div class="wrapper-nav">
@@ -1773,7 +1524,7 @@
         <div class="content-block">
           <div class="ct-header">
             <h3>Contact &amp; FAQ</h3>
-            <h6>Heb je vragen? Neem contact op!</h6>
+            <p>Heb je vragen? Neem contact op!</p>
           </div>
           <ul class="list">
             <li><a href="javascript:void(0)">Veelgestelde vragen</a></li>
@@ -1781,11 +1532,11 @@
             <li><a href="javascript:void(0)">Algemene voorwaarden</a></li>
             <li><a href="javascript:void(0)">Privacy beleid</a></li>
           </ul>
-          <div class="ct-footer flex-column">
+          <div class="content-block flex-column">
             
-          <span><i class="fas fa-phone-alt"></i><a href="tel:07212234">072-12234</a></span>
+          <span class="contact-us"><i class="fas fa-phone-alt"></i><a href="tel:07212234">072-12234</a></span>
           
-          <span><i class="fas fa-envelope"></i><a href="mailto:post@foodfreedom.nl?subject=Ik heb een vraag">post@foodfreedom.nl</a></span>
+          <span class="contact-us"><i class="fas fa-envelope"></i><a href="mailto:post@foodfreedom.nl?subject=Ik heb een vraag">post@foodfreedom.nl</a></span>
 
           </div>          
         </div>
@@ -1793,7 +1544,7 @@
         <div class="content-block">
           <div class="ct-header">
             <h3>Social media</h3>
-            <h6>Volg ons voor meer nieuws</h6>
+            <p>Volg ons voor meer nieuws</p>
           </div>
           <div class="content-block">
             <a href="javascript:void(0)"><span class="fab fa-facebook"></span></a>
@@ -1801,7 +1552,8 @@
           </div>
           <div class="content-block flex-column">
             <p>U kunt betalen met</p>
-            <span><i class="fab fa-cc-mastercard"></i>
+            <span class="payment-icons">
+            <i class="fab fa-cc-mastercard"></i>
             <i class="fab fa-cc-visa"></i>
             <i class="fab fa-ideal"></i>
             <i class="fab fa-cc-paypal"></i></span>
@@ -1811,18 +1563,18 @@
         <div class="content-block">
           <div class="ct-header">
             <h3>Nieuwsbrief</h3>
-            <h6>Ontvang wekelijks recepten</h6>
+            <p>Ontvang wekelijks recepten</p>
           </div>
-          <div class="content-block">
-            <input type="email" placeholder="Jouw e-mail adres" required>
-            <div class="ct-footer">
-              <a href="javascript:void(0)" class="btn-sm action">Verstuur</a>
-            </div>
+          <div class="content-block email">
+            <div class="email-input"><input type="email" placeholder="Jouw e-mail adres" required></div>
+
+            <a href="javascript:void(0)" class="btn-sm action">Verstuur</a>
+            
           </div>
         </div>
       </div>
 
-      <div class="ct-footer"><p>foodfreedom | Designed by Stephan vd M | <span class="far fa-copyright"></span> 2021 Alle rechten voorbehouden.</p></div>
+      <div class="ct-footer credits"><p>foodfreedom | Designed by Stephan vd M <i class="far fa-copyright"></i> 2021 Alle rechten voorbehouden.</p></div>
     </div>
 
 </body>
