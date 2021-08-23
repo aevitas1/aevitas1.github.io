@@ -981,15 +981,17 @@
     }
 
     /* recepten */
-    .container-recepten .content-block { justify-content: space-around; gap: 2rem; }
-    .container-recepten .grid-item { display: inline-block; flex: 1; max-width: 20rem; padding: 2rem;}
+    .container-recepten .content-block { justify-content: space-around; }
+    .container-recepten .grid-item { flex: 1; max-width: 20rem; padding: 2rem; }
     .container-recepten .row-img { min-width: 16rem; margin: 0 auto; }
-    .container-recepten .row-head { padding: 0.5rem; }
+    .container-recepten .row-head { padding: 0.5rem 0; }
     .container-recepten .row-text { padding-bottom: 1rem; width: 16rem; }
-    .container-recepten .aller-row-img { display: flex; flex-direction: row; }
+    .container-recepten .allergenen-img { display:inline-flex; }
+    .container-recepten .allergenen-img .tooltip { padding: 0 .5rem; }
+ 
 
 
-    
+
     /* founder */
     .container-founder {
       padding: 0;
@@ -1016,6 +1018,10 @@
     .container-bestel .ct-header {
       max-width: 40vw;
     }
+
+
+
+
 
     /*
     styling specifiek
@@ -1102,6 +1108,23 @@
       transform: scale(1);
       transition: all 0s ease-in-out
     }
+      /* tooltips */
+    .tooltip { position: relative; }
+    .tooltip:before { 
+      content: attr(data-text); 
+      position: absolute; 
+      width: max-content;
+      padding: .5rem;
+      background-color:rgba(0, 0, 0, 0.8);
+      color: #fff;
+      text-align: center;
+      bottom: 100%;
+      transform: translateX(-50%);
+      display: none;
+    }
+    .tooltip:hover:before {
+      display: inline-block; 
+    }
 
     /* hero */
     .container-hero {
@@ -1178,7 +1201,8 @@
     .container-recepten .grid-item { background-color:var(--bg-ribbon-color); background-clip: border-box;  border: 1px solid rgba(0, 0, 0, 0.1); }
     .container-recepten .row-head { font-size: 1.5rem; }
     .container-recepten .row-text { font-size: 1.2rem; }
-    .container-recepten .aller-row-img img {max-width: 3rem; }
+    .container-recepten .allergenen-img img {max-width: 3rem; }
+
   
 
     /* founder */
@@ -1402,7 +1426,7 @@
 </head>
 
 
-<body outlines="0">
+<body outlines="1">
   <header>
     <!-- nav -->
     <div class="wrapper-nav">
@@ -1602,32 +1626,51 @@
 
     <div class="content">
       <div class="content-block">
-        <div class="grid-item">
-          <a href="javascript:void(0)">
+
+        <div class="grid-item">      
             <img class="row-img" src="images/recepten_3.jpg">
             <div class="row-head">Maaltijd salade</div>
-            <div class="row-text">met rode kool</div>
-            <div class="aller-row-img">
-            <img src="images/allergenen/zwavel.png" alt="Zwaveldioxide">
-            <img src="images/allergenen/ei.png" alt="Ei">
-            <img src="images/allergenen/gluten.png">
-            <img src="images/allergenen/melk.png">
-            </div> 
-          </a>
+            <div class="row-text">met spinazie</div>
+            <div class="allergenen-img">
+            <div class="tooltip" data-text="Bevat zwaveldioxide">
+            <img src="images/allergenen/zwavel.png" alt="bevat waveldioxide">
+          </div>            
+          </div>
+            </div>
         </div>
+
+
+
+
+
         <div class="grid-item">
           <a href="javascript:void(0)">
-            <img class="row-img" src="images/recepten_2.jpg">
+            <img class="row-img" src="images/recepten_2.jpg"></a>
             <div class="row-head">Kerrie bloemkool</div>
-            <div class="row-text">met broccoli op een bedje van quinoa</div>
-          </a>
+            <div class="row-text">met broccoli en quinoa</div>
+          <div class="allergenen-img">
+            <div class="tooltip" data-text="Bevat gluten">
+              <img src="images/allergenen/gluten.png" alt="Bevat gluten">
+            </div>
+            <div class="tooltip" data-text="Bevat ei">
+              <img src="images/allergenen/ei.png" alt="Bevat ei">
+            </div>
+          </div>
         </div>
+
         <div class="grid-item">
           <a href="javascript:void(0)">
-            <img class="row-img" src="images/recepten_6.jpg">
+            <img class="row-img" src="images/recepten_6.jpg"></a>
             <div class="row-head">Gebraden eendenborst</div>
-            <div class="row-text">met aardappel mousse en een vijgenjus</div>
-          </a>
+            <div class="row-text">met aardappel en vijgenjus</div>
+          <div class="allergenen-img">
+            <div class="tooltip" data-text="Bevat melk">
+              <img src="images/allergenen/melk.png" alt="Bevat melk">
+            </div>
+            <div class="tooltip" data-text="Bevat sporen van noten">
+              <img src="images/allergenen/noten.png" alt="Bevat sporen van noten">
+            </div>
+          </div>
         </div>
       </div>
     </div>
