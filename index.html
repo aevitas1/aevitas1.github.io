@@ -1120,12 +1120,13 @@
       text-align: center;
       bottom: 100%;
       transform: translateX(-50%);
-      opacity: 0;
+      visibility: hidden;
     }
     .tooltip:hover:before,
     .tooltip:focus:before {
-      opacity: 1; 
+      visibility: visible;
     }
+
     @keyframes tooltip {
       from { display: none; }
       to { display: inline-block; }
@@ -1441,7 +1442,7 @@
 </head>
 
 
-<body outlines="1">
+<body outlines="0">
   <header>
     <!-- nav -->
     <div class="wrapper-nav">
