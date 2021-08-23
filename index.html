@@ -1126,7 +1126,10 @@
     .tooltip:focus:before {
       display: inline-block; 
     }
-
+    @keyframes tooltip {
+      from { display: none; }
+      to { display: inline-block; }
+    }
     /* hero */
     .container-hero {
       background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
@@ -1398,6 +1401,12 @@
       }
       .tooltip:hover:before {
         display: none;
+      }
+      .tooltip {
+       animation-duration: 2s;
+      -webkit-animation-duration: 2s;
+      -o-animation-duration: 2s;
+      -moz-animation-duration: 2s;
       }
       }
 
