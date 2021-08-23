@@ -844,6 +844,11 @@
       padding: 1em;
       cursor: pointer
     }
+    .btn-sm {
+      width: 8.3em;
+      padding: .5em;
+      cursor: pointer;
+    }
 
     .text-list>* {
       width: auto;
@@ -1081,14 +1086,24 @@
 
     .button {
       font-size: 1.5em;
-      background-color: #E4CACA;
+      background-color: rgba(187, 75, 125, 0.8);
       color: Black;
       border: 3px solid black;
       border-radius: 1.25rem;
     }
+    .btn-sm {
+      font-size: 1.2em;
+      background-color: rgba(187, 75, 125, 0.8);
+      color: Black;
+      border: 1px solid black;
+      border-radius: .5rem;
+    }
 
     .button:hover {
-      background-color: #902656
+      background-color: #902656;
+    }
+    .btn-sm:hover {
+      background-color: #902656;
     }
 
     .action {
@@ -1128,10 +1143,6 @@
       opacity: 1;
     }
 
-    @keyframes tooltip {
-      from { opacity:0; }
-      to { opacity:1; }
-    }
     /* hero */
     .container-hero {
       background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
@@ -1308,15 +1319,9 @@
   background-attachment: fixed;
 }
 /* tooltips */
-.tooltip:hover:before {
-        opacity: 0;
-      }
-      .tooltip {
-       animation: tooltip 2s ease;
-      -webkit-animation: tooltip 2s ease;
-      -o-animation: tooltip 2s ease;
-      -moz-animation: tooltip 2s ease;
-      }
+  .tooltip:hover:before {
+    display: none;
+  }
 }
 
     /* ********* */
@@ -1649,7 +1654,7 @@
             <div class="row-head">Maaltijd salade</div>
             <div class="row-text">met spinazie</div>
             <div class="allergenen-img">
-            <div class="tooltip" data-text="Bevat zwaveldioxide" tooltip>
+            <div class="tooltip" data-text="Bevat zwaveldioxide">
             <img src="images/allergenen/zwavel.png" alt="bevat waveldioxide">
           </div>            
           </div>
@@ -1691,7 +1696,7 @@
     </div>
 
     <div class="ct-footer">
-      <a href="javascript:void(0)" class="button action">RECEPTUREN</a>
+      <a href="javascript:void(0)" class="btn-sm action">RECEPTUREN</a>
     </div>
   </section>
 
@@ -1817,7 +1822,7 @@
     </div>
     <div class="footer-bottom">
       <span class="credit">foodfreedom | Designed by Stephan vd M</span>
-      <span class="far fa-copyright"></span><span> 20a21 Alle rechten voorbehouden.</span>
+      <span class="far fa-copyright"></span><span> 2021 Alle rechten voorbehouden.</span>
     </div>
   </footer>
 </body>
