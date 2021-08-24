@@ -398,6 +398,7 @@
     .ct-header {
       padding: 1rem
     }
+    .ct-header h1 { font-size: 1.8rem; }
 
     .ct-footer {
       padding: 2.5rem 0 0 0
@@ -553,10 +554,8 @@
     }
 
     /* recepten */
-    .container-recepten .content-block { justify-content: space-around; }
+    .container-recepten .content .content-block { flex:1; justify-content: space-around; padding: 2rem 1rem;}
     .container-recepten .grid-item { max-width: 20rem; padding: 2rem;  }
-
-
     .container-recepten .row-img { min-width: 16rem; margin: 0 auto; }
     .container-recepten .row-head { padding: 0.5rem 0; }
     .container-recepten .row-text { padding-bottom: 1rem; width: 16rem; }
@@ -598,7 +597,7 @@
 
     .container-footer { padding: 0 .5rem; }
   
-    /* content left */
+    /* content to the left */
     .container-footer span,
     .container-footer .content-block, 
     .container-footer .content-block .ct-header,
@@ -686,6 +685,7 @@
     h6 {
       font-family: 'Righteous';
       letter-spacing: 0.05em;
+      font-weight: 500;
     }
 
     .ct-header {
@@ -887,6 +887,7 @@
       width: 25%;
       background: #96c959;
     }
+    .container-footer .ct-header h3 {font-size: 1.5rem;}
     
     .contact-us i {background-color: var(--green); border-radius: 50%;}
     .social i { border-radius: 50%; }
@@ -1417,8 +1418,8 @@ nav .nav-content .links { padding-left: 1.875rem; }
     </div>
 
     <div class="content">
-      <div class="content-block">
 
+      <div class="content-block">
         <div class="grid-item">      
             <a href="javascript:void(0)"><img class="row-img" src="images/recepten_3.jpg"></a>
             <div class="row-head">Maaltijd salade</div>
@@ -1428,13 +1429,13 @@ nav .nav-content .links { padding-left: 1.875rem; }
             <img src="images/allergenen/zwavel.png" alt="bevat waveldioxide"></span>
           </div>            
           </div>
-            </div>
+      </div>
         
 
 
 
 
-
+      <div class="content-block">
         <div class="grid-item">
           <a href="javascript:void(0)"><img class="row-img" src="images/recepten_2.jpg"></a>
             <div class="row-head">Kerrie bloemkool</div>
@@ -1448,20 +1449,46 @@ nav .nav-content .links { padding-left: 1.875rem; }
             </span>
           </div>
         </div>
+      </div>
 
+      <div class="content-block">
         <div class="grid-item">
           <a href="javascript:void(0)"><img class="row-img" src="images/recepten_6.jpg"></a>
             <div class="row-head">Gebraden eendenborst</div>
             <div class="row-text">met aardappel en vijgenjus</div>
           <div class="allergenen-img">
-            <span class="tooltip" data-tooltip="Bevat melk">
-              <img src="images/allergenen/melk.png" alt="Bevat melk">
+            <span class="tooltip" data-tooltip="Bevat kleine hoeveelheid sporen van melk">
+              <img src="images/allergenen/melk.png" alt="Bevat kleine hoeveelheid sporen van melk">
             </span>
             <span class="tooltip" data-tooltip="Bevat sporen van noten">
               <img src="images/allergenen/noten.png" alt="Bevat sporen van noten">
             </span>
           </div>
         </div>
+      </div>
+
+      <div class="content-block">
+        <div class="grid-item">
+          <a href="javascript:void(0)"><img class="row-img" src="images/recepten_1.jpg"></a>
+            <div class="row-head">Lactosevrije brownie</div>
+            <div class="row-text">met lactosevrij ijs</div>
+          <div class="allergenen-img">
+            <span class="tooltip" data-tooltip="Bevat sporen van noten">
+              <img src="images/allergenen/noten.png" alt="Bevat sporen van noten">
+            </span>
+            <span class="tooltip" data-tooltip="Bevat gluten">
+            <img src="images/allergenen/gluten.png" alt="Bevat gluten">
+            </span>
+            <span class="tooltip" data-tooltip="Bevat ei">
+            <img src="images/allergenen/ei.png" alt="Bevat ei">
+            </span>
+            <span class="tooltip" data-tooltip="Bevat sporen van pinda">
+            <img src="images/allergenen/noten.png" alt="Bevat sporen van pinda">
+            </span>
+          </div>
+        </div>
+      </div>
+
       </div>
     </div>
 
