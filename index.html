@@ -737,7 +737,6 @@
     /* footer */
     /* footer height */
 
-    .container-footer .content > .content-block { min-height: 35vh; }
     .container-footer { padding: 0 .5rem; }
   
     /* content left */
@@ -775,13 +774,16 @@
     .container-footer .credits p { padding: 0 10vw; }
 
     /* icoontjes */
-    .contact-us i { padding: .6rem; background-color: var(--green); border-radius: 50%; }
+    .contact-us i { padding: .6rem; }
     .contact-us a {padding: .5rem; }
-    .social i { border-radius: 50%; }
     
     .container-footer .content-block .content-block span { padding: 0.5rem .5rem 0 0; }
     .payment-icons i { padding-right: .5rem ;}
 
+    /* fixed height footer */
+    .container-footer .left,
+    .container-footer .center,
+    .container-footer .right { min-height: 20rem;}
 
     /*
     styling specifiek
@@ -1026,7 +1028,9 @@
       width: 25%;
       background: #96c959;
     }
-
+    
+    .contact-us i {background-color: var(--green); border-radius: 50%;}
+    .social i { border-radius: 50%; }
     .fa-facebook, .fa-pinterest, .fa-cc-mastercard, .fa-cc-visa, .fa-ideal, .fa-cc-paypal { font-size: 2rem; }
     .fa-facebook { color: #3B5998;}
     .fa-pinterest {color: #C8323C;}
@@ -1106,8 +1110,6 @@
 .container-bestel {
   min-height: 50vh;
   background: transparent url("images/home-bestel-nu-a.png") no-repeat scroll 70% 20%;
-  background-size: cover;
-  background-attachment: fixed;
 }
     }
 
@@ -1149,6 +1151,10 @@
 .container-footer .content {
   flex-direction: column; 
 }
+.container-footer .left,
+.container-footer .center,
+.container-footer .right { min-height: 0rem; padding-bottom: 1rem; }
+
 }
 
 
@@ -1557,7 +1563,7 @@
     <div class="container-footer">
       <div class="content footer flex-row flex-nowrap">
 
-        <div class="content-block">
+        <div class="content-block left">
           <div class="ct-header">
             <h3>Contact &amp; FAQ</h3>
             <p>Heb je vragen? Neem contact op!</p>
@@ -1577,7 +1583,7 @@
           </div>          
         </div>
 
-        <div class="content-block">
+        <div class="content-block center">
           <div class="ct-header">
             <h3>Social media</h3>
             <p>Volg ons voor meer nieuws</p>
@@ -1596,7 +1602,7 @@
           </div>
         </div>
 
-        <div class="content-block">
+        <div class="content-block right">
           <div class="ct-header">
             <h3>Nieuwsbrief</h3>
             <p>Ontvang wekelijks recepten</p>
