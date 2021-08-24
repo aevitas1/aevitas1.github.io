@@ -758,7 +758,7 @@
 
     /* all items to the left  */
     .container-footer .content-block .content-block span
-    { width: 50%; text-align: left; padding: 0; }
+    { width: 50%; text-align: left; padding: .25rem 0; }
     .container-footer .content-block .content-block p { width: 50%; padding-left:0;}
 
     /* reduce padding header */
@@ -772,8 +772,12 @@
     .container-footer .credits { padding: 0; max-height: 3rem; border-top: 1px solid rgba(0, 0, 0, 0.3);}
     .container-footer .credits p { padding: 0 10vw; }
 
-
-
+    /* icoontjes */
+    .contact-us i { padding: .6rem; background-color: var(--green); border-radius: 50%; }
+    .contact-us a {padding: .5rem; }
+    
+    .container-footer .content-block .content-block span { padding: 0.5rem .5rem 0 0; }
+    .payment-icons i { padding-right: .5rem ;}
 
 
 
@@ -1012,14 +1016,6 @@
     .container-footer .credits {
       background-color: #bedc9b; }
 
-    .container-footer .ct-header::before {
-      position: absolute;
-      content: '';
-      height: 4px;
-      bottom:0;
-      width: 100%;
-      background: #E3F0D4;
-    }
     .container-footer .ct-header::after {
       position: absolute;
       content: '';
@@ -1028,6 +1024,21 @@
       width: 25%;
       background: #96c959;
     }
+
+    .fa-facebook, .fa-pinterest, .fa-cc-mastercard, .fa-cc-visa, .fa-ideal, .fa-cc-paypal { font-size: 2rem; }
+    .fa-facebook { color: #3B5998;}
+    .fa-pinterest {color: #C8323C;}
+    .fa-cc-mastercard {
+      background: -webkit-linear-gradient(180deg, #FF5F00 50%, #EB001B 33%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;}
+    .fa-cc-visa {color: #1a1f71;}
+    .fa-ideal { color: #CC0066; }
+    .fa-cc-paypal { color: rgb(0 69 124);}
+    
+    .container-footer input { font-size: 1.0625rem; padding-left: 1rem;  border-radius: 1rem; height: 2rem; width: 20vw; }
+    .container-footer input:focus {border: 1px solid #aacf80; outline: none;}
+    
 
 
 
@@ -1226,7 +1237,7 @@
 </head>
 
 
-<body outlines="0">
+<body outlines="1">
   <header>
     <!-- nav -->
     <div class="wrapper-nav">
@@ -1557,9 +1568,9 @@
           </ul>
           <div class="content-block flex-column">
             
-          <span class="contact-us"><i class="fas fa-phone-alt"></i><a href="tel:07212234">072-12234</a></span>
+          <span class="contact-us"><i class="action fas fa-phone-alt"></i><a href="tel:07212234">072-12234</a></span>
           
-          <span class="contact-us"><i class="fas fa-envelope"></i><a href="mailto:post@foodfreedom.nl?subject=Ik heb een vraag">post@foodfreedom.nl</a></span>
+          <span class="contact-us"><i class="action fas fa-envelope"></i><a href="mailto:post@foodfreedom.nl?subject=Ik heb een vraag">post@foodfreedom.nl</a></span>
 
           </div>          
         </div>
@@ -1570,8 +1581,8 @@
             <p>Volg ons voor meer nieuws</p>
           </div>
           <div class="content-block">
-            <a href="javascript:void(0)"><span class="fab fa-facebook"></span></a>
-            <a href="javascript:void(0)"><span class="fab fa-pinterest"></span></a>
+            <a href="javascript:void(0)"><span class="action fab fa-facebook"></span></a>
+            <a href="javascript:void(0)"><span class="action fab fa-pinterest"></span></a>
           </div>
           <div class="content-block flex-column">
             <p class="payment">U kunt betalen met</p>
