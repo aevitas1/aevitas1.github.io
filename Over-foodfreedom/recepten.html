@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1">
+
+  <title>foodfreedom - lactosevrije maaltijdboxen</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous" defer></script>
+
+<link rel="stylesheet" href="recepten.css" crossorigin="anonymous">
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;500;900&display=swap">
+
+  <!-- icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+
+</head>
+<!-- bootstrap dropdown menu hover fix -->
+<script>
+  $(document).ready(function(){
+      $(".dropdown").hover(function(){
+          var dropdownMenu = $(this).children(".dropdown-menu");
+          if(dropdownMenu.is(":visible")){
+              dropdownMenu.parent().toggleClass("open");
+          }
+      });
+  });     
+  </script>
+
+<body outlines="1">
+  <header>
+    <!-- nav -->
+
+    <nav class="navbar navbar-expand-lg fixed-top my-0 py-0 me-auto" style="background-color: #E3F0D4;">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="fas fa-bars"></span></button>
+
+        <a class="navbar-brand my-0 py-0 ms-xl-5 ps-xl-5 mx-auto" href="#"><img class="mx-auto" src="../images/logo-foodfreedom-01.jpg" alt=""></a>
+
+
+
+          
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mt-3">
+            <li class="nav-item ms-xxl-5 ps-xxl-5">
+              <a class="nav-link me-xxl-4" href="../index.html">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link me-xxl-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Maaltijdboxen
+              </a>
+              <ul class="dropdown-menu" style="background-color: #E3F0D4;" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item py-2" href="#">Basis</a></li>
+                <li><a class="dropdown-item py-2" href="#">Extra</a></li>
+                <li><a class="dropdown-item py-2" href="#">Luxe</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link me-xxl-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Hoe werkt het?
+              </a>
+              <ul class="dropdown-menu" style="background-color: #E3F0D4;" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item py-2" href="#">Bestellen</a></li>
+                <li><a class="dropdown-item py-2" href="#">Bezorgen & afhalen</a></li>
+                <li><a class="dropdown-item py-2" href="#">Koken</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link me-xxl-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Mijn account
+              </a>
+              <ul class="dropdown-menu" style="background-color: #E3F0D4;" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item py-2" href="#">Registreren</a></li>
+                <li><a class="dropdown-item py-2" href="#">Mijn profiel</a></li>
+                <li><a class="dropdown-item py-2" href="#">Mijn bestellingen</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Over foodfreedom
+              </a>
+              <ul class="dropdown-menu" style="background-color: #E3F0D4;" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item py-2" href="#">Over ons</a></li>
+                <li><a class="dropdown-item py-2" aria-current="page" href="#">Recepten</a></li>
+                <li><a class="dropdown-item py-2" href="#">Reviews</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control-sm mt-3 me-0" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn fas fa-search mt-3" type="submit"></button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+
+
+    <!-- end nav -->
+  </header>
+
+  <!-- start content-->
+  <section class="container-fluid container-recepten-top">
+    <h1 class="text-center pt-5">This content contains bootstrap</h1>
+    <ul class="pagination justify-content-center py-4">
+        <li class="page-item disabled">
+            <span class="page-link">Vorige</span>
+        </li>
+        <li class="page-item active" aria-current="page">
+            <span class="page-link">1</span>
+        </li>
+
+        <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+
+
+
+        <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="javascript:void(0)">Volgende</a>
+        </li>
+    </ul>
+  </section>
+
+  <section class="container-fluid">
+    <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 pb-4">
+
+        <div class="card col-lg-4 col-md-6 col-sm-12 text-center" style="width: 20rem;">
+            <img src="../images/recepten_1.jpg" class="card-img-top mx-auto mt-2" alt="...">
+            <div class="card-body">
+                <h4 class="card-title">Chocolade fondant</h4>
+                <p class="card-text text-muted">met vanille roomijs en amandelen</p>
+                <a href="javascript:void(0)" class="btn btn-light stretched-link">Bekijk
+                    receptuur</a>
+            </div>
+        </div>
+
+        <div class="card col-lg-4 col-md-6 col-sm-12 text-center" style="width: 20rem;">
+            <img src="../images/recepten_1.jpg" class="card-img-top mx-auto mt-2" alt="...">
+            <div class="card-body">
+                <h4 class="card-title">Chocolade fondant</h4>
+                <p class="card-text text-muted">met vanille roomijs en amandelen</p>
+                <a href="javascript:void(0)" class="btn btn-light stretched-link">Bekijk
+                    receptuur</a>
+            </div>
+        </div>
+
+        <div class="card col-lg-4 col-md-6 col-sm-12 text-center" style="width: 20rem;">
+            <img src="../images/recepten_1.jpg" class="card-img-top mx-auto mt-2" alt="...">
+            <div class="card-body">
+                <h4 class="card-title">Chocolade fondant</h4>
+                <p class="card-text text-muted">met vanille roomijs en amandelen</p>
+                <a href="javascript:void(0)" class="btn btn-light stretched-link">Bekijk
+                    receptuur</a>
+            </div>
+        </div>
+        <div class="card col-lg-4 col-md-6 col-sm-12 text-center" style="width: 20rem;">
+            <img src="../images/recepten_1.jpg" class="card-img-top mx-auto mt-2" alt="...">
+            <div class="card-body">
+                <h4 class="card-title">Chocolade fondant</h4>
+                <p class="card-text text-muted">met vanille roomijs en amandelen</p>
+                <a href="javascript:void(0)" class="btn btn-light stretched-link">Bekijk
+                    receptuur</a>
+            </div>
+        </div>
+    </div>
+  </section>
+
+
+<!-- 
+  <!-- end content -->
+  <!-- <footer>
+    <div class="container-footer">
+      <div class="content footer flex-row flex-nowrap">
+
+        <div class="content-block left">
+          <div class="ct-header">
+            <h3>Contact &amp; FAQ</h3>
+            <p>Heb je vragen? Neem contact op!</p>
+          </div>
+          <ul class="list">
+            <li><a href="javascript:void(0)">Veelgestelde vragen</a></li>
+            <li><a href="javascript:void(0)">Vacatures</a></li>
+            <li><a href="javascript:void(0)">Algemene voorwaarden</a></li>
+            <li><a href="javascript:void(0)">Privacy beleid</a></li>
+          </ul>
+          <div class="content-block flex-column">
+            
+          <span class="contact-us"><i class="action fas fa-phone-alt"></i><a href="tel:07212234">072-12234</a></span>
+          
+          <span class="contact-us"><i class="action fas fa-envelope"></i><a href="mailto:post@foodfreedom.nl?subject=Ik heb een vraag">post@foodfreedom.nl</a></span>
+
+          </div>          
+        </div>
+
+        <div class="content-block center">
+          <div class="ct-header">
+            <h3>Social media</h3>
+            <p>Volg ons voor meer nieuws</p>
+          </div>
+          <div class="content-block">
+            <span class="social"><i class="action fab fa-facebook"></i><a href="javascript:void(0)"></a></span>
+            <span class="social"><i class="action fab fa-pinterest"></i><a href="javascript:void(0)"></a></span>
+          </div>
+          <div class="content-block flex-column">
+            <p class="payment">U kunt betalen met</p>
+            <span class="payment-icons">
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-ideal"></i>
+            <i class="fab fa-cc-paypal"></i></span>
+          </div>
+        </div>
+
+        <div class="content-block right">
+          <div class="ct-header">
+            <h3>Nieuwsbrief</h3>
+            <p>Ontvang wekelijks recepten</p>
+          </div>
+          <div class="content-block email">
+            <div class="email-input"><input type="email" placeholder="Jouw e-mail adres" required></div>
+
+            <div class="verstuur">
+            <a href="javascript:void(0)" class="btn-sm action">VERSTUUR</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content copyright">
+      <div class="ct-footer credits"><p>foodfreedom | Designed by Stephan vd M <i class="far fa-copyright"></i> 2021 Alle rechten voorbehouden.</p></div>
+      </div>
+    </div>
+  </footer> -->
+
+</body>
+
+</html>
