@@ -34,7 +34,7 @@
   });     
   </script>
 
-<body outlines="1">
+<body outlines="0">
   <header>
     <!-- nav -->
 
@@ -48,7 +48,7 @@
 
 
           
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse ps-5" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mt-3">
             <li class="nav-item ms-xxl-5 ps-xxl-5">
               <a class="nav-link me-xxl-4" href="../index.html">Home</a>
@@ -113,8 +113,8 @@
 
   <!-- start content-->
   <section class="container-fluid container-recepten-top">
-    <h1 class="text-center pt-5">This content contains bootstrap</h1>
-    <ul class="pagination justify-content-center py-4">
+    <h1 class="text-center pt-5 mt-5">This content contains bootstrap</h1>
+    <ul class="pagination justify-content-center py-4 mb-0">
         <li class="page-item disabled">
             <span class="page-link">Vorige</span>
         </li>
@@ -178,71 +178,72 @@
   </section>
 
 
-<!-- 
-  <!-- end content -->
-  <!-- <footer>
-    <div class="container-footer">
-      <div class="content footer flex-row flex-nowrap">
+  <footer>
+    <div class="container-fluid pt-3" style="background-color: #E3F0D4;">
+      <div class="row row-cols align-items-start">
 
-        <div class="content-block left">
-          <div class="ct-header">
-            <h3>Contact &amp; FAQ</h3>
-            <p>Heb je vragen? Neem contact op!</p>
-          </div>
-          <ul class="list">
-            <li><a href="javascript:void(0)">Veelgestelde vragen</a></li>
-            <li><a href="javascript:void(0)">Vacatures</a></li>
-            <li><a href="javascript:void(0)">Algemene voorwaarden</a></li>
-            <li><a href="javascript:void(0)">Privacy beleid</a></li>
+        <div class="col-xl-4 ps-4">
+          <h1 class="fs-4">Contact & FAQ</h1>
+          <p class="fs-4">Heb je vragen? Neem contact op!</p>
+          <ul class="list-group contact">
+                <li class="list-group-item py-0" style="background: transparent;"><a href="" style="color: black;">Veelgestelde vragen</a></li>
+                <li class="list-group-item py-0" style="background: transparent;"><a href="" style="color: black;">Vacatures</a></li>
+                <li class="list-group-item py-0" style="background: transparent;"><a href="" style="color: black;">Algemene voorwaarden</a></li>
+                <li class="list-group-item py-0" style="background: transparent;"><a href="" style="color: black;">Privacy beleid</a></li>
           </ul>
-          <div class="content-block flex-column">
-            
-          <span class="contact-us"><i class="action fas fa-phone-alt"></i><a href="tel:07212234">072-12234</a></span>
-          
-          <span class="contact-us"><i class="action fas fa-envelope"></i><a href="mailto:post@foodfreedom.nl?subject=Ik heb een vraag">post@foodfreedom.nl</a></span>
 
-          </div>          
-        </div>
+          <div class="contact pt-3">
+          <div class="phone">
+            <div><i class="action fs-6 fas fa-phone-alt" style="padding: .6rem; color: black;"></i>
+            <p class="fs-6"><a href="tel:07212234">072-12234</a></p>
+          </div>
+          </div>
 
-        <div class="content-block center">
-          <div class="ct-header">
-            <h3>Social media</h3>
-            <p>Volg ons voor meer nieuws</p>
+          <div class="email">
+          <div><i class="action fs-6 fas fa-envelope" style="padding: .6rem; color: black;"></i>
+          <p class="fs-6"><a href="mailto:post@foodfreedom.nl?subject=Ik heb een vraag">post@foodfreedom.nl</a></p>
           </div>
-          <div class="content-block">
-            <span class="social"><i class="action fab fa-facebook"></i><a href="javascript:void(0)"></a></span>
-            <span class="social"><i class="action fab fa-pinterest"></i><a href="javascript:void(0)"></a></span>
           </div>
-          <div class="content-block flex-column">
-            <p class="payment">U kunt betalen met</p>
-            <span class="payment-icons">
-            <i class="fab fa-cc-mastercard"></i>
-            <i class="fab fa-cc-visa"></i>
-            <i class="fab fa-ideal"></i>
-            <i class="fab fa-cc-paypal"></i></span>
           </div>
-        </div>
-
-        <div class="content-block right">
-          <div class="ct-header">
-            <h3>Nieuwsbrief</h3>
-            <p>Ontvang wekelijks recepten</p>
-          </div>
-          <div class="content-block email">
-            <div class="email-input"><input type="email" placeholder="Jouw e-mail adres" required></div>
-
-            <div class="verstuur">
-            <a href="javascript:void(0)" class="btn-sm action">VERSTUUR</a>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <div class="content copyright">
-      <div class="ct-footer credits"><p>foodfreedom | Designed by Stephan vd M <i class="far fa-copyright"></i> 2021 Alle rechten voorbehouden.</p></div>
+      <div class="col-xl-4 ps-3">
+          <h1 class="fs-4">Social media</h1>
+          <p class="fs-4">Volg ons voor meer nieuws</p>
+          <div class="social">
+            <span class="social"><i class="action fab fa-facebook me-2 fs-2" style="border-radius: 50%;"></i><a href="javascript:void(0)"></a></span>
+            <span class="social"><i class="action fab fa-pinterest fs-2" style="border-radius: 50%;"></i><a href="javascript:void(0)"></a></span>
+          </div>
+          <p class="fs-6">U kunt betalen met</p>
+          <div class="payment">
+          <i class="fab fa-cc-mastercard pe-1 fs-2"></i>
+          <i class="fab fa-cc-visa pe-1 fs-2"></i>
+          <i class="fab fa-ideal pe-1 fs-2"></i>
+          <i class="fab fa-cc-paypal fs-2"></i>
+          </div>
+      </div>
+
+    <div class="col-xl-4 ps-3">
+        <h1 class="fs-4">Nieuwsbrief</h1>
+        <p class="fs-4">Ontvang wekelijks recepten</p>
+
+        <div class="input-group mb-3" style="max-width: 20rem;">
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Jouw e-mail adres">
+        </div>
+        <button type="button" class="btn btn-sm action"><a href="javascript:void(0)">VERSTUUR</a></button>
+    </div>
+
+
+      
+    </div>
+    </div>
+
+    <div class="container-fluid"style="background: #bedc9b; border-top: 1px solid rgba(0, 0, 0, 0.3);">
+      <div class="row py-1">
+        <div class="credits text-center mt-2"><p>foodfreedom | Designed by Stephan vd M <i class="far fa-copyright"></i> 2021 Alle rechten voorbehouden.</p></div>
       </div>
     </div>
-  </footer> -->
+  </footer>
 
 </body>
 
