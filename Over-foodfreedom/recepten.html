@@ -20,10 +20,10 @@
 
   <!-- icons -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
-
-</head>
-<!-- bootstrap dropdown menu hover fix -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- typewriter -->
+<script src="../main.js" defer></script>
+<!-- bootstrap dropdown menu hover fix -->  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
 <script>
   $(document).ready(function(){
       $(".dropdown").hover(function(){
@@ -34,6 +34,10 @@
       });
   });     
   </script>
+
+</head>
+
+
 
 <body outlines="0">
   <header>
@@ -108,7 +112,6 @@
     </nav>
     <!-- end nav -->
   </header>
-
       <input class="filter-radio" type="checkbox" id="Vlees" name="categories" value="Vlees">
       <input class="filter-radio" type="checkbox" id="Vis" name="categories" value="Vis">
       <input class="filter-radio" type="checkbox" id="Vega" name="categories" value="Vega">
@@ -116,10 +119,11 @@
       <input class="filter-radio" type="checkbox" id="Dessert" name="categories" value="Dessert">
   
   <!-- start content-->
-  <section class="container-hero">
+  <section class="container-hero" style="padding-top: 4.375rem;">
     <div class="container-fluid">
       <h1 class="text-center" style="color: #fff;">Recepturen</h1>
-      <h2 class="text-center fs-5" style="color: #fff; text-shadow: 1px 2px 1px black;">Kies uw leefstyle en vind recepturen</h2>
+      <div class="text-effect text-center justify-content-center" style="display: flex;">
+      <h2 class="fs-5" style="color: #fff; text-shadow: 1px 2px 1px black;">Kies uw leefstyle en</h2><h2 class="typewriter fs-5" style="color: #fff; text-shadow: 1px 2px 1px black;"></h2><h2 class="fs-5" style="color: #fff; text-shadow: 1px 2px 1px black;">  recepturen</h2></div>
     </div>
   </section>
 
@@ -143,13 +147,12 @@
         </li>
       </ol>
   </section>
-  
-  <section class="container-fluid container-recepten pt-5">
+    <!-- row-cols-xxl-4 row-cols-md-2 row-cols-sm-1   -->
+  <section class="container-fluid container-recepten pt-5 justify-content-center" >
 
-    <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 pb-4 justify-content-around">
-
-        <div class="card col-lg-4 col-md-6 col-sm-12 text-center recept shadow-sm mb-4" style="width: 18rem;" data-category="Dessert">
-            <a href=""><img src="../images/recepten_1.jpg" class="card-img-top mx-auto mt-2 rounded-4" alt="Lactosevrije brownie met amandel en lactosevrij vanille ijs"></a>          
+    <div class="row row-cols-4 pb-4 justify-content-around mx-auto" style="max-width: 60%;">
+        <div class="card text-center recept shadow-sm mb-4 me-3" style="width: 18rem;" data-category="Dessert">
+            <a href=""><img src="../images/recepten_1.jpg" class="card-img-top mx-auto mt-2" alt="Lactosevrije brownie met amandel en lactosevrij vanille ijs"></a>          
             <div class="card-body">
                 <h4 class="card-title">Chocolade fondant</h4>
                 <p class="card-text text-muted">met vanille roomijs en amandelen</p>
@@ -166,8 +169,8 @@
             </div>
         </div>
 
-        <div class="card col-lg-4 col-md-6 col-sm-12 text-center recept shadow-sm mb-4" style="width: 18rem;" data-category="Vega">
-          <a href=""><img src="../images/recepten_2.jpg" class="card-img-top mx-auto mt-2 rounded-4" alt="Lactosevrije kerrie bloemkool"></a>          
+        <div class="card text-center recept shadow-sm mb-4 me-3" style="width: 18rem;" data-category="Vega">
+          <a href=""><img src="../images/recepten_2.jpg" class="card-img-top mx-auto mt-2" alt="Lactosevrije kerrie bloemkool"></a>          
           <div class="card-body">
               <h4 class="card-title">Kerrie bloemkool</h4>
               <p class="card-text text-muted">met broccoli en quinoa</p>
@@ -184,8 +187,8 @@
           </div>
       </div>
 
-      <div class="card col-lg-4 col-md-6 col-sm-12 text-center recept shadow-sm mb-4" style="width: 18rem;" data-category="Salade Vega">
-        <a href=""><img src="../images/recepten_3.jpg" class="card-img-top mx-auto mt-2 rounded-4" alt="Lactosevrije maaltijdsalade met tomaat"></a>          
+      <div class="card text-center recept shadow-sm mb-4 me-3" style="width: 18rem;" data-category="Salade Vega">
+        <a href=""><img src="../images/recepten_3.jpg" class="card-img-top mx-auto mt-2" alt="Lactosevrije maaltijdsalade met tomaat"></a>          
         <div class="card-body">
             <h4 class="card-title">Maaltijd salade</h4>
             <p class="card-text text-muted">met spinazie</p>
@@ -202,8 +205,8 @@
         </div>
     </div>
 
-    <div class="card col-lg-4 col-md-6 col-sm-12 text-center recept shadow-sm mb-4" style="width: 18rem;" data-category="Vlees Vega">
-      <a href=""><img src="../images/recepten_4.jpg" class="card-img-top mx-auto mt-2 rounded-4" alt="Lactosevrije spaghetti bolognaise"></a>          
+    <div class="card text-center recept shadow-sm mb-4 me-3" style="width: 18rem;" data-category="Vlees Vega">
+      <a href=""><img src="../images/recepten_4.jpg" class="card-img-top mx-auto mt-2" alt="Lactosevrije spaghetti bolognaise"></a>          
       <div class="card-body">
           <h4 class="card-title">Spaghetti bolognaise</h4>
           <p class="card-text text-muted">met parmezaanse kaas en basilicum</p>
@@ -220,8 +223,8 @@
       </div>
   </div>
 
-  <div class="card col-lg-4 col-md-6 col-sm-12 text-center recept shadow-sm mb-4" style="width: 18rem;" data-category="Vega">
-    <a href=""><img src="../images/recepten_5.jpg" class="card-img-top mx-auto mt-2 rounded-4" alt="Lactosevrije doperwten"></a>          
+  <div class="card text-center recept shadow-sm mb-4 me-3" style="width: 18rem;" data-category="Vega">
+    <a href=""><img src="../images/recepten_5.jpg" class="card-img-top mx-auto mt-2" alt="Lactosevrije doperwten"></a>          
     <div class="card-body">
         <h4 class="card-title">Doperwten</h4>
         <p class="card-text text-muted">2 losse erwtjes met een halve circel eronder</p>
@@ -238,8 +241,8 @@
     </div>
 </div>
 
-<div class="card col-lg-4 col-md-6 col-sm-12 text-center recept shadow-sm mb-4" style="width: 18rem;" data-category="Vlees">
-  <a href=""><img src="../images/recepten_6.jpg" class="card-img-top mx-auto mt-2 rounded-4" alt="Gebraden eendenborst"></a>          
+<div class="card text-center recept shadow-sm mb-4 me-3" style="width: 18rem;" data-category="Vlees">
+  <a href=""><img src="../images/recepten_6.jpg" class="card-img-top mx-auto mt-2" alt="Gebraden eendenborst"></a>          
   <div class="card-body">
       <h4 class="card-title">Gebraden eendenborst</h4>
       <p class="card-text text-muted">met aardappel en vijgenjus</p>
@@ -256,8 +259,8 @@
   </div>
 </div>
 
-<div class="card col-lg-4 col-md-6 col-sm-12 text-center recept shadow-sm mb-4" style="width: 18rem;" data-category="Vega">
-  <a href=""><img src="../images/recepten_7.jpg" class="card-img-top mx-auto mt-2 rounded-4" alt="Lactosevrije brownie met amandel en lactosevrij vanille ijs"></a>          
+<div class="card text-center recept shadow-sm mb-4 me-3" style="width: 18rem;" data-category="Vega">
+  <a href=""><img src="../images/recepten_7.jpg" class="card-img-top mx-auto mt-2" alt="Lactosevrije brownie met amandel en lactosevrij vanille ijs"></a>          
   <div class="card-body">
       <h4 class="card-title">Knoflook toast</h4>
       <p class="card-text text-muted">met ei en cherrytomaat</p>
@@ -274,8 +277,8 @@
   </div>
 </div>
 
-<div class="card col-lg-4 col-md-6 col-sm-12 text-center recept shadow-sm mb-4" style="width: 18rem;" data-category="Vis">
-  <a href=""><img src="../images/recepten_8.jpg" class="card-img-top mx-auto mt-2 rounded-4" alt="Lactosevrije zalm met spirelli van courgette"></a>          
+<div class="card text-center recept shadow-sm mb-4 me-3" style="width: 18rem;" data-category="Vis">
+  <a href=""><img src="../images/recepten_8.jpg" class="card-img-top mx-auto mt-2" alt="Lactosevrije zalm met spirelli van courgette"></a>          
   <div class="card-body">
       <h4 class="card-title">Gebakken zalm</h4>
       <p class="card-text text-muted">met spirelli van courgette</p>
@@ -291,8 +294,8 @@
         </div>
   </div>
 </div>
-
     </div>
+
   </section>
 
 
