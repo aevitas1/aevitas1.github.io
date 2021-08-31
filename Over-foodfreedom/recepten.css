@@ -30,7 +30,6 @@ a:hover {color: black;}
 .btn-sm:hover { background-color: #902656;}
 
 /**************** nav **************/
-
 .dropdown:hover .dropdown-menu{ display: block;} .dropdown-menu{ margin-top: 0;}
 .navbar-brand img { mix-blend-mode: multiply; max-height: 4.375rem; display: block; }
 
@@ -50,10 +49,14 @@ nav .dropdown-menu { border: none; }
 nav .search-box input, nav .search-box .fa-search { outline: none; border: none; }
 /************* recipes ************/
 .typewriter { border-bottom: 2px solid rgba(0, 0, 0, 0.3); width: 4.5rem; height: 1.7rem; }
-.container-recepten .card-img-top { height: 14rem; width: auto; border-radius: 10px; }
+.container-recepten .card-img-top { height: 14rem; width: auto; position: relative;}
+.container-recepten .card a {border-radius: 10px; border: 1px solid rgba(0, 0, 0, .2);}
 .container-recepten .card-title { font-size: 1rem; }
 .container-recepten .card-text {font-size: .8rem; }
-.container-recepten .card-buttons { display: flex; justify-content: center; }
+.cook-time { background: #E3F0D4; width: 5rem; padding-top: 1.5rem; border-radius: 10px; transform: rotate(45deg); top: -.3rem; right: -1.5rem; font-size: .8rem; border: 1px solid black;}
+.cook-time i { padding-right: .2rem; font-size: 1rem;}
+
+
 
 
 /************ filter bar **********/
