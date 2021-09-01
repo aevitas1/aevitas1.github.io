@@ -159,8 +159,7 @@ nav .nav-link,
 nav .dropdown-item { color: black; font-weight: 500; font-size: 1.05rem; }
 .container-recepten { flex-direction: column; }
 .container-hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), transparent url("../images/recepten_hero.jpg") scroll no-repeat contain }
-.container-hero .text-effect h2 { font-size: 1.10rem !important; }
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), transparent url("../images/recepten_hero.jpg") scroll no-repeat cover 70% 40%; }
 }
 /* >>>>>>>>>>>>>>>>>> BELOW 992px */
 @media (max-width: 992px) {
