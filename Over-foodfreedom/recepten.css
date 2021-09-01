@@ -26,8 +26,10 @@ a:hover {color: black;}
 
 .btn-lg { font-size: 1.5em; background-color: rgba(187, 75, 125, 0.8); color: black; border: 2px solid black;border-radius: 1.25rem;}
 .btn-sm { background-color: rgba(187, 75, 125, 0.8); border: 1px solid black; border-radius: .5em; font-size: 1.2rem; padding: .5em; color: black; }
+.btn-x-sm { padding: 0.5rem 1rem; border-radius: .7em; min-width: 3.125rem; line-height: normal; cursor: pointer; transition: all 0.1s; background-color: rgba(187, 75, 125, 0.8); border: 1px solid black; margin-bottom: 0!important; user-select: none;}
 .lg:hover,
-.btn-sm:hover { background-color: #902656;}
+.btn-sm:hover,
+.btn-x-sm:hover { background-color: #902656;}
 
 /**************** nav **************/
 .dropdown:hover .dropdown-menu{ display: block;} .dropdown-menu{ margin-top: 0;}
@@ -49,6 +51,7 @@ nav .dropdown-menu { border: none; }
 nav .search-box input, nav .search-box .fa-search { outline: none; border: none; }
 /************* recipes ************/
 .typewriter { border-bottom: 2px solid rgba(0, 0, 0, 0.3); width: 4.5rem; height: 1.7rem; }
+
 .container-recepten .card-img-top { height: 14rem; width: auto; position: relative;}
 .container-recepten .card a {border-radius: 10px; border: 1px solid rgba(0, 0, 0, .2);}
 .container-recepten .card-title { font-size: 1rem; }
@@ -56,8 +59,11 @@ nav .search-box input, nav .search-box .fa-search { outline: none; border: none;
 .cook-time { background: #E3F0D4; width: 5rem; padding-top: 1.5rem; border-radius: 10px; transform: rotate(45deg); top: -.3rem; right: -1.5rem; font-size: .8rem; border: 1px solid black;}
 .cook-time i { padding-right: .2rem; font-size: 1rem;}
 
-
-
+.container-recepten .search { position: relative; box-shadow: 0 0 40px rgba(51, 51, 51 .1);}
+.container-recepten .search input { height: 2.75rem; text-indent: 1.5rem; border: 2px solid #d6d4d4; border-radius: 5px; min-width: 100%; }
+.container-recepten .search .fa-search { position: absolute; top: .8rem; left: .8rem;}
+.container-recepten .search input:focus { box-shadow: none; border: 2px solid blue;}
+.container-recepten li {background: transparent; }
 
 /************ filter bar **********/
 .filter-radio {display: none; }
@@ -68,14 +74,14 @@ input[type="checkbox"]:checked ~ .container-recepten [data-category] { display: 
 .container-filter .filters label {padding: 0.5rem 1rem; border-radius: .7em; min-width: 3.125rem; line-height: normal; cursor: pointer; transition: all 0.1s; background-color: rgba(187, 75, 125, 0.8); border: 1px solid black; margin-bottom: 0!important; user-select: none;}
 .container-filter .filters label:hover {background: #902656;}
 
-.container-filter [data-category] { display: block; }
+.container-filter [data-category] > { display: block; }
 
 [value="Vlees"]:checked ~ .container-recepten .card[data-category~="Vlees"], 
 [value="Vis"]:checked ~ .container-recepten .card[data-category~="Vis"], 
 [value="Vega"]:checked ~ .container-recepten .card[data-category~="Vega"], 
 [value="Salade"]:checked ~ .container-recepten .card[data-category~="Salade"], 
 [value="Dessert"]:checked ~ .container-recepten .card[data-category~="Dessert"]
-{display: block;}
+{display:flex; }
 
 .container-filter .fa-check-circle { display: none; }
 
@@ -151,21 +157,19 @@ footer .ct-head::after { position: absolute; content: '';height: 4px;bottom: 0;l
 @media (max-width: 1200px){
 nav .nav-link,
 nav .dropdown-item { color: black; font-weight: 500; font-size: 1.05rem; }
+.container-recepten { flex-direction: column; }
 }
 /* >>>>>>>>>>>>>>>>>> BELOW 992px */
 @media (max-width: 992px) {
     nav .dropdown-item { padding: .5rem 0 .5rem 2rem !important; font-size: 1.125rem; }
     nav .nav-link { padding: .8rem; font-size: 1.25rem;}
-
+    .container-recepten .row { width: 100%; }    
 }
 /* >>>>>>>>>>>>>>>>>> ABOVE 992px */
 @media (min-width: 992px) {
-    nav .nav-link {
-        border-radius: 5px;
-    }
+    nav .nav-link { border-radius: 5px; }
 }    
 /*>>>>>>>>>>>>>>>>>> BELOW 576 px */
     
 @media all and (min-width: 36rem) {
-
  }
