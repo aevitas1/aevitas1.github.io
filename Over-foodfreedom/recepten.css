@@ -158,6 +158,10 @@ footer .ct-head::after { position: absolute; content: '';height: 4px;bottom: 0;l
 nav .nav-link,
 nav .dropdown-item { color: black; font-weight: 500; font-size: 1.05rem; }
 .container-recepten { flex-direction: column; }
+.container-hero {
+  min-height: 40vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), transparent url("../images/recepten_hero.jpg") no-repeat scroll 70% 50%;
+  }
 }
 /* >>>>>>>>>>>>>>>>>> BELOW 992px */
 @media (max-width: 992px) {
