@@ -85,6 +85,7 @@ nav .search-box input, nav .search-box .fa-search { outline: none; border: none;
 .bereidingstijd .fa-clock { font-size: 1.25rem; }
 .bereidingstijd p { font-size: 1rem; }
 .circle-number {border-radius: 50%; border: 2px solid black; width: 3rem; height: 3rem; display: flex; justify-content: center; align-content: center; align-items: center; text-align: center;}
+.receptuur-layout .row-allergenen img {max-width: 3rem; border-radius: 50%;}
 /************ filter bar **********/
 .filter-radio {display: none; }
 input[type="checkbox"]:checked ~ .container-recepten [data-category] { display: none; }
