@@ -87,6 +87,8 @@ nav .search-box input, nav .search-box .fa-search { outline: none; border: none;
 .bereidingstijd p { font-size: 1rem; }
 .circle-number {border-radius: 50%; border: 2px solid black; width: 3rem; height: 3rem; display: flex; justify-content: center; align-content: center; align-items: center; text-align: center;}
 .receptuur-layout .row-allergenen img {max-width: 3rem; border-radius: 50%;}
+
+.koelkast input { -webkit-box-shadow: inset 0px 0px 3px 1px rgb(99, 95, 95); box-shadow: inset 0px 0px 3px 1px rgb(99, 95, 95); }
 /************ filter bar **********/
 .filter-radio {display: none; }
 input[type="checkbox"]:checked ~ .container-recepten [data-category] { display: none; }
@@ -152,7 +154,7 @@ nav .nav-link,
 nav .dropdown-item { color: black; font-weight: 500; font-size: 1.05rem; }
 .container-recepten { flex-direction: column; }
 .container-hero {
-  min-height: 50vh; background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), transparent url("../images/recepten_hero.jpg") no-repeat scroll auto;}
+  min-height: 50vh; background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), transparent url("../images/recepten_hero.png") no-repeat scroll auto;}
 }
 /* >>>>>>>>>>>>>>>>>> BELOW 992px */
 @media (max-width: 992px) {
