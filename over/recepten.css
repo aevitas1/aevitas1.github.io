@@ -18,6 +18,18 @@ section:nth-of-type(odd) { background-color: var(--odd-bg-color) }
 
 a { text-decoration: none; color: black; }
 a:hover {color: black;}
+.breadcrumb-active {color: rgb(58, 49, 49); }
+.top-recepturen img { border-radius: 0 0 5rem 0;}
+.fa-facebook { color: #3B5998;}
+.fa-pinterest {color: #C8323C;}
+.fa-cc-mastercard {
+  background: -webkit-linear-gradient(180deg, #FF5F00 50%, #EB001B 66%);
+  background-clip:border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;}
+.fa-cc-visa {color: #1a1f71;}
+.fa-ideal { color: #CC0066; }
+.fa-cc-paypal { color: rgb(0 69 124);}
 
 /*************** buttons ***************/
 .action { box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14) 0px 1px 3px 0px rgba(0, 0, 0, .12);}
@@ -49,7 +61,7 @@ nav .dropdown-item:hover {background: #902656; color: black;}
 nav .dropdown-menu { border: none; }
 /* ********** searchbar ********* */
 nav .search-box input, nav .search-box .fa-search { outline: none; border: none; }
-/************* recipes ************/
+/****** recipes grid page *********/
 .typewriter { border-bottom: 2px solid rgba(0, 0, 0, 0.3); width: 4.5rem; height: 1.7rem; }
 
 .container-recepten .card-img-top { height: 14rem; width: auto; position: relative;}
@@ -64,11 +76,18 @@ nav .search-box input, nav .search-box .fa-search { outline: none; border: none;
 .container-recepten .search .fa-search { position: absolute; top: .8rem; left: .8rem;}
 .container-recepten .search input:focus { box-shadow: none; border: 2px solid blue;}
 .container-recepten li {background: transparent; }
-
+/*********** recipes base *********/
+.waarderingen .fas { color: rgb(218, 189, 25); font-size: 1.25rem;}
+.waarderingen .far { color: black; font-size: 1.25rem;}
+.thumbs i {margin: 0 auto; }
+.thumbs .fa-thumbs-up { color: rgb(16, 99, 16); padding: 0 1.5rem; }
+.thumbs .fa-thumbs-down { color: rgb(148, 9, 9); padding: 0 1.5rem; }
+.bereidingstijd .fa-clock { font-size: 1.25rem; }
+.bereidingstijd p { font-size: 1rem; }
+.circle-number {border-radius: 50%; border: 2px solid black; width: 3rem; height: 3rem; display: flex; justify-content: center; align-content: center; align-items: center; text-align: center;}
 /************ filter bar **********/
 .filter-radio {display: none; }
 input[type="checkbox"]:checked ~ .container-recepten [data-category] { display: none; }
-/* .filter-radio[type="radio"] { display: none; } */
 .container-filter .filters {text-align: center;}
 .container-filter .filters * {display: inline-block;}
 .container-filter .filters label {padding: 0.5rem 1rem; border-radius: .7em; min-width: 3.125rem; line-height: normal; cursor: pointer; transition: all 0.1s; background-color: rgba(187, 75, 125, 0.8); border: 1px solid black; margin-bottom: 0!important; user-select: none;}
@@ -107,21 +126,6 @@ input[type="checkbox"]:checked ~ .container-recepten [data-category] { display: 
 .container-hero h1 { color: white; text-shadow: 1px 2px 1px black; padding-top: 5rem; }
 .container-hero h2 { font-family: 'Roboto';}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /************* footer *************/
 footer .container-fluid { background: var(--odd-bg-color); }
 footer .list-group { border: none; }
@@ -130,16 +134,6 @@ footer .list-group-item { border: none; }
 footer .phone *,
 footer .email * { display: inline-block; }
 footer .contact i {background-color: var(--green); border-radius: 50%;}
-footer .fa-facebook { color: #3B5998;}
-footer .fa-pinterest {color: #C8323C;}
-footer .fa-cc-mastercard {
-  background: -webkit-linear-gradient(180deg, #FF5F00 50%, #EB001B 66%);
-  background-clip:border-box;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;}
-footer .fa-cc-visa {color: #1a1f71;}
-footer .fa-ideal { color: #CC0066; }
-footer .fa-cc-paypal { color: rgb(0 69 124);}
 footer .ct-head { position: relative;}
 footer .ct-head::after { position: absolute; content: '';height: 4px;bottom: 0;left: 0; width: 25%;background: #96c959;}
 
@@ -159,13 +153,13 @@ nav .nav-link,
 nav .dropdown-item { color: black; font-weight: 500; font-size: 1.05rem; }
 .container-recepten { flex-direction: column; }
 .container-hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), transparent url("../images/recepten_hero.jpg") scroll no-repeat cover 70% 40%; }
+  min-height: 50vh; background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), transparent url("../images/recepten_hero.jpg") no-repeat scroll auto;}
 }
 /* >>>>>>>>>>>>>>>>>> BELOW 992px */
 @media (max-width: 992px) {
     nav .dropdown-item { padding: .5rem 0 .5rem 2rem !important; font-size: 1.125rem; }
     nav .nav-link { padding: .8rem; font-size: 1.25rem;}
-    .container-recepten .row { width: 100%; }    
+    .container-recepten .row { width: 100%; }   
 }
 /* >>>>>>>>>>>>>>>>>> ABOVE 992px */
 @media (min-width: 992px) {
