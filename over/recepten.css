@@ -31,6 +31,29 @@ a:hover {color: black;}
 .fa-ideal { color: #CC0066; }
 .fa-cc-paypal { color: rgb(0 69 124);}
 
+/**** remove blue bootstrap outlines ***/
+
+textarea:hover, 
+input:hover, 
+textarea:active, 
+input:active, 
+textarea:focus, 
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+select:hover,
+select:focus,
+select:active,
+.btn:active,
+.btn.active
+{
+    outline:0px !important;
+    -webkit-appearance:none;
+    box-shadow: none !important;
+}
+
 /*************** buttons ***************/
 .action { box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14) 0px 1px 3px 0px rgba(0, 0, 0, .12);}
 .action:hover { transform: scale(1.02); box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, .20), 0px 3px 4px 0px rgba(0, 0, 0, .14), 0px 1px 8px 0px rgba(0, 0, 0, .12);}
