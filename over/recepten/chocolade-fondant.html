@@ -8,7 +8,7 @@
   <title>foodfreedom - lactosevrije maaltijdboxen</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="../recepten.css" crossorigin="anonymous">
   <!-- fonts -->
@@ -94,7 +94,7 @@
               </a>
               <ul class="dropdown-menu" style="background-color: #E3F0D4;" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item py-2" href="#">Over ons</a></li>
-                <li><a class="dropdown-item py-2" href="#">Recepten</a></li>
+                <li><a class="dropdown-item py-2" href="../recepten.html">Recepten</a></li>
                 <li><a class="dropdown-item py-2" href="#">Reviews</a></li>
               </ul>
             </li>
@@ -113,17 +113,18 @@
 
   <!-- start content-->
 <section class="container-fluid">
-  <div class="container receptuur-layout" style="padding-top: 4.375rem;">
+  <div class="row pt-5 mt-5 ps-3" style="color: black;">
+  <ol class="breadcrumb" style="font-size: 0.9rem;">
+    <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+    <li class="breadcrumb-item"><a href="../recepten.html">Recepten</a></li>
+    <li class="breadcrumb-item breadcrumb-active aria-current="page">Chocolade fondant</li>
+  </ol>
+  </div>
+  <div class="container receptuur-layout pt-2" >
 
   <div class="row pb-5">
     <div class="col-lg-6 receptuur-base" style="background: var(--even-bg-color);">
-          <ol class="breadcrumb pt-3" style="font-size: 0.9rem;">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Recepten</a></li>
-            <li class="breadcrumb-item breadcrumb-active aria-current="page">Chocolade fondant</li>
-          </ol>
-          <hr>
-          <h1 class="text-center mx-auto print" style="width: 75%;">Chocolade fondant met amandel en vanille ijs</h1>
+          <h1 class="text-center mx-auto print pt-5" style="width: 75%;">Chocolade fondant met amandel en vanille ijs</h1>
           <p class="text-center mx-auto pt-2 pb-5 fs-5">Na lang zoeken is hij er hoor, de chocolade fondant met vanille ijs in al zijn glorie en ook nog eens lactose vrij! Nu kunt ook u genieten van dit heerlijke dessert.</p>
           <div class="row text-center">
             <div class="col waarderingen d-inline mx-auto p-2 text-center">
@@ -148,6 +149,14 @@
             </div>
           </div>
           <hr>
+          <div class="row">
+            <div class="row-allergenen text-center">
+              <p>Allergenen informatie</p>
+              <span class="tt" data-bs-placement="top" title="Bevat ei"><img src="../../images/allergenen/ei.png" alt="Bevat ei"></span>
+              <span class="tt" data-bs-placement="top" title="Bevat gluten"><img src="../../images/allergenen/gluten.png" alt="Bevat gluten"></span>
+              <span class="tt" data-bs-placement="top" title="Bevat sporen van noten"><img src="../../images/allergenen/noten.png" alt="Bevat sporen van noten"></span>
+            </div>
+          </div>
     </div>
 
   
@@ -340,7 +349,12 @@
       </div>
     </div>
   </footer>
-
+<script>
+  const tooltips = document.querySelectorAll('.tt')
+  tooltips.forEach(t => {
+    new bootstrap.Tooltip(t)
+  })
+</script>
 </body>
 
 </html>
