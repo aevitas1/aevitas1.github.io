@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1">
-
   <title>foodfreedom - lactosevrije maaltijdboxen</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -17,10 +16,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;500;900&display=swap">
+  
 
   <!-- icons -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
-
+  <!-- print -->
+  <link rel="stylesheet" href="print.css" type="text/css" media="print" />
 </head>
 <!-- bootstrap dropdown menu hover fix -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -111,14 +112,163 @@
 
 
   <!-- start content-->
-<section class="container-fluid receptuur-layout">
-  <div class="container" style="padding-top: 4.375rem;">
+<section class="container-fluid">
+  <div class="container receptuur-layout" style="padding-top: 4.375rem;">
 
-  <div class="row">
+  <div class="row pb-5">
+    <div class="col-lg-6 receptuur-base" style="background: var(--even-bg-color);">
+          <ol class="breadcrumb pt-3" style="font-size: 0.9rem;">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Recepten</a></li>
+            <li class="breadcrumb-item breadcrumb-active aria-current="page">Chocolade fondant</li>
+          </ol>
+          <hr>
+          <h1 class="text-center mx-auto print" style="width: 75%;">Chocolade fondant met amandel en vanille ijs</h1>
+          <p class="text-center mx-auto pt-2 pb-5 fs-5">Na lang zoeken is hij er hoor, de chocolade fondant met vanille ijs in al zijn glorie en ook nog eens lactose vrij! Nu kunt ook u genieten van dit heerlijke dessert.</p>
+          <div class="row text-center">
+            <div class="col waarderingen d-inline mx-auto p-2 text-center">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <p>17 waarderingen</p>
+            </div>
+            <div class="col thumbs d-inline mx-auto p-2 text-center">
+              <a href=""><i class="far fa-thumbs-up"></i></a>
+              <a href=""><i class="far fa-thumbs-down"></i></a>
+              <p>Deel ons uw mening</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="row bereidingstijd mx-auto p-2 text-center ">
+              <div class="col voorbereiding"><i class="far fa-clock"></i><p><strong>Voorbereiding</strong></p>10 min<p></p></div>
+              <div class="col kooktijd"><i class="far fa-clock"></i><p><strong>Baktijd</strong></p><p>10 min</p></div>
+              <div class="col kook-totaal"><i class="far fa-clock"></i><p><strong>Totaal</strong></p><p>20 min</p></div>
+            </div>
+          </div>
+          <hr>
+    </div>
 
-    <div class="col-lg-9 receptuur-base" style="background: rgb(40, 90, 40); height: 1000px;"></div>
-    <div class="col-lg-3 top-recepturen" style="background: green; height: 1000px;"></div>
-    
+  
+    <div class="col-lg-6 top-recepturen m-0 p-0 order-md-1 d-flex" style="background: var(--even-bg-color); border-radius: 0 0 5rem 0;"><img src="../../images/lava-cake.jpg" alt="" class="img-fluid"></div>
+  
+  </div>
+</div>
+</section>
+
+
+
+
+  <section class="container-fluid pt-4 pb-5" style="background: var(--odd-bg-color);">
+    <div class="container" style="background: var(--even-bg-color); border-radius: 0; height: auto;">
+    <div class="row">
+
+      <div class="col-lg-4 p-0 m-0 ingredienten ">
+        <h3 class="pt-4 ps-5">Ingredienten</h3>
+        <select class="form-select form-select-sm ms-4" style="width: 50%; border-radius: 10px;">
+          <option selected aria-label="Disabled select example"selected disabled>Kies aantal personen..</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+      <div class="ingredienten-tabel ps-5 pt-2">
+      <table class="table table-borderless table-sm">
+        <tr>
+          <th>100 g</th>
+          <td>plantaardige vloeibare boter</td>
+        </tr>
+        <tr>
+          <th>100 g</th>
+          <td>pure chocolade</td>
+        </tr>
+        <tr>
+          <th>100 g</th>
+          <td>suiker</td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>eieren</td>
+        </tr>
+        <tr>
+          <th>60 g</th>
+          <td>bloem</td>
+        </tr>
+        <tr>
+          <th>bakspray</th>
+          <td>om in te vetten</td>
+        </tr>
+        <tr>
+          <th>1 ijsschep</th>
+          <td>lactosevrij vanille ijs</td>
+        </tr>
+        <tr>
+          <th>15 g</th>
+          <td>amandelen</td>
+        </tr>
+        <tr>
+          <th>40 g</th>
+          <td>lactosevrij (slag)room</td>
+        </tr>
+      </table>
+    </div>
+    </div>   
+
+
+    <div class="col-lg-8 bereidingswijze">
+      <div class="row header text-center ">
+        <div class="col"><h3 class="pt-4 ps-3">Aan de slag</h3></div>
+        <div class="col"><a href="#" onclick="window.print();return false;"><i class="fas fa-print pt-4 ms-5 fs-4" style="color: black;"></i></a></div>
+      </div>
+      <hr>  
+      <div class="row">
+        <div class="col">
+          <ul class="list-group list-group-horizontal pb-2">
+            <li class="list-group-item" style="background: transparent; border: none;"><div class="circle-number"><div class="text-center fs-3">1</div></div></li>
+            <li class="list-group-item flex-fill" style="background: transparent; border: none;">Verwarm de oven voor op 220 graden hete lucht.</li>
+          </ul>
+          <ul class="list-group list-group-horizontal pb-2">
+            <li class="list-group-item" style="background: transparent; border: none;"><div class="circle-number"><div class="text-center fs-3">2</div></div></li>
+            <li class="list-group-item flex-fill" style="background: transparent; border: none;">Smelt de boter en de chocolade au bain marie (in een rvs kom boven water dat +- 90 graden is). </li>
+          </ul>
+          <ul class="list-group list-group-horizontal pb-2">
+            <li class="list-group-item" style="background: transparent; border: none;"><div class="circle-number"><div class="text-center fs-3">3</div></div></li>
+            <li class="list-group-item flex-fill" style="background: transparent; border: none;">Voeg de suiker en de eieren toe en blijf goed kloppen met de garde.</li>
+          </ul>
+          <ul class="list-group list-group-horizontal pb-2">
+            <li class="list-group-item" style="background: transparent; border: none;"><div class="circle-number"><div class="text-center fs-3">4</div></div></li>
+            <li class="list-group-item flex-fill" style="background: transparent; border: none;">Voeg nu de bloem toe en roer alles nog even goed door.</li>
+          </ul>
+          <ul class="list-group list-group-horizontal pb-2">
+            <li class="list-group-item" style="background: transparent; border: none;"><div class="circle-number"><div class="text-center fs-3">5</div></div></li>
+            <li class="list-group-item flex-fill" style="background: transparent; border: none;">Vet de vorm in met olie of bakspray. Vul de vorm met het chocolade mengsel.</li>
+          </ul>
+          <ul class="list-group list-group-horizontal pb-2">
+            <li class="list-group-item" style="background: transparent; border: none;"><div class="circle-number"><div class="text-center fs-3">6</div></div></li>
+            <li class="list-group-item flex-fill" style="background: transparent; border: none;">Bak ze nu in 10 minuten gaar in de voorverwarmde oven.</li>
+          </ul>
+          <ul class="list-group list-group-horizontal pb-2">
+            <li class="list-group-item" style="background: transparent; border: none;"><div class="circle-number"><div class="text-center fs-3">7</div></div></li>
+            <li class="list-group-item flex-fill" style="background: transparent; border: none;">Laat de chocolade fondant afkoelen, half warm is het lekkerst want dan zijn ze vanbinnen vloeibaar.</li>
+          </ul>
+          <hr>
+        </div>
+      </div>    
+          <div class="row text-center">
+            <p class="fs-4">Deel dit receptuur</p>
+              <div class="social">
+                <a href="javascript:void(0)"><span class="social"><i class="action fab fa-facebook me-2 fs-2" style="border-radius: 50%;"></i></span></a>
+                <a href="javascript:void(0)"><span class="social"><i class="action fab fa-pinterest fs-2" style="border-radius: 50%;"></i></span></a>
+            </div>
+        </div>
+    </div>
+    </div>
+
   </div>
 </section>
 
