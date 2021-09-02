@@ -64,6 +64,7 @@ nav .search-box input, nav .search-box .fa-search { outline: none; border: none;
 /****** recipes grid page *********/
 .typewriter { border-bottom: 2px solid rgba(0, 0, 0, 0.3); width: 4.5rem; height: 1.7rem; }
 
+.container-recepten .card .card-body{ padding: .5rem 0; }
 .container-recepten .card-img-top { height: 14rem; width: auto; position: relative;}
 .container-recepten .card a {border-radius: 10px; border: 1px solid rgba(0, 0, 0, .2);}
 .container-recepten .card-title { font-size: 1rem; }
@@ -122,7 +123,7 @@ input[type="checkbox"]:checked ~ .container-recepten [data-category] { display: 
 
 /************* hero *************/
 .container-hero .container-fluid { background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-  url("../images/recepten_hero.jpg"); background-size: cover; background-position: 50% 70%; background-repeat: no-repeat; background-attachment: fixed; }
+  url("../images/recepten_hero.png"); background-size: cover; background-position: 50% 70%; background-repeat: no-repeat; background-attachment: fixed; }
 .container-hero .container-fluid {height: 40vh;}
 .container-hero h1 { color: white; text-shadow: 1px 2px 1px black; padding-top: 5rem; }
 .container-hero h2 { font-family: 'Roboto';}
@@ -137,9 +138,6 @@ footer .email * { display: inline-block; }
 footer .contact i {background-color: var(--green); border-radius: 50%;}
 footer .ct-head { position: relative;}
 footer .ct-head::after { position: absolute; content: '';height: 4px;bottom: 0;left: 0; width: 25%;background: #96c959;}
-
-
-
 
 
 
