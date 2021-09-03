@@ -170,7 +170,11 @@ footer .ct-head::after { position: absolute; content: '';height: 4px;bottom: 0;l
 
 
 
-
+/* <<<<<<<<<<<<<<<<< BELOW 1400px */
+@media (max-width: 1400px){
+  .receptuur-layout .top-recepturen {border-radius: 0 !important;}
+  .receptuur-layout .top-recepturen .img-fluid {border-radius: 0;}
+}
 /* <<<<<<<<<<<<<<<<< BELOW 1200px */
 @media (max-width: 1200px){
 nav .nav-link,
@@ -178,17 +182,25 @@ nav .dropdown-item { color: black; font-weight: 500; font-size: 1.05rem; }
 .container-recepten { flex-direction: column; }
 .container-hero {
   min-height: 50vh; background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), transparent url("../images/recepten_hero.png") no-repeat scroll auto;}
+.receptuur-layout .row { flex-direction: column-reverse; align-items: center;}
+.receptuur-layout .receptuur-base .bereidingstijd {flex-direction: row;}
+.receptuur-layout .top-recepturen { max-height: 40vh; overflow: hidden;}
+.receptuur-layout .top-recepturen .img-fluid { position: relative; bottom: 8rem; clip-path: inset(20% 0% 0% 0%); }
 }
 /* >>>>>>>>>>>>>>>>>> BELOW 992px */
 @media (max-width: 992px) {
     nav .dropdown-item { padding: .5rem 0 .5rem 2rem !important; font-size: 1.125rem; }
-    nav .nav-link { padding: .8rem; font-size: 1.25rem;}
-    .container-recepten .row { width: 100%; }   
+    nav .nav-link { padding: .8rem; font-size: 1.25rem;} 
+    .receptuur-layout .top-recepturen .img-fluid { bottom: 9rem;}
 }
 /* >>>>>>>>>>>>>>>>>> ABOVE 992px */
 @media (min-width: 992px) {
     nav .nav-link { border-radius: 5px; }
 }    
+/*>>>>>>>>>>>>>>>>>> BELOW 768 px */ 
+@media (max-width: 768px) { 
+  .receptuur-layout .top-recepturen .img-fluid { position: unset; clip-path: none;}
+}
 /*>>>>>>>>>>>>>>>>>> BELOW 576 px */  
 @media all and (max-width: 36rem) {
     .container-filter h1 { margin: 0; padding: 0 !important; }
@@ -196,6 +208,7 @@ nav .dropdown-item { color: black; font-weight: 500; font-size: 1.05rem; }
     .container-filter ol li { justify-content: space-between; padding: 1rem .6rem !important; display: inline-block;}
     .container-filter .filters label { padding: 0.5rem .3rem;}
     .container-recepten { padding: 1rem 0 !important; margin: 0;}
+    .receptuur-base h1 {width: 95% !important;}
  }
  
  
