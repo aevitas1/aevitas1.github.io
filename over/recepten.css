@@ -180,8 +180,11 @@ footer .ct-head::after { position: absolute; content: '';height: 4px;bottom: 0;l
 nav .nav-link,
 nav .dropdown-item { color: black; font-weight: 500; font-size: 1.05rem; }
 .container-recepten { flex-direction: column; }
-.container-hero {
-  min-height: 50vh; background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), transparent url("../images/recepten_hero.png") no-repeat scroll auto;}
+.container-hero > .container-fluid{ 
+  max-height: 50vh; background: linear-gradient(rgba(0, 0, 0, 0.3), 
+  rgba(0, 0, 0, 0.3)),
+   transparent url("../images/recepten_hero.png") 
+   no-repeat center center; background-size: cover; }
 .receptuur-layout .row { flex-direction: column-reverse; align-items: center;}
 .receptuur-layout .receptuur-base .bereidingstijd {flex-direction: row;}
 .receptuur-layout .top-recepturen { max-height: 40vh; overflow: hidden;}
@@ -209,6 +212,7 @@ nav .dropdown-item { color: black; font-weight: 500; font-size: 1.05rem; }
     .container-filter .filters label { padding: 0.5rem .3rem;}
     .container-recepten { padding: 1rem 0 !important; margin: 0;}
     .receptuur-base h1 {width: 95% !important;}
+    .text-effect h2 { font-size: 1.1rem !important;}
  }
  
  
