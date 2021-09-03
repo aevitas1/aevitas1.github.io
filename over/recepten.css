@@ -99,10 +99,10 @@ nav .search-box input, nav .search-box .fa-search { outline: none; border: none;
 .cook-time { background: #E3F0D4; width: 5rem; padding-top: 1.5rem; border-radius: 10px; transform: rotate(45deg); top: -.3rem; right: -1.5rem; font-size: .8rem; border: 1px solid black;}
 .cook-time i { padding-right: .2rem; font-size: 1rem;}
 
-.container-recepten .search { position: relative; box-shadow: 0 0 40px rgba(51, 51, 51 .1);}
+.container-recepten .search { position: relative; }
 .container-recepten .search input { height: 2.75rem; text-indent: 1.5rem; border: 2px solid #d6d4d4; border-radius: 5px; min-width: 100%; }
 .container-recepten .search .fa-search { position: absolute; top: .8rem; left: .8rem;}
-.container-recepten .search input:focus { box-shadow: none; border: 2px solid blue;}
+.container-recepten .search input:focus { box-shadow: none; }
 .container-recepten li {background: transparent; }
 /*********** recipes base *********/
 .waarderingen .fas { color: rgb(218, 189, 25); font-size: 1.25rem;}
