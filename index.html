@@ -5,16 +5,15 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1">
-
   <title>lactosevrije maaltijdboxen - foodfreedom</title>
-
   <link href="styles.css" rel="stylesheet" type="text/css">
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;500;900&display=swap">
-
+  <!-- js -->
+  <script src="main.js" defer></script>
   <!-- icons -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
 
@@ -24,7 +23,7 @@
 <body outlines="0">
   <header>
     <!-- nav -->
-    <div class="wrapper-nav">
+    <div class="wrapper-nav autohide">
       <nav>
         <input type="checkbox" id="show-search">
         <input type="checkbox" id="show-menu">
@@ -200,7 +199,7 @@
         </li>
         <li>
           <i class="fas fa-trash-alt"></i>
-          <h3>Minder waste</h3>
+          <h3>Minder afval</h3>
           <p>Wij houden niet van weggooien!</p>
         </li>
         <li>
@@ -222,26 +221,28 @@
     <div class="content">
 
       <div class="content-block">
-        <div class="grid-item">      
-            <a href="javascript:void(0)"><img class="row-img" src="images/recepten_3.jpg" alt="Lactosevrije maaltijd salade"></a>
-            <div class="row-head">Maaltijd salade</div>
-            <div class="row-text">met spinazie</div>
-            <div class="allergenen-img">
+        <div class="grid-item">
+          <a href="javascript:void(0)"><img class="row-img" src="images/recepten_3.jpg"
+              alt="Lactosevrije maaltijd salade"></a>
+          <div class="row-head">Maaltijd salade</div>
+          <div class="row-text">met spinazie</div>
+          <div class="allergenen-img">
             <span class="tooltip" data-tooltip="Bevat zwaveldioxide">
-            <img src="images/allergenen/zwavel.png" alt="bevat zwaveldioxide"></span>
-          </div>            
+              <img src="images/allergenen/zwavel.png" alt="bevat zwaveldioxide"></span>
           </div>
+        </div>
       </div>
-        
+
 
 
 
 
       <div class="content-block">
         <div class="grid-item">
-          <a href="javascript:void(0)"><img class="row-img" src="images/recepten_2.jpg" alt="Lactosevrije kerrie bloemkool met quinoa"></a>
-            <div class="row-head">Kerrie bloemkool</div>
-            <div class="row-text">met broccoli en quinoa</div>
+          <a href="javascript:void(0)"><img class="row-img" src="images/recepten_2.jpg"
+              alt="Lactosevrije kerrie bloemkool met quinoa"></a>
+          <div class="row-head">Kerrie bloemkool</div>
+          <div class="row-text">met broccoli en quinoa</div>
           <div class="allergenen-img">
             <span class="tooltip" data-tooltip="Bevat gluten">
               <img src="images/allergenen/gluten.png" alt="Bevat gluten">
@@ -255,9 +256,10 @@
 
       <div class="content-block">
         <div class="grid-item">
-          <a href="javascript:void(0)"><img class="row-img" src="images/recepten_6.jpg" alt="Lactosevrije aardappel puree met eend"></a>
-            <div class="row-head">Gebraden eendenborst</div>
-            <div class="row-text">met aardappel en vijgenjus</div>
+          <a href="javascript:void(0)"><img class="row-img" src="images/recepten_6.jpg"
+              alt="Lactosevrije aardappel puree met eend"></a>
+          <div class="row-head">Gebraden eendenborst</div>
+          <div class="row-text">met aardappel en vijgenjus</div>
           <div class="allergenen-img">
             <span class="tooltip" data-tooltip="Bevat kleine hoeveelheid sporen van melk">
               <img src="images/allergenen/melk.png" alt="Bevat kleine hoeveelheid sporen van melk">
@@ -271,27 +273,28 @@
 
       <div class="content-block">
         <div class="grid-item">
-          <a href="over/recepten/chocolade-fondant.html"><img class="row-img" src="images/recepten_1.jpg" alt="Lactosevrije brownie"></a>
-            <div class="row-head">Chocolade fondant</div>
-            <div class="row-text">met lactosevrij ijs</div>
+          <a href="over/recepten/chocolade-fondant.html"><img class="row-img" src="images/recepten_1.jpg"
+              alt="Lactosevrije brownie"></a>
+          <div class="row-head">Chocolade fondant</div>
+          <div class="row-text">met lactosevrij ijs</div>
           <div class="allergenen-img">
             <span class="tooltip" data-tooltip="Bevat sporen van noten">
               <img src="images/allergenen/noten.png" alt="Bevat sporen van noten">
             </span>
             <span class="tooltip" data-tooltip="Bevat gluten">
-            <img src="images/allergenen/gluten.png" alt="Bevat gluten">
+              <img src="images/allergenen/gluten.png" alt="Bevat gluten">
             </span>
             <span class="tooltip" data-tooltip="Bevat ei">
-            <img src="images/allergenen/ei.png" alt="Bevat ei">
+              <img src="images/allergenen/ei.png" alt="Bevat ei">
             </span>
             <span class="tooltip" data-tooltip="Bevat sporen van pinda">
-            <img src="images/allergenen/pindas.png" alt="Bevat sporen van pinda">
+              <img src="images/allergenen/pindas.png" alt="Bevat sporen van pinda">
             </span>
           </div>
         </div>
       </div>
 
-      </div>
+    </div>
     </div>
 
     <div class="ct-footer">
@@ -377,12 +380,13 @@
             <li><a href="javascript:void(0)">Privacy beleid</a></li>
           </ul>
           <div class="content-block flex-column">
-            
-          <span class="contact-us"><i class="action fas fa-phone-alt"></i><a href="tel:07212234">072-12234</a></span>
-          
-          <span class="contact-us"><i class="action fas fa-envelope"></i><a href="mailto:post@foodfreedom.nl?subject=Ik heb een vraag">post@foodfreedom.nl</a></span>
 
-          </div>          
+            <span class="contact-us"><i class="action fas fa-phone-alt"></i><a href="tel:07212234">072-12234</a></span>
+
+            <span class="contact-us"><i class="action fas fa-envelope"></i><a
+                href="mailto:post@foodfreedom.nl?subject=Ik heb een vraag">post@foodfreedom.nl</a></span>
+
+          </div>
         </div>
 
         <div class="content-block center">
@@ -397,10 +401,10 @@
           <div class="content-block flex-column">
             <p class="payment">U kunt betalen met</p>
             <span class="payment-icons">
-            <i class="fab fa-cc-mastercard"></i>
-            <i class="fab fa-cc-visa"></i>
-            <i class="fab fa-ideal"></i>
-            <i class="fab fa-cc-paypal"></i></span>
+              <i class="fab fa-cc-mastercard"></i>
+              <i class="fab fa-cc-visa"></i>
+              <i class="fab fa-ideal"></i>
+              <i class="fab fa-cc-paypal"></i></span>
           </div>
         </div>
 
@@ -413,14 +417,16 @@
             <div class="email-input"><input type="email" placeholder="Jouw e-mail adres" required></div>
 
             <div class="verstuur">
-            <a href="javascript:void(0)" class="btn-sm action">VERSTUUR</a>
+              <a href="javascript:void(0)" class="btn-sm action">VERSTUUR</a>
             </div>
           </div>
         </div>
       </div>
 
       <div class="content copyright">
-      <div class="ct-footer credits"><p>foodfreedom | Designed by Stephan vd M <i class="far fa-copyright"></i> 2021 Alle rechten voorbehouden.</p></div>
+        <div class="ct-footer credits">
+          <p>foodfreedom | Designed by Stephan vd M <i class="far fa-copyright"></i> 2021 Alle rechten voorbehouden.</p>
+        </div>
       </div>
     </div>
   </footer>
