@@ -1,50 +1,27 @@
-/* typewriter */
-class TypeWriter {
-    constructor() {
-      this.textData = ["vind", "print", "email"];
-      this.currentWord = "";
-      this.word = "";
-      this.count = 0;
-      this.index = 0;
-      this.speed = 500;
-      this.isDeleting = false;
-      this.type();
+// hide nav on scroll
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    el_autohide = document.querySelector('.autohide');
+
+    // add padding-top to bady (if necessary)
+    navbar_height = document.querySelector('.wrapper-nav').offsetHeight;
+    document.body.style.paddingTop = navbar_height;
+
+    if (el_autohide) {
+        var last_scroll_top = 0;
+        window.addEventListener('scroll', function () {
+            let scroll_top = window.scrollY;
+            if (scroll_top < last_scroll_top) {
+                el_autohide.classList.remove('scrolled-down');
+                el_autohide.classList.add('scrolled-up');
+            }
+            else {
+                el_autohide.classList.remove('scrolled-up');
+                el_autohide.classList.add('scrolled-down');
+            }
+            last_scroll_top = scroll_top;
+        });
     }
-  
-    type() {
-      if (this.count >= this.textData.length) {
-        this.count = 0;
-      }
-  
-      this.currentText = this.textData[this.count];
-  
-      if (this.isDeleting) {
-        this.speed = 50;
-        this.word = this.currentText.slice(0, --this.index);
-  
-        if (this.word === "") {
-          this.isDeleting = false;
-          this.count++;
-          this.speed = 400;
-        }
-      } else {
-        this.word = this.currentText.slice(0, ++this.index);
-  
-        if (this.word === this.currentText) {
-          this.isDeleting = true;
-        }
-      }
-  
-      const typewriter = document.querySelector(".typewriter");
-      typewriter.innerHTML = this.word;
-  
-      setTimeout(() => this.type(), this.speed);
-    }
-  }
-  
-  const init = () => {
-    new TypeWriter();
-  };
-  
-  document.addEventListener("DOMContentLoaded", init());
-  
+});
+
