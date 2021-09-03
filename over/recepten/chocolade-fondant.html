@@ -6,7 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1">
   <title>foodfreedom - lactosevrije maaltijdboxen</title>
-
+  <!-- bootstrap dropdown menu hover fix -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
@@ -25,24 +27,15 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
   <!-- print -->
   <link rel="stylesheet" href="print.css" type="text/css" media="print" />
+  <!-- js -->
+  <script src="../recepten.js"></script>
 </head>
-<!-- bootstrap dropdown menu hover fix -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-  $(document).ready(function () {
-    $(".dropdown").hover(function () {
-      var dropdownMenu = $(this).children(".dropdown-menu");
-      if (dropdownMenu.is(":visible")) {
-        dropdownMenu.parent().toggleClass("open");
-      }
-    });
-  });
-</script>
 
 <body outlines="0">
   <header>
     <!-- nav -->
-    <nav class="navbar navbar-expand-lg fixed-top my-0 py-0 me-auto" style="background-color: #E3F0D4;">
+    <nav class="autohide navbar navbar-expand-lg fixed-top my-0 py-0 me-auto" id="navbar"
+      style="background-color: #E3F0D4;">
       <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -502,6 +495,7 @@
       </div>
     </div>
   </footer>
+  <!-- tooltips -->
   <script>
     const tooltips = document.querySelectorAll('.tt')
     tooltips.forEach(t => {
