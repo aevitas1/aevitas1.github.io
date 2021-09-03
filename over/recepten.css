@@ -67,6 +67,10 @@ select:active,
 .btn-x-sm:hover { background-color: #902656;}
 
 /**************** nav **************/
+.scrolled-down{
+  transform:translateY(-100%); transition: all 0.3s ease-in-out; }
+.scrolled-up{
+  transform:translateY(0); transition: all 0.3s ease-in-out; }
 .dropdown:hover .dropdown-menu{ display: block;} .dropdown-menu{ margin-top: 0;}
 .navbar-brand img { mix-blend-mode: multiply; max-height: 4.375rem; display: block; }
 
@@ -156,7 +160,7 @@ input[type="checkbox"]:checked ~ .container-recepten [data-category] { display: 
 /************* footer *************/
 footer .container-fluid { background: var(--odd-bg-color); }
 footer .list-group { border: none; }
-footer .list-group-item { border: none; }
+footer .list-group-item { border: none; padding: 0; }
 
 footer .phone *,
 footer .email * { display: inline-block; }
