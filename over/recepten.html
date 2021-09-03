@@ -7,7 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1">
 
   <title>foodfreedom - lactosevrije maaltijdboxen</title>
-
+  <!-- bootstrap dropdown menu hover fix -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+  <!-- bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
@@ -23,20 +25,8 @@
 
   <!-- icons -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
-  <!-- typewriter -->
-  <script src="../main.js" defer></script>
-  <!-- bootstrap dropdown menu hover fix -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
-  <script>
-    $(document).ready(function () {
-      $(".dropdown").hover(function () {
-        var dropdownMenu = $(this).children(".dropdown-menu");
-        if (dropdownMenu.is(":visible")) {
-          dropdownMenu.parent().toggleClass("open");
-        }
-      });
-    });
-  </script>
+  <!-- js -->
+  <script src="recepten.js" defer></script>
 
 </head>
 
@@ -45,7 +35,8 @@
 <body outlines="0">
   <header>
     <!-- nav -->
-    <nav class="navbar navbar-expand-lg fixed-top my-0 py-0 me-auto" style="background-color: #E3F0D4;">
+    <nav class="autohide navbar navbar-expand-lg fixed-top my-0 py-0 me-auto" id="navbar"
+      style="background-color: #E3F0D4;">
       <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -128,9 +119,9 @@
   <input class="filter-radio" type="checkbox" id="Dessert" name="categories" value="Dessert">
 
   <!-- start content-->
-  <section class="container-hero" style="padding-top: 4.375rem;">
+  <section class="container-hero">
     <div class="container-fluid">
-      <h1 class="text-center" style="color: #fff;">Recepturen</h1>
+      <h1 class="text-center" style="color: #fff; padding-top: 8.375rem;">Recepturen</h1>
       <div class="text-effect text-center justify-content-center" style="display: flex;">
         <h2 class="fs-5" style="color: #fff; text-shadow: 1px 2px 1px black;">Kies uw leefstyle en</h2>
         <h2 class="typewriter fs-5" style="color: #fff; text-shadow: 1px 2px 1px black;"></h2>
@@ -496,7 +487,58 @@
       </div>
     </div>
   </footer>
+  <script>
+    /* typewriter */
+    class TypeWriter {
+      constructor() {
+        this.textData = ["vind", "print", "email"];
+        this.currentWord = "";
+        this.word = "";
+        this.count = 0;
+        this.index = 0;
+        this.speed = 500;
+        this.isDeleting = false;
+        this.type();
+      }
 
+      type() {
+        if (this.count >= this.textData.length) {
+          this.count = 0;
+        }
+
+        this.currentText = this.textData[this.count];
+
+        if (this.isDeleting) {
+          this.speed = 50;
+          this.word = this.currentText.slice(0, --this.index);
+
+          if (this.word === "") {
+            this.isDeleting = false;
+            this.count++;
+            this.speed = 400;
+          }
+        } else {
+          this.word = this.currentText.slice(0, ++this.index);
+
+          if (this.word === this.currentText) {
+            this.isDeleting = true;
+          }
+        }
+
+        const typewriter = document.querySelector(".typewriter");
+        typewriter.innerHTML = this.word;
+
+        setTimeout(() => this.type(), this.speed);
+      }
+    }
+
+    const init = () => {
+      new TypeWriter();
+    };
+
+    document.addEventListener("DOMContentLoaded", init());
+
+  </script>
 </body>
 
 </html>
